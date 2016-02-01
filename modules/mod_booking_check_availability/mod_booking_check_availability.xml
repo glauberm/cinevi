@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>MOD_BOOKING_CHECK_AVAILABILITY</name>
+    <author>ARTIO s.r.o.</author>
+    <creationDate>August 2014</creationDate>
+    <authorEmail>info@artio.cz</authorEmail>
+    <authorUrl>http://www.artio.cz</authorUrl>
+    <version>2.0.0</version>
+    <description>MOD_BOOKING_CHECK_AVAILABILITY_DESC</description>
+    <languages folder="language">
+        <language tag="cs-CZ">cs-CZ/cs-CZ.mod_booking_check_availability.ini</language>
+        <language tag="cs-CZ">cs-CZ/cs-CZ.mod_booking_check_availability.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_booking_check_availability.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_booking_check_availability.sys.ini</language>        
+    </languages>
+    <files>
+        <folder>assets</folder>
+        <folder>tmpl</folder>
+        <file>index.html</file>
+        <filename module="mod_booking_check_availability">mod_booking_check_availability.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

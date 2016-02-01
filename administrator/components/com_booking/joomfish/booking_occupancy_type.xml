@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+    <name>Booking Occupancy Type</name>
+    <author>Artio s.r.o.</author>
+    <version>1.0.0</version>
+    <description>Definition for the Booking occupancy type</description>
+    <reference>
+        <table name="booking_occupancy_type">
+            <field type="referenceid" name="id" translate="0">ID</field>
+            <field type="titletext" name="title" translate="1">Title</field>
+        </table>
+    </reference>
+    <translationfilters>
+        <keyword>title</keyword>
+    </translationfilters>
+</joomfish>

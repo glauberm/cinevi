@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="administrator/components/com_booking/elements">
+        <field name="id" type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" />
+        <field name="title" type="text" label="JGLOBAL_TITLE" class="inputbox input-xxlarge" size="100" required="true" />
+        <field name="event" type="list" label="NOTIFY_ON_EVENT" required="true">
+            <option value="">- none -</option>
+            <option value="afterReservationIsDone">AFTER_RESERVATION_IS_DONE</option>
+            <option value="beforeReservationStart">BEFORE_RESERVATION_START</option>
+        </field>
+        <field name="template" type="email" default="0" label="EMAIL_TEMPLATE" required="true" />
+        <field name="prereserved" type="radio" class="radio btn-group" default="0" label="PRE_RESERVED">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="reserved" type="radio" class="radio btn-group" default="1" label="RESERVED">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="cancelled" type="radio" class="radio btn-group" default="0" label="CANCELLED">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="unpaid" type="radio" class="radio btn-group" default="0" label="UNPAID">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="deposit" type="radio" class="radio btn-group" default="0" label="DEPOSIT_PAID">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="paid" type="radio" class="radio btn-group" default="1" label="PAID_IN_FULL">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="weeks" type="text" label="NOTIFY_IN_WEEKS" class="inputbox input-mini" size="1" required="true" default="0" />
+        <field name="days" type="text" label="NOTIFY_IN_DAYS" class="inputbox input-mini" size="1" required="true" default="0" />
+        <field name="hours" type="text" label="NOTIFY_IN_HOURS" class="inputbox input-mini" size="1" required="true" default="12" />
+        <field name="minutes" type="text" label="NOTIFY_IN_MINUTES" class="inputbox input-mini" size="1" required="true" default="0" />
+        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+    </fieldset>
+</form>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>BOOKING</name>
+    <creationDate>11 May 2015</creationDate>
+    <author>ARTIO s.r.o.</author>
+    <authorEmail>info@artio.net</authorEmail>
+    <authorUrl>http://www.artio.net</authorUrl>
+    <copyright>Copyright (C) 2015 ARTIO</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html</license>
+    <version>2.3.4</version>
+    <scriptfile>install.php</scriptfile>
+    <forum>http://www.artio.net/support-forums/booking</forum>
+    <paidsupport>http://www.artio.net/support-services/joomla-support</paidsupport>
+    <productpage>http://www.artio.net/joomla-extensions/booking-and-reservation</productpage>
+    <documentation>http://www.artio.net/book-it/documentation</documentation>
+    <faq>http://www.artio.net/faqs/booking</faq>
+    <video>http://www.artio.net/book-it/video-tutorials</video>
+    <languages folder="language/site">
+        <language tag="cs-CZ">cs-CZ/cs-CZ.com_booking.ini</language>
+        <language tag="de-DE">de-DE/de-DE.com_booking.ini</language>
+        <language tag="en-GB">en-GB/en-GB.com_booking.ini</language>
+        <language tag="es-ES">es-ES/es-ES.com_booking.ini</language>
+        <language tag="fi-FI">fi-FI/fi-FI.com_booking.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.com_booking.ini</language>
+        <language tag="it-IT">it-IT/it-IT.com_booking.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.com_booking.ini</language>
+        <language tag="sv-SE">sv-SE/sv-SE.com_booking.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.com_booking.ini</language>
+    </languages>
+    <files folder="site">
+        <folder>assets</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>booking.php</filename>
+        <filename>cron.php</filename>
+        <filename>index.html</filename>
+        <filename>router.php</filename>
+    </files>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <administration>
+        <languages folder="language/admin">
+            <language tag="cs-CZ">cs-CZ/cs-CZ.com_booking.common.ini</language>
+            <language tag="cs-CZ">cs-CZ/cs-CZ.com_booking.ini</language>
+            <language tag="cs-CZ">cs-CZ/cs-CZ.com_booking.menu.ini</language>
+            <language tag="cs-CZ">cs-CZ/cs-CZ.com_booking.sys.ini</language>
+            <language tag="de-DE">de-DE/de-DE.com_booking.common.ini</language>
+            <language tag="de-DE">de-DE/de-DE.com_booking.ini</language>
+            <language tag="de-DE">de-DE/de-DE.com_booking.menu.ini</language>
+            <language tag="de-DE">de-DE/de-DE.com_booking.sys.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_booking.common.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_booking.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_booking.menu.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_booking.sys.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_booking.common.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_booking.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_booking.menu.ini</language>
+            <language tag="es-ES">es-ES/es-ES.com_booking.sys.ini</language>
+            <language tag="fi-FI">fi-FI/fi-FI.com_booking.common.ini</language>
+            <language tag="fi-FI">fi-FI/fi-FI.com_booking.ini</language>
+            <language tag="fi-FI">fi-FI/fi-FI.com_booking.menu.ini</language>
+            <language tag="fi-FI">fi-FI/fi-FI.com_booking.sys.ini</language>
+            <language tag="fr-FR">fr-FR/fr-FR.com_booking.common.ini</language>
+            <language tag="fr-FR">fr-FR/fr-FR.com_booking.ini</language>
+            <language tag="fr-FR">fr-FR/fr-FR.com_booking.menu.ini</language>
+            <language tag="fr-FR">fr-FR/fr-FR.com_booking.sys.ini</language>
+            <language tag="it-IT">it-IT/it-IT.com_booking.common.ini</language>
+            <language tag="it-IT">it-IT/it-IT.com_booking.ini</language>
+            <language tag="it-IT">it-IT/it-IT.com_booking.menu.ini</language>
+            <language tag="it-IT">it-IT/it-IT.com_booking.sys.ini</language>
+            <language tag="nl-NL">nl-NL/nl-NL.com_booking.common.ini</language>
+            <language tag="nl-NL">nl-NL/nl-NL.com_booking.ini</language>
+            <language tag="nl-NL">nl-NL/nl-NL.com_booking.menu.ini</language>
+            <language tag="nl-NL">nl-NL/nl-NL.com_booking.sys.ini</language>
+            <language tag="sv-SE">sv-SE/sv-SE.com_booking.common.ini</language>
+            <language tag="sv-SE">sv-SE/sv-SE.com_booking.ini</language>
+            <language tag="sv-SE">sv-SE/sv-SE.com_booking.menu.ini</language>
+            <language tag="sv-SE">sv-SE/sv-SE.com_booking.sys.ini</language>
+            <language tag="sl-SI">sl-SI/sl-SI.com_booking.common.ini</language>
+            <language tag="sl-SI">sl-SI/sl-SI.com_booking.ini</language>
+            <language tag="sl-SI">sl-SI/sl-SI.com_booking.menu.ini</language>
+            <language tag="sl-SI">sl-SI/sl-SI.com_booking.sys.ini</language>            
+        </languages>
+        <menu img="../components/com_booking/assets/images/logo-16.png">ARTIO_BOOKING</menu>
+        <submenu>
+            <menu img="../components/com_booking/assets/images/logo-16.png" link="option=com_booking">CONTROL_PANEL</menu>
+            <menu img="../components/com_booking/assets/images/icon-16-category.png" link="option=com_booking&amp;view=reservations">RESERVATIONS</menu>
+            <menu img="../components/com_booking/assets/images/icon-16-object.png" link="option=com_booking&amp;view=subjects">BOOKABLE_ITEMS</menu>
+            <menu img="../components/com_booking/assets/images/icon-16-template.png" link="option=com_booking&amp;view=templates">TEMPLATES</menu>
+            <menu img="../components/com_booking/assets/images/icon-16-cbadmins.png" link="option=com_booking&amp;view=admins">MANAGERS</menu>
+            <menu img="../components/com_booking/assets/images/icon-16-user.png" link="option=com_booking&amp;view=customers">CUSTOMERS</menu>
+                        <!-- <menu img="../components/com_booking/assets/images/icon-16-upgrade.png" link="option=com_booking&amp;view=upgrade">CHECK_UPDATES</menu> -->
+            <menu img="../components/com_booking/assets/images/icon-16-help.png" link="option=com_booking&amp;startOffset=3">HELP_AND_SUPPORT</menu>
+        </submenu>
+        <files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>elements</folder>
+            <folder>extensions</folder>
+            <folder>falang</folder>
+            <folder>helpers</folder>
+            <folder>joomfish</folder>
+            <folder>models</folder>
+            <folder>objects</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>booking.php</filename>
+            <filename>config.xml</filename>
+            <filename>defines.php</filename>
+            <filename>changelog.txt</filename>
+            <filename>index.html</filename>
+        </files>
+    </administration>
+    <updateservers>
+                <server name="ARTIO Booking Updates" type="extension" priority="1">http://www.artio.net/joomla-updates/list/com_booking2_free.xml</server>
+    </updateservers>
+</extension>

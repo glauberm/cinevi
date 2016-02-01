@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="BOOKABLE_ITEMS_WITH_THE_SAME_TEMPLATE">
+	</layout>
+    <!-- Joomla 1.6 and newer -->
+    <fields name="request">
+        <fieldset name="request" addfieldpath="/administrator/components/com_booking/elements">
+            <field name="id" type="template" use_type="1" default="0" label="SELECT_TEMPLATE" description="" />
+        </fieldset>
+    </fields>
+</metadata>

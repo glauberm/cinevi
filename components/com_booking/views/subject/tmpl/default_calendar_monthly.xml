@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="MONTH_LAYOUT" description="MONTHLY_CALENDAR_DESCRIPTION"></layout>
+	<files>
+		<filename>default_calendar_monthly.php</filename>
+	</files>
+</metadata>

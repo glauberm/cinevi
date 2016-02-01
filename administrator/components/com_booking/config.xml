@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config addfieldpath="/administrator/components/com_booking/elements/">
+    <fieldset name="MainSettings" label="MAIN_SETTINGS">
+    	<field name="parents_bookable" type="list" default="0" class="btn-group" label="PARENT_BOOKABLE" description="HLP_PARENT_BOOKABLE">
+			<option value="0">JNONE</option>    	
+			<option value="1">BOOK_ALL_CHILDREN</option>
+            <option value="2">BOOK_ONE_CHILDREN</option>
+    	</field>
+        <field name="customers_usergroup" type="usergroup" label="CUSTOMERS_USER_GROUP" description="HLP_CUSTOMERS_USER_GROUP" />
+        <field type="radio" name="login_before_reserving" default="0" class="btn-group" label="CUSTOMER_HAS_TO_LOGIN_OR_REGISTER_BEFORE_RESERVING" description="HLP_CUSTOMER_HAS_TO_LOGIN_OR_REGISTER_BEFORE_RESERVING">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="enable_registration" default="1" class="btn-group" label="ENABLE_NEW_REGISTRATION" description="HLP_ENABLE_NEW_REGISTRATION">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="captcha" type="plugins" folder="captcha" default="" label="USE_CAPTCHA" filter="cmd" description="HLP_USE_CAPTCHA">
+			<option value="">JOPTION_USE_DEFAULT</option>
+			<option value="0">JOPTION_DO_NOT_USE</option>
+		</field>
+        <field type="radio" name="more_reservations" default="1" class="btn-group" label="MORE_RESERVATIONS" description="HLP_MORE_RESERVATIONS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="list" name="confirm_reservation" default="0" class="btn-group" label="CONFIRM_RESERVATION" description="HLP_CONFIRM_RESERVATION">
+            <option value="0">JNO</option>
+            <option value="1">RESERVATION_RESERVED_BEFORE_CONFIRM</option>
+            <option value="2">RESERVATION_RESERVED_AFTER_CONFIRN</option>
+        </field>
+        <field type="list" name="prefill_reservation" default="1" label="PREFILL_RESERVATION" description="HLP_PREFILL_RESERVATION">
+            <option value="0">JNONE</option>
+            <option value="1">CUSTOMERS_ONLY</option>
+            <option value="2">CUSTOMERS_AND_MANAGERS</option>
+        </field>
+        <field type="list" name="redirection_after_reservation" default="0" label="REDIRECTION_AFTER_RESERVATION" description="HLP_REDIRECTION_AFTER_RESERVATION">
+            <option value="0">THANKYOU_PAGE</option>
+            <option value="1">LATEST_SUBJECT</option>
+            <option value="2">SUBJECT_LIST</option>
+            <option value="3">RESERVATION_LIST_LOGGED</option>
+            <option value="4">HOMEPAGE</option>
+            <option value="5">MENU_ITEM</option>
+            <option value="6">CUSTOM_URL</option>
+        </field>
+        <field type="menuitem" name="redirection_after_reservation_menu_item" label="REDIRECTION_AFTER_RESERVATION_MENU_ITEM" description="HLP_REDIRECTION_AFTER_RESERVATION_MENU_ITEM" class="masterChild" />
+        <field type="text" name="redirection_after_reservation_custom_url" label="REDIRECTION_AFTER_RESERVATION_CUSTOM_URL" description="HLP_REDIRECTION_AFTER_RESERVATION_CUSTOM_URL" size="60" class="masterChild" />
+        <field type="list" name="redirection_back_reservation" default="2" label="REDIRECTION_BACK_RESERVATION" description="HLP_REDIRECTION_BACK_RESERVATION">
+            <option value="0">LATEST_SUBJECT</option>
+            <option value="1">SUBJECT_LIST</option>
+            <option value="2">RESERVATION_LIST_LOGGED</option>
+            <option value="3">HOMEPAGE</option>
+        </field>
+        <field type="radio" name="enable_responsive" default="0" class="btn-group" label="ENABLE_RESPONSIVE" description="HLP_ENABLE_RESPONSIVE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="enable_jquery" default="0" class="btn-group" label="ENABLE_JQUERY" description="HLP_ENABLE_JQUERY">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="spacer" label="REQUIRE_ACCEPTING" />
+        <field type="term" name="terms_of_contract_accept" default="0" label="TERMS_OF_CONTRACT" class="btn-group modal masterChild" link_class="modal" description="HLP_ACCEPT_TERMS_OF_CONTRACT" value="1" link="index.php?option=com_booking&amp;task=article.edit&amp;id=1&amp;tmpl=component" linktext="EDIT_TERMS_OF_CONTRACT" rel="{'handler': 'iframe', 'size': {'width': 600, 'height': 400}}">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+        <field type="term" name="terms_of_privacy_accept" default="0" label="TERMS_OF_PRIVACY" class="btn-group modal masterChild" link_class="modal" description="HLP_ACCEPT_TERMS_OF_PRIVACY" value="1" link="index.php?option=com_booking&amp;task=article.edit&amp;id=2&amp;tmpl=component" linktext="EDIT_TERMS_OF_PRIVACY" rel="{'handler': 'iframe', 'size': {'width': 600, 'height': 400}}">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+        <field type="list" name="locations" default="0" label="USE_LOCATIONS" description="HLP_USE_LOCATIONS">
+            <option value="0">DISABLE</option>
+            <option value="1">LOCATIONS_TYPE_1</option>
+            <option value="2">LOCATIONS_TYPE_2</option>
+        </field>
+        <field type="radio" name="show_registration_under_login" default="0" class="btn-group" label="SHOW_REGISTRATION_UNDER_LOGIN" description="HLP_SHOW_REGISTRATION_UNDER_LOGIN">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+        <field type="radio" name="allow_custom_message" default="1" class="btn-group" label="ALLOW_CUSTOM_MESSAGE" description="HLP_ALLOW_CUSTOM_MESSAGE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>                
+    </fieldset>
+    <fieldset name="Formating" label="FORMATING">
+        <field type="radio" name="date_type" default="0" label="DATE_FORMAT" class="btn-group" description="HLP_DATE_TYPE">
+            <option value="0">USE_COMPONENT_TRANSLATION_CONSTANTS</option>
+            <option value="1">USE_CUSTOM_FORMAT</option>
+        </field>
+        <field type="dateformat" name="date_long" default="" label="LONG_DATE" description="HLP_DATE_LONG" class="masterChild" year="true" month="true" day="true" meridiem="true" hour="true" minute="true" items="13" />
+        <field type="dateformat" name="date_normal" default="" label="NORMAL_DATE" description="HLP_DATE_NORMAL" class="masterChild" year="true" month="true" day="true" meridiem="false" hour="false" minute="false" items="7" />
+        <field type="dateformat" name="date_day" default="" label="DAY_DATE" description="HLP_DATE_DAY" class="masterChild" year="true" month="true" day="true" meridiem="false" hour="false" minute="false" items="7" />
+        <field type="dateformat" name="date_day_short" default="" label="DAY_DATE_SHORT" description="HLP_DATE_DAY_SHORT" class="masterChild" year="true" month="true" day="true" meridiem="false" hour="false" minute="false" items="7" />
+        <field type="dateformat" name="time" default="" label="TIME" description="HLP_TIME" class="masterChild" year="false" month="false" day="false" meridiem="true" hour="true" minute="true" items="5" />
+        <field type="radio" name="address_format" default="0" label="ADDRESS_FORMAT_TYPE" class="btn-group" description="HLP_ADDRESS_FORMAT">
+            <option value="0">ADDRESS_FORMAT_TYPE_DEFAULT</option>
+            <option value="1">ADDRESS_FORMAT_TYPE_CUSTOM</option>
+        </field>        
+        <field type="text" name="address_format_custom" default="" label="ADDRESS_FORMAT_CUSTOM" description="HLP_ADDRESS_FORMAT_CUSTOM" size="80" class="masterChild" />
+    </fieldset>
+    <fieldset name="Images" label="IMAGES">
+        <field type="list" name="popup" default="slimbox" label="POPUP_WINDOW" description="HLP_POPUP_WINDOW">
+            <option value="slimbox">Slimbox</option>
+            <option value="shadowbox">Shadowbox</option>
+        </field>
+        <field name="images" type="text" default="/images/booking/" label="IMAGE_PATH" description="HLP_IMAGE_PATH" size="100" />
+        <field name="templates_icons" type="text" default="/components/com_booking/assets/images/icons/" label="TEMPLATE_ICONS_PATH" description="HLP_TEMPLATE_ICONS" size="100" />
+        <field name="images_cache" type="text" label="CACHE_PATH" description="HLP_CACHE_PATH" size="100" default="cache/com_booking/" />
+        <field type="text" name="jpg_quality" label="JPG_QUALITY" default="85" description="HLP_JPG_QUALITY" size="1" />
+        <field type="list" name="png_quality" label="PNG_QUALITY" default="9" description="HLP_PNG_QUALITY">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </field>
+        <field type="list" name="png_filter" label="PNG_FILTER" default="0" description="HLP_PNG_FILTER">
+            <option value="0">PNG_NO</option>
+            <option value="8">PNG_NONE</option>
+            <option value="16">PNG_SUB</option>
+            <option value="32">PNG_UP</option>
+            <option value="64">PNG_AVG</option>
+            <option value="128">PNG_PAETH</option>
+            <option value="248">PNG_ALL</option>
+        </field>
+    </fieldset>
+    <fieldset name="Prices" label="PRICES">
+        <field name="using_prices" type="list" default="2" label="USING_PRICES">
+            <option value="0">WITHOUT_PRICES</option>
+            <option value="1">PRICES_WITHOUT_DEPOSIT</option>
+            <option value="2">PRICES_WITH_DEPOSIT</option>
+        </field>
+        <field name="main_currency" type="text" default="EUR" label="MAIN_CURRENCY" description="HLP_MAIN_CURRENCY" />
+        <field name="last_zero" type="radio" default="0" label="LAST_ZERO" description="HLP_LAST_ZERO" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="decimals" type="text" default="2" label="DECIMALS" description="HLP_DECIMALS_CURRENCY" />
+        <field name="decimals_point" type="radio" default="," label="DECIMALS_POINT" description="HLP_DECIMALS_POINT_CURRENCY" class="btn-group">
+            <option value=",">COMMA</option>
+            <option value=".">POINT</option>
+        </field>
+        <field name="thousand_separator" type="radio" default="space" label="THOUSAND_SEPARATOR" description="HLP_THOUSAND_SEPARATOR" class="btn-group">
+            <option value="none">JNONE</option>
+            <option value="space">SPACE</option>
+            <option value="comma">COMMA</option>
+            <option value="point">POINT</option>
+            <option value="char">CUSTOM</option>
+        </field>
+        <field name="thousand_separator_char" type="text" default="" label="THOUSAND_SEPARATOR_CHAR" description="HLP_THOUSAND_SEPARATOR_CHAR" />
+        <field name="price_format" type="list" default="2" label="PRICE_FORMAT" description="HLP_PRICE_FORMAT">
+            <option value="1">100€</option>
+            <option value="2">100 €</option>
+            <option value="3">$100</option>
+            <option value="4">$ 100</option>
+        </field>
+        <field name="online_payment_expiration_time" type="text" label="ONLINE_PAYMENT_EXPIRATION_TIME" description="HLP_MAIN_CANCEL_TIME_IN_MINUTES" />
+        <field name="taxrates" type="taxrate" label="TAX_RATES" multiple="true" />
+        <field type="radio" name="b2b_tax" default="0" label="SHOW_ITEM_PRICE_WITHOUT_TAX" class="btn-group" description="HLP_SHOW_ITEM_PRICE_WITHOUT_TAX">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_total_price" type="radio" default="1" label="SHOW_TOTAL_PRICE" class="btn-group" description="HLP_SHOW_TOTAL_PRICE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_payment_status" type="radio" default="1" label="SHOW_PAYMENT_STATUS" class="btn-group" description="HLP_SHOW_PAYMENT_STATUS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_unit_price" type="radio" default="1" label="SHOW_UNIT_PRICE" class="btn-group" description="HLP_SHOW_UNIT_PRICE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_deposit_price" type="radio" default="1" label="SHOW_DEPOSIT_PRICE" class="btn-group" description="HLP_SHOW_DEPOSIT_PRICE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_price_excluding_tax" type="radio" default="1" label="SHOW_PRICE_EXCLUDING_TAX" class="btn-group" description="HLP_SHOW_PRICE_EXCLUDING_TAX">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_tax" type="radio" default="1" label="SHOW_TAX" class="btn-group" description="HLP_SHOW_TAX">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="use_provisions" type="radio" default="0" label="USE_PROVISIONS" class="btn-group" description="HLP_USE_PROVISIONS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+        <field name="choose_pay_amount" type="radio" default="0" label="CHOOSE_PAY_AMOUNT" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+    </fieldset>
+    <fieldset name="Calendars" label="CALENDARS">
+        <field type="radio" name="default_calendar_page_bookable" default="0" class="btn-group" label="DEFAULT_CALENDAR_PAGE_BOOKABLE" description="HLP_DEFAULT_CALENDAR_PAGE_BOOKABLE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+        
+        <field type="radio" name="display_who_reserve" default="0" class="btn-group" label="SHOW_CUSTOMER_NAMES" description="HLP_SHOW_CUSTOMER_NAMES">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="display_mine_only" default="0" class="btn-group masterChild" label="SHOW_LOGGED_IN_CUSTOMER_ONLY" description="HLP_SHOW_LOGGED_IN_CUSTOMER_ONLY">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="show_note_in_calendar" default="0" class="btn-group masterChild" label="SHOW_USER_NOTE_IN_CALENDAR" description="HLP_SHOW_USER_NOTE_IN_CALENDAR">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="who_reserve_show_type" default="1" class="btn-group masterChild" label="WHO_RESERVE_SHOW_TYPE">
+            <option value="0">TOOLTIP</option>
+            <option value="1">TEXT</option>
+        </field>
+        <field type="radio" name="first_day" default="0" label="FIRST_WEEK_DAY" class="btn-group" description="HLP_FIRST_WEEK_DAY">
+            <option value="0">MONDAY</option>
+            <option value="1">SUNDAY</option>
+        </field>
+        <field type="radio" name="quick_navigator" default="1" class="btn-group" label="DISPLAY_QUICK_NAVIGATOR" description="HLP_DISPLAY_QUICK_NAVIGATOR">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="text" name="calendar_future_days" default="0d" label="ENABLE_RESERVATION_AFTER_NUM_DAYS" description="HLP_CALENDAR_FUTURE_DAYS" />
+        <field type="radio" name="disable_unbookable_days" default="1" class="btn-group masterChild" label="DISABLE_UNBOOKABLE_DAYS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="text" name="calendar_deep_month" default="5" label="FUTURE_MONTHS_TO_SHOW" description="HLP_CALENDAR_SHOW_MONTHS" />
+        <field type="text" name="calendar_num_months" default="1" label="NUMBER_OF_MONTHS" description="HLP_NUMBER_OF_MONTHS" />
+        <field type="text" name="calendar_deep_week" default="20" label="FUTURE_WEEKS_TO_SHOW" description="HLP_CALENDAR_SHOW_WEEKS" />
+        <field type="text" name="calendar_num_weeks" default="1" label="NUMBER_OF_WEEKS" description="HLP_NUMBER_OF_WEEKS" />
+        <field type="text" name="calendar_deep_day" default="100" label="FUTURE_DAYS_TO_SHOW" description="HLP_CALENDAR_SHOW_DAYS" />
+        <field type="radio" name="show_full_week" default="0" label="SHOW_FULL_WEEKLY_CALENDAR" class="btn-group" description="HLP_SHOW_FULL_WEEKLY_CALENDAR">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="list" name="week_style" default="0" label="WEEK_CALENDAR_STYLE">
+        	<option value="0">ONLY_COLUMN_TIME</option>
+        	<option value="1">EACH_COLUMN_TIME</option>
+            <option value="2">NO_TIME</option>
+        </field> 
+        <field type="radio" name="time_interval_style" default="0" label="TIME_INTERVAL_STYLE" class="btn-group" description="HLP_TIME_INTERVAL_STYLE">
+            <option value="0">FROM_TO</option>
+            <option value="1">FROM</option>
+        </field>
+        <field type="list" name="days_in_week_layout" multiple="true" size="7" label="DAYS_IN_WEEK_LAYOUT">
+            <option value="1">MONDAY</option>
+            <option value="2">TUESDAY</option>
+            <option value="3">WEDNESDAY</option>
+            <option value="4">THURSDAY</option>
+            <option value="5">FRIDAY</option>
+            <option value="6">SATURDAY</option>
+            <option value="7">SUNDAY</option>
+        </field>
+        <field type="radio" name="book_current_day" default="0" label="BOOK_CURRENT_DAY" class="btn-group" description="HLP_BOOK_CURRENT_DAY">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="hide_days_not_begin_fix_limit" default="0" label="HIDE_DAYS_IN_WHICH_DOES_NOT_BEGIN_FIXED_LIMIT" class="btn-group" description="HLP_HIDE_DAYS_IN_WHICH_DOES_NOT_BEGIN_FIXED_LIMIT">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="nights_style" default="1" label="NIGHTS_STYLE" class="btn-group" description="HLP_STYLE_LABELS">
+            <option value="0">MON</option>
+            <option value="1">MON_TUE</option>
+        </field>        
+        <field type="radio" name="hide_not_corresponding_days" default="0" label="HIDE_DAYS_NOT_CORRESPONDING_TO_ACTUAL_MONTH" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>                               
+        <field type="text" name="color_calendar_field_reserved" default="" label="COLOR_OF_RESERVED_FIELD" description="HLP_COLOR_RESERVED_FIELD" class="color {pickerPosition:'top',required:false}"
+            size="7" />
+        <field type="text" name="color_calendar_field_free" default="" label="COLOR_OF_FREE_FIELD" description="HLP_COLOR_FREE_FIELD" class="color {pickerPosition:'top',required:false}" size="7" />
+        <field type="text" name="color_calendar_unavailable" default="" label="UNAVAILABLE_COLOR" description="HLP_COLOR_UNAVAILABLE" class="color {pickerPosition:'top',required:false}" size="7" />
+        <field type="text" name="color_calendar_box_reserved" default="" label="COLOR_OF_RESERVED_PRICE" description="HLP_COLOR_RESERVED_PRICE" class="color {pickerPosition:'top',required:false}"
+            size="7" />
+    </fieldset>
+    <fieldset name="PeriodLayout" label="PERIOD_CALENDAR">
+        <field name="show_recurrence_pattern_daily" type="radio" default="1" label="SHOW_RECURRENCE_PATTERN_DAILY" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_recurrence_pattern_weekly" type="radio" default="1" label="SHOW_RECURRENCE_PATTERN_WEEKLY" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_recurrence_pattern_monthly" type="radio" default="0" label="SHOW_RECURRENCE_PATTERN_MONTHLY" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_recurrence_pattern_yearly" type="radio" default="0" label="SHOW_RECURRENCE_PATTERN_YEARLY" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_range_of_recurrence_no_end_date" type="radio" default="0" label="SHOW_RANGE_OF_RECURRENCE_NO_END_DATE" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_range_of_recurrence_end_after" type="radio" default="1" label="SHOW_RANGE_OF_RECURRENCE_END_AFTER" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="show_range_of_recurrence_end_by" type="radio" default="1" label="SHOW_RANGE_OF_RECURRENCE_END_BY" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="multi_time_frame" type="radio" default="0" label="MULTI_TIME_FRAME" class="btn-group">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+    </fieldset>
+    <fieldset name="Google" label="Google">
+        <field type="text" name="google_client_id" default="" label="GOOGLE_CLIENT_ID" description="HLP_GOOGLE_CLIENT_ID" size="60" class="input-xxlarge" />
+        <field type="text" name="google_client_secret" default="" label="GOOGLE_CLIENT_SECRET" description="HLP_GOOGLE_CLIENT_SECRET" size="60" class="input-xxlarge" />
+        <field type="googlecalendarlist" name="google_default_calendar" default="" label="GOOGLE_DEFAULT_CALENDAR" description="HLP_GOOGLE_DEFAULT_CALENDAR" />
+        <field type="list" name="google_event_summary" default="1" label="GOOGLE_EVENT_SUMMARY" description="HLP_GOOGLE_EVENT_SUMMARY">
+            <option value="1">GOOGLE_EVENT_SUMMARY_CUSTOMER_NAME</option>
+            <option value="0">GOOGLE_EVENT_SUMMARY_ITEM_TITLE</option>
+        </field>
+    </fieldset>
+    <fieldset name="FrontendObjectsList" label="FRONTEND__OBJECTS_LIST">
+    	<field type="radio" name="list_style" default="0" class="btn-group" label="SUBJECTS_LIST_STYLE">
+            <option value="0">TREE</option>
+            <option value="1">FLAT</option>
+        </field>
+        <field type="radio" name="show_flag_featured" default="1" class="btn-group" label="SHOW_FLAG_IS_FEATURED" description="HLP_SHOW_FLAG_IS_FEATURED">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="display_thumbs_subjects_list" default="1" class="btn-group" label="SHOW_THUMBNAILS" description="HLP_SHOW_INTROTEXT">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="display_thumbs_subjects_list_width" type="text" default="150" label="THUMBNAIL_WIDTH" description="" size="10" class="masterChild" />
+        <field name="display_thumbs_subjects_list_height" type="text" label="THUMBNAIL_HEIGHT" description="" size="10" class="masterChild" />
+        <field type="radio" default="1" name="display_readmore_subjects_list" label="SHOW_INTROTEXT" class="btn-group" description="HLP_INTROTEXT_LENGTH">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" default="1" name="crop_readmore_subjects_list" label="CROP_INTROTEXT" class="btn-group" description="HLP_CROP_INTROTEXT">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+        <field name="display_readmore_subjects_list_length" type="text" default="300" label="INTROTEXT_LENGTH" description="HLP_INTROTEXT_LENGTH" size="10" class="masterChild" />
+        <field name="subjects_properties" default="1" type="list" label="DISPLAY_PROPERTIES" description="HLP_DISPLAY_PROPERTIES">
+            <option value="0">Hide</option>
+            <option value="1">AS_TABLE_WITH_TEXTS</option>
+            <option value="2">AS_ICON_LIST</option>
+        </field>
+        <field name="subjects_list_filter" default="1" type="radio" class="btn-group" label="DISPLAY_FILTER" description="HLP_DISPLAY_FILTER">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="subjects_pagination" default="1" type="radio" class="btn-group" label="DISPLAY_PAGINATION" description="HLP_DISPLAY_PAGINATION">
+            <option value="auto">Auto</option>
+            <option value="1">Show</option>
+            <option value="0">Hide</option>
+        </field>
+        <field name="subjects_pagination_start" default="10" type="list" label="DEFAULT_PAGINATION" description="HLP_DEFAULT_PAGINATION" class="masterChild">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="40">40</option>
+            <option value="80">80</option>
+        </field>
+        <field name="subjects_pagination_selector" default="1" type="radio" class="btn-group" label="DISPLAY_PAGINATION_SELECTOR">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="button_bookit" default="1" type="radio" class="btn-group" label="DISPLAY_BOOKIT_BUTTON" description="HLP_DISPLAY_BOOKIT_BUTTON">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="subjects_calendar" default="0" type="radio" class="btn-group" label="SUBJECTS_CALENDAR" description="HLP_SUBJECTS_CALENDAR">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="subjects_calendar_skin" default="dhx_skyblue" type="list" label="SUBJECTS_CALENDAR_SKIN" description="HLP_SUBJECTS_CALENDAR_SKIN" class="masterChild">
+            <option value="dhx_skyblue">CALENDAR_SKIN_SKYBLUE</option>
+            <option value="dhx_web">CALENDAR_SKIN_WEB</option>
+            <option value="omega">CALENDAR_SKIN_OMEGA</option>
+        </field>
+        <field name="subjects_calendar_start" default="0" type="text" label="SUBJECTS_CALENDAR_START" description="HLP_SUBJECTS_CALENDAR_START" size="10" class="masterChild" />
+        <field name="subjects_calendar_deep" default="3" type="text" label="SUBJECTS_CALENDAR_DEEP" description="HLP_SUBJECTS_CALENDAR_DEEP" size="10" class="masterChild" />
+        <field name="subjects_week" default="0" type="radio" class="btn-group" label="SUBJECTS_WEEK" description="HLP_SUBJECTS_WEEK">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="subjects_week_deep" default="7" type="text" label="SUBJECTS_WEEK_DEEP" description="HLP_SUBJECTS_WEEK_DEEP" size="10" class="masterChild" />
+    </fieldset>
+    <fieldset name="FrontendObjectDetail" label="FRONTEND__OBJECT_DETAIL">
+        <field type="radio" name="multiple_reservations" default="1" class="btn-group" label="MULTIPLE_RESERVATIONS" description="HLP_MULTIPLE_RESERVATIONS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+		<field type="radio" name="button_position" default="0" class="btn-group" label="BUTTON_POSITION" description="HLP_BUTTON_POSITION">
+			<option value="0">POSITION_BEFORE_CALENDAR</option>
+			<option value="1">POSITION_AFTER_CALENDAR</option>
+		</field>
+        <field type="radio" name="cart_popup" default="1" class="btn-group" label="CART_POPUP" description="HLP_CART_POPUP">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="show_capacity" default="0" class="btn-group" label="SHOW_CAPACITY" description="HLP_SHOW_CAPACITY">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" default="1" name="display_image_subject_detail" label="SHOW_IMAGE" class="btn-group" description="HLP_SHOW_IMAGE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="display_thumbs_subject_detail_width" type="text" default="300" label="IMAGE_WIDTH" description="HLP_IMAGE_WIDTH" size="10" />
+        <field name="display_thumbs_subject_detail_height" type="text" label="IMAGE_HEIGHT" description="HLP_IMAGE_HEIGHT" size="10" />
+        <field type="radio" default="1" name="display_gallery_subject_detail" label="SHOW_PHOTOGALLERY" class="btn-group" description="HLP_SHOW_PHOTOGALLERY">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="list" name="display_gallery_subject_position" default="bottom" label="PHOTOGALLERY_POSITION" description="HLP_PHOTOGALLERY_POSITION">
+            <option value="above">ABOVE</option>
+            <option value="below">BELOW</option>
+        </field>
+        <field type="list" name="display_gallery_subject_style" default="slideshow" label="PHOTOGALLERY_STYLE" description="HLP_PHOTOGALLERY_STYLE">
+            <option value="slideshow">SLIDESHOW</option>
+            <option value="squares">SQUARES</option>
+        </field>
+        <field name="gallery_slideshow_duration" type="text" default="500" label="GALLERY_SLIDESHOW_DURATION" description="HLP_GALLERY_SLIDESHOW_DURATION" size="10" />
+        <field name="gallery_slideshow_shift" type="text" default="3" label="GALLERY_SLIDESHOW_SHIFT" description="HLP_GALLERY_SLIDESHOW_SHIFT" size="10" />
+        <field name="display_gallery_thumbs_subject_detail_width" type="text" default="50" label="GALLERY_THUMB_WIDTH" description="HLP_GALLERY_THUMB_WIDTH" size="10" />
+        <field name="display_gallery_thumbs_subject_detail_height" type="text" default="50" label="GALLERY_THUMB_HEIGHT" description="HLP_GALLERY_THUMB_HEIGHT" size="10" />
+        <field name="display_gallery_preview_subject_detail_width" type="text" default="600" label="GALLERY_PREVIEW_WIDTH" description="HLP_GALLERY_PREVIEW_WIDTH" size="10" />
+        <field name="display_gallery_preview_subject_detail_height" type="text" label="GALLERY_PREVIEW_HEIGHT" description="HLP_GALLERY_PREVIEW_HEIGHT" size="10" />
+        <field type="list" name="display_properties_subject_detail" default="1" label="SHOW_PROPERTIES" description="HLP_SHOW_PROPERTIES">
+            <option value="0">Hidden</option>
+            <option value="1">AS_TABLE_WITH_TEXTS</option>
+            <option value="2">AS_ICON_LIST</option>
+            <option value="3">AS_TEXT_LIST</option>
+        </field>
+        <field type="radio" name="display_subject_back" default="1" class="btn-group" label="DISPLAY_BACK_LINK" description="HLP_DISPLAY_BACK_LINK">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="list" name="display_subject_text_position" default="below_properties" label="TEXT_POSITION" description="HLP_TEXT_POSITION">
+            <option value="below_image">BELOW_IMAGE</option>
+            <option value="below_properties">BELOW_PROPERTIES</option>
+        </field>
+        <field type="list" name="prices_layout" default="detailed_list" label="PRICES_LAYOUT" description="HLP_PRICES_LAYOUT">
+            <option value="0">Hidden</option>
+            <option value="detailed_list">DETAILED_LIST</option>
+            <option value="brief_legend">BRIEF_LEGEND</option>
+            <option value="extended_legend">EXTENDED_LEGEND</option>
+            <option value="table_list">TABLE_LIST</option>
+        </field>
+        <field type="radio" name="show_permanent_volume_discount" default="1" class="btn-group" label="SHOW_PERMANENT_VOLUME_DISCOUNT" >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field type="radio" name="show_early_booking_discount" default="1" class="btn-group" label="SHOW_EARLY_BOOKING_DISCOUNT">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>        
+    </fieldset>
+    <fieldset name="ReservationList" label="RESERVATION_LIST_DEFAULTS">
+        <field type="radio" name="show_occupancy_column" default="1" label="SHOW_OCCUPANCY_COLUMN" class="btn-group"  description="HLP_SHOW_OCCUPANCY_COLUMN">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>        
+        <field type="radio" name="show_supplements_column" default="0" label="SHOW_SUPPLEMENTS_COLUMN" class="btn-group"  description="HLP_SHOW_SUPPLEMENTS_COLUMN">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>                
+        <field type="radio" name="show_note_column" default="0" label="SHOW_NOTE_COLUMN" class="btn-group"  description="HLP_SHOW_NOTE_COLUMN">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>                        
+    </fieldset>    
+    <fieldset name="Mailing" label="MAILING">
+        <field name="mailing_manager" type="text" label="MANAGER_E_MAIL" size="60" />
+        <field name="mailing_phone" type="text" label="MANAGER_PHONE" size="60" />
+        <field name="mailing_supplier" type="text" label="SUPPLIER_E_MAIL" size="60" />
+        <field name="" type="spacer" label="BASIC_MAILING" />
+        <field name="mailing_registration_client" type="email" default="0" label="CUSTOMER_REGISTRATION" description="CUSTOMER_REGISTRATION_TIP" />
+        <field name="mailing_registration_manager" type="email" default="0" label="MANAGER_REGISTRATION" description="MANAGER_REGISTRATION_TIP" />
+        <field name="mailing_reservation_client" type="email" default="0" label="CUSTOMER_RESERVATION" description="CUSTOMER_RESERVATION_TIP" />
+        <field name="mailing_reservation_manager" type="email" default="0" label="MANAGER_RESERVATION" description="MANAGER_RESERVATION_TIP" />
+        <field name="mailing_reservation_supplier" type="email" default="0" label="SUPPLIER_RESERVATION" description="SUPPLIER_RESERVATION_TIP" />
+        <field name="mailing_status_client" type="email" default="0" label="CUSTOMER_STATE" description="CUSTOMER_STATE_TIP" />
+            </fieldset>
+    <fieldset name="RegistrationReservationFields" label="REGISTRATION_RESERVATION_FIELDS">
+        <field type="spacer" default="Reservation setting info" />
+        <field type="list" name="rs_title_before" default="1" label="TITLE_BEFORE" description="HLP_TITLE_BEFORE">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_firstname" default="1" label="FIRSTNAME" description="HLP_FIRSTNAME">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_middlename" default="1" label="MIDDLENAME" description="HLP_MIDDLENAME">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_surname" default="1" label="SURNAME" description="HLP_SURNAME">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_title_after" default="1" label="TITLE_AFTER" description="HLP_TITLE_AFTER">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_more_names" default="0" label="MORE_NAMES" description="HLP_MORE_NAMES">
+            <option value="0">NO_HIDE</option>
+            <option value="1">MORE_NAMES_IN_RESERVATION</option>
+            <option value="2">MORE_NAMES_PER_ITEM</option>
+        </field>
+        <field type="list" name="rs_company" default="1" label="COMPANY" description="HLP_COMPANY">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_company_id" default="1" label="COMPANY_ID">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_vat_id" default="1" label="VAT_ID">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_street" default="1" label="STREET" description="HLP_STREET">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_city" default="1" label="CITY" description="HLP_CITY">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_country" default="1" label="COUNTRY" description="HLP_COUNTRY">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_zip" default="1" label="ZIP" description="HLP_ZIP">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_email" default="1" label="EMAIL" description="HLP_EMAIL">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_telephone" default="1" label="TELEPHONE" description="HLP_TELEPHONE">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_fax" default="1" label="FAX" description="HLP_FAX">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="rs_note" default="1" label="NOTE" description="HLP_NOTE">
+            <option value="0">NO_HIDE</option>
+            <option value="1">YES_OPTIONAL</option>
+            <option value="2">YES_COMPULSORY</option>
+        </field>
+        <field type="list" name="fields_position" label="FIELDS_POSITION" default="1">
+            <option value="0">BEFORE_CUSTOMER_NAME</option>
+            <option value="1">AFTER_CUSTOMER_NAME</option>
+        </field>
+        <field type="fields" name="fields" default="" label="EXTRA_FIELDS" description="HLP_EXTRA_FIELDS" />
+    </fieldset>
+    <fieldset name="Registration" label="REGISTRATION" addrulepath="/administrator/components/com_booking/models/rules">
+        <field name="artioDownloadId" type="text" label="ARTIO_DOWNLOAD_ID" description="ARTIO_DOWNLOAD_ID_TIP" size="32" validate="downloadid" class="input-xxlarge" message="INVALID_DOWNLOAD_ID" />
+    </fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL">
+        <field name="rules" type="rules" labelclass="hide" validate="rules" filter="rules">
+            <action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC"/>
+            <action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC"/>        
+            <action name="booking.reservation.create" title="MAKE_RESERVATION" description="HLP_MAKE_RESERVATION" />
+            <action name="booking.reservation.edit.date" title="EDIT_DATE_RESERVATION" description="HLP_EDIT_DATE_RESERVATION" />
+            <action name="booking.reservation.edit.item" title="EDIT_ITEM_RESERVATION" description="HLP_EDIT_ITEM_RESERVATION" />
+            <action name="booking.reservations.manage" title="MANAGE_RESERVATIONS" description="HLP_MANAGE_RESERVATIONS" />
+            <action name="booking.item.manage" title="GLOBAL_ITEM_MANAGEMENT" description="HLP_GLOBAL_ITEM_MANAGEMENT" />
+            <action name="booking.view.customers" title="VIEW_CUSTOMERS" description="HLP_VIEW_CUSTOMERS" />
+            <action name="booking.edit.customer" title="EDIT_CUSTOMER" description="HLP_EDIT_CUSTOMER" />
+            <action name="booking.show.reservations" title="SHOW_RESERVATIONS" description="HLP_SHOW_RESERVATIONS" />
+            <action name="booking.show.reservations.popup" title="SHOW_RESERVATIONS_POPUP" description="HLP_SHOW_RESERVATIONS_POPUP" />
+            <action name="booking.mailing.new.reservation" title="RECEIVE_MANAGER_EMAIL_NEW_RESERVATION" description="HLP_RECEIVE_MANAGER_EMAIL_NEW_RESERVATION" />
+            <action name="booking.mailing.change.reservation" title="RECEIVE_MANAGER_EMAIL_CHANGE_RESERVATION" description="HLP_RECEIVE_MANAGER_EMAIL_CHANGE_RESERVATION" />
+            <action name="booking.mailing.cancel.reservation" title="RECEIVE_MANAGER_EMAIL_CANCEL_RESERVATION" description="HLP_RECEIVE_MANAGER_EMAIL_CANCEL_RESERVATION" />
+        </field>
+        <field name="asset_id" type="hidden" default="com_booking" />
+    </fieldset>
+</config>

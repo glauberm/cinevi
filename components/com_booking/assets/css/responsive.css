@@ -1,0 +1,279 @@
+/*
+ *
+ * Responsive CSS styles
+ * 
+ * @version $Id$
+ * @package ARTIO Booking
+ * @subpackage assets
+ * @copyright Copyright (C) 2013 ARTIO s.r.o.. All rights reserved.
+ * @author ARTIO s.r.o., http://www.artio.net
+ * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
+ * @link http://www.artio.net Official website
+ *  
+ * ------------------------------------------------------------------------ 
+ *   
+ * Template made by ARTIO s.r.o.
+ * Creation Date: 27th June 2013
+ *
+ * BOOK IT! 2.1.0+
+ * All Rights Reserved 
+ * 
+ * Template is prepared for responsive design to use maximal width of mobile
+ * devices. ARTIO can not guarantee correct functionality for any Joomla
+ * template. Please, do not modify this file. Instead of it, rewrite css
+ * in your own template. Only there you can have your modifications on safe
+ * place. This file can be modified in any new version and will be rewrited
+ * by updating this component.   
+ *
+ * Next information should help you to rewrite default colors:
+ *  
+ * COLORS: (There are not included colors for #bookSetting and #bookIt gradient)
+ *  WHITE: #ffffff 
+ *   GRAY: #eeeeee, #dddddd, #333333
+ *  BLACK: #000000
+ *
+ *   BLUE: #2766b2
+ *    RED: #ff2415, #ffe6e6, #aa6666
+ *         
+ */
+ @CHARSET "UTF-8";
+
+/* ------------------------------------------------------------------------
+                                 BASIC STYLES
+   ------------------------------------------------------------------------ */
+
+.clr, .cleaner { clear:both; }
+.aIcon { display:block; width:16px; height:16px; margin:0 auto; }
+.aIconLegend { /*display:inline; float:left;*/ height:16px; line-height:16px; margin:0 auto; padding-left:20px; padding-right:5px; }
+
+/* ------------------------------------------------------------------------
+                                  ITEM LIST
+   ------------------------------------------------------------------------ */
+
+#list .filter { margin:0 0 1em; text-align:left; }
+#list .filter .toolbar { overflow:hidden; padding:0.2em 1em; text-align:right; }
+#list .filter .toolbar span { display:inline-block; width:2em; height:2em; }
+#list .filter .toolbar span img { width:100%; }
+#list .filter .toolbar span.label { float:left; line-height:2em; }
+#list .filter .toolbar span.submit { background-color:#2766b2; }
+#list .filter .toolbar span.reset { background-color:#ff2415; }
+#list .filter .items { overflow:hidden; padding:1em 2em; background-color:#eeeeee; }
+#list .filter .items .item { float:left; width:49%; padding:0; }
+#list .filter .items .item label { display:inline-block; width:40%; text-align:right; }
+#list .filter .items .item label label { width:auto; text-align:right; }
+#list .filter .items .item select { max-width:90%; }
+
+.subjectsList { width:100%; }
+.subjectsList .subject { position:relative; width:50%; margin:0 0 2em; border-top:1px solid #333333; padding:1.5em 50% 0 0; }
+.subjectsList .subject h2 { margin-top:1em; padding-right:1em; padding-top:0.5em; }
+.subjectsList .subject div.image { float:left; width:100%; }
+.subjectsList .subject div.image-right { position:absolute; top:1em; left:0; height:1.6em; margin:0; }
+.subjectsList .subject a.preview { display:block; width:100%; }
+.subjectsList .subject div.properties { clear:both; float:right; width:100%; margin:1.6em -100% 0 0; }
+.subjectsList .subject div.properties table { width:100%; }
+.subjectsList .subject div.properties table th,
+.subjectsList .subject div.properties table td { background-color:#eeeeee; }
+.subjectsList .subject p.readmore { padding-right:1em; }
+.subjectsList .subject div.bookit { position:absolute; top:1em; right:0; }
+
+/* ------------------------------------------------------------------------
+                                 ITEM DETAIL
+   ------------------------------------------------------------------------ */
+
+a.bookit-back { float:right; line-height:2em; }
+
+#bookIt { display:block; width:50%; margin:0 auto; padding:0.5em 0; border:0.1em solid #ffffff; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; background-color:#2766b2; text-align:center; text-decoration:none; font-size:1.8em; font-weight:bold; color:#ffffff; }
+#bookIt { /* colors not included in header */
+	background: #9dd53a; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9dd53a), color-stop(50%,#a1d54f), color-stop(51%,#80c217), color-stop(100%,#7cbc0a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 ); /* IE6-9 */
+}
+
+#bookSetting .info { float:none; width:auto; }
+#bookSetting .properties-block { float:none; width:auto; margin:0 0 1em; }
+#bookSetting .properties table { width:100%; }
+#bookSetting .properties table th,
+#bookSetting .properties table td { background-color:#eeeeee; }
+#bookSetting .fulltext { width:auto; margin:0 0 1em; }
+#bookSetting .main-image { display:block; padding:0 0 2em; text-align:center; }
+
+#bookSetting .bookInterval .buttons { float:left; width:55%; }
+#bookSetting .bookInterval .buttons .checkInfo { padding:0 0 0.2em; }
+#bookSetting .bookInterval .buttons .checkTools { display:block; }
+#bookSetting .bookInterval .buttons .checkTools a { float:left; display:block; margin:0 0.5em 0.5em 0; border:1px solid #dddddd; padding:0.3em 0.8em; text-decoration:none; }
+#bookSetting .bookInterval .buttons .checkTools a.checkButtonActive,
+#bookSetting .bookInterval .buttons .checkTools a:hover { background-color:#2766b2; color:#ffffff; }
+#bookSetting .bookInterval .fromTo { float:right; width:40%; }
+#bookSetting .bookInterval .fromTo .cal { padding:0 0 0.2em; }
+
+#checkInfo { height:3em; }
+.checkInfoError { color:#ff2415; }
+
+/* photogallery */
+
+#photogallery { position:relative; overflow:hidden; width:auto; height:50px; }
+#photogallery-images { position:absolute; left:0; top:0; display:block; }
+
+/* supplements */
+
+#supplements { position:relative; overflow:hidden; height:auto; margin:0 0 10px; padding:0.5em 0.5em 0; background-color:#F6F6F6; }
+#supplements .supplement { float:left; margin:0; padding:0 1.5em 0.5em 0; }
+#supplements .supplement h3 { float:left; margin:0; padding-right:0.5em; padding-top:0.5em; font-size:1em; font-weight:normal; line-height:1em; }
+#supplements .supplement h3 label { position:static; float:none; width:auto; height:auto; margin:0; padding:0; font-size:1em; line-height:1em; }
+#supplements .supplement .field { float:left; display:block; }
+#supplements .supplement .fieldBoolean { padding:0.4em 0 0; vertical-align:top; }
+#supplements .supplement .field .separator { float:left; display:block; width:20px; margin:0; padding:0; }
+#supplements .supplement .field .checkbox { margin:0; border:medium none; padding:0; vertical-align:top; }
+#supplements .supplement .field select { float:left; }
+#supplements .supplement .price { float:left; display:block; margin:0; padding:0.5em 0.5em 0 0.5em; font-size:1em; font-weight:normal; color:#000000; line-height:1em; cursor:auto; }
+#supplements .supplement .quantity_select { float:left; }
+#supplements .supplement .quantity_select label { position:static; float:none; width:auto; height:auto; margin:0; padding:0; padding-top:0.5em; font-size:1em; line-height:1em; }
+
+/* calendars */
+
+.monthlyCalendar thead tr th { text-align:center; }
+.monthlyCalendar tbody tr td { border:1px solid #eeeeee; padding:0; vertical-align:top; }
+.monthlyCalendar tbody tr td.week { background-color:#dddddd; }
+.monthlyCalendar tbody tr td span.date { display:block; margin:0 0 0.2em; padding:0.1em; background-color:#eeeeee; text-align:center; }
+.monthlyCalendar tbody tr td span.week { display:block; padding:0.2em 0.1em; text-align:center; font-size:0.8em; font-weight:bold; }
+.monthlyCalendar tbody tr td span.month { display:block; font-size:0.5em; }
+
+.weeklyCalendar #weekDaysScroller { position:relative; overflow:hidden; width:100%; }
+.weeklyCalendar #weekDays { position:absolute; left:0; top:0; display:block; /*width:auto;*/ white-space:nowrap; }
+.weeklyCalendar .boxesDay { display:inline-block; /*float:left;*/ margin:0 10px 0 0; }
+.weeklyCalendar .boxesDay table { width:13em; }
+.weeklyCalendar .boxesDay .boxes td.box { float:none; }
+.weeklyCalendar .boxesDay .boxes span.time { float:left; width:7em; height:1.6em; line-height:1.6em; margin:0 8px 0 0; }
+
+.dailyCalendar .boxesDay { display:inline-block; /*float:left;*/ margin:0 10px 0 0; }
+.dailyCalendar .boxesDay .boxes span.time { float:left; height:1.6em; line-height:1.6em; margin:0 8px 0 0; }
+
+#bookSetting span.price { float:left; width:1.6em; height:1.6em; margin:0 0.15em 0.2em 0.15em; padding:0.2em; font-size:13px; color:#ffffff; cursor:pointer; line-height:13px; }
+#bookSetting div.price { float:left; height:1.6em; padding:0.3em 0.5em; font-size:1em; font-weight:bold; color:#ffffff; cursor:pointer; line-height:1.1; }
+
+#bookSetting .prices .price { height:auto; }
+#bookSetting .prices { margin-bottom:10px; padding:0.5em 0.5em 0; background-color:#eeeeee; }
+#bookSetting .prices h3 { float:left; margin:0; padding:0.3em 1em 0 0; font-size:1em; font-weight:normal; line-height:1em; }
+#bookSetting .prices h3 input { float:left; margin:0; padding:0; }
+#bookSetting .prices h3 label { float:left; display:block; margin:0; padding:0 0 0 0.5em; font-size:1em; clear:none; line-height:1em; }
+#bookSetting .prices .rtype { float:left; padding-right:2em; padding-bottom:0.5em; }
+
+/* reserved */
+
+table.boxes tr.reserved,
+.weeklyCalendar td.reserved,
+.monthlyCalendar td.reserved { background-color:#ffe6e6; color: #aa6666; }
+table.boxes tr.reserved span.date,
+.weeklyCalendar td.reserved span.date,
+.monthlyCalendar td.reserved span.date { background-color:#aa6666; color:#ffffff; }
+.monthlyCalendar tbody tr td.reserved { border-color:#aa6666; }
+
+/* These colors are not included in css header */
+
+#bookSetting .price0 { background-color:#AFD8F8; }
+#bookSetting .price1 { background-color:#F6BD0F; }
+#bookSetting .price2 { background-color:#8BBA00; }
+#bookSetting .price3 { background-color:#FF8E46; }
+#bookSetting .price4 { background-color:#008E8E; }
+#bookSetting .price5 { background-color:#D64646; }
+#bookSetting .price6 { background-color:#8E468E; }
+#bookSetting .price7 { background-color:#588526; }
+#bookSetting .price8 { background-color:#B3AA00; }
+#bookSetting .price9 { background-color:#008ED6; }
+#bookSetting .price10 { background-color:#9D080D; }
+#bookSetting .price11 { background-color:#A186BE; }
+#bookSetting .price12 { background-color:#CC6600; }
+#bookSetting .price13 { background-color:#FDC689; }
+#bookSetting .price14 { background-color:#ABA000; }
+#bookSetting .price15 { background-color:#F26D7D; }
+#bookSetting .price16 { background-color:#FFF200; }
+#bookSetting .price17 { background-color:#0054A6; }
+#bookSetting .price18 { background-color:#F7941C; }
+#bookSetting .price19 { background-color:#CC3300; }
+#bookSetting .price20 { background-color:#006600; }
+#bookSetting .price21 { background-color:#663300; }
+#bookSetting .price22 { background-color:#6DCFF6; }
+
+#bookSetting span.selected { background-color:#0E54A9; }
+
+/* reservation popup */
+
+.bookingToolbar { padding:0.5em 0 1em; }
+.bookingToolbar table { margin-right:2em; }
+.bookingToolbar table a { padding:1em 0 1em 35px; }
+.bookingToolbar a { display:block; padding:0.8em 0 0.8em 35px; line-height:1.1; }
+
+/* reservation form */
+
+div.customer input,
+div.customer textarea,
+div.customer select,
+div.reservation input,
+div.contact input,
+div.contact textarea,
+div.contact select { width:auto; max-width:200px; }
+
+div.customer table,
+div.reservation table,
+div.payments table,
+div.contact table,
+div.terms table { width:100%; }
+
+div.customer table td.key,
+div.reservation table td.key,
+div.payments table td.key,
+div.contact table td.key,
+div.terms table td.key { width:30%; text-align:right; }
+
+div.terms table td label { display:block; }
+
+table.reserved_item .remove-link { display:block; width:30px; height:30px; background-color:#FF2415; cursor:pointer; }
+table.reserved_item .remove-link img { width:100%; }
+
+/* pagination */
+
+.calendarPagination { margin:1em 0; text-align:center; font-size:0.9em; }
+.calendarPagination .previousPage { float:left; }
+.calendarPagination .nextPage { float:right; }
+
+/* ------------------------------------------------------------------------
+                                 QUICKBOOK
+   ------------------------------------------------------------------------ */
+
+#step3-1 { overflow:hidden; }
+#step3-2 { overflow:hidden; padding:10px 0 0; }
+
+#quickbook td { text-align:center; }
+#quickbook td a,
+#quickbook td span { display:block; padding:5px 6px; background-color:#EEE; text-decoration:none; text-align:center; color:#999; }
+#quickbook td.special a { background-color:#EEE; text-decoration:none; color:#000; cursor:text; }
+#quickbook td.special a:hover { text-decoration:none; }
+#quickbook td a { background-color:#27C; color:#FFF; }
+#quickbook td a:hover,
+#quickbook td a:focus,
+#quickbook td a.selected { background-color:#000; color:#FFF; text-decoration:none; }
+
+#day .pagenav { list-style:none; margin:0; padding:0; }
+#day .pagenav li { float:left; padding:0 10px 0 0; }
+#day a { display:block; padding:5px 6px; background-color:#27C; text-decoration:none; color:#FFF; }
+#day a:hover,
+#day a:focus,
+#day a.selected { background-color:#000; text-decoration:none; color:#FFF; }
+
+/* ------------------------------------------------------------------------
+                                 ITEM LIST
+   ------------------------------------------------------------------------ */
+
+form#list div.subjectsList div.subject div.calendars div.calendar {
+  background-color: transparent;
+  border: medium none;
+  float: left;
+  height: 205px;
+  position: relative;
+  width: 200px;
+}

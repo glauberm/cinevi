@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="rules" type="rules" labelclass="hide" component="com_booking">
+            <action name="booking.reservations.manage" title="MANAGE_RESERVATIONS" />
+            <action name="booking.closingdays.manage" title="MANAGE_CLOSING_DAYS" />
+            <action name="booking.show.reservations" title="SHOW_RESERVATIONS" />
+            <action name="booking.show.reservations.popup" title="SHOW_RESERVATIONS_POPUP" />
+            <action name="booking.mailing.new.reservation" title="RECEIVE_MANAGER_EMAIL_NEW_RESERVATION" />
+            <action name="booking.mailing.change.reservation" title="RECEIVE_MANAGER_EMAIL_CHANGE_RESERVATION" />
+            <action name="booking.mailing.cancel.reservation" title="RECEIVE_MANAGER_EMAIL_CANCEL_RESERVATION" />
+        </field>
+        <field name="asset_id" type="hidden" />
+    </fieldset>
+</form>

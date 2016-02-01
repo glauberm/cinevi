@@ -1,0 +1,26 @@
+/**
+ * CSS for list subjects page for browser Internet Explorer 7
+ * 
+ * @version $Id$
+ * @package ARTIO Booking
+ * @subpackage assets
+ * @copyright Copyright (C) 2010 ARTIO s.r.o.. All rights reserved.
+ * @author ARTIO s.r.o., http://www.artio.net
+ * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
+ * @link http://www.artio.net Official website
+ */
+@CHARSET "UTF-8";
+
+button {
+	margin: 0px 3px 0px 3px;
+}
+
+#bookSetting div.properties table,
+#bookSetting div.reservationTypes table {
+  width: auto;
+}
+
+#bookSetting h2.subjectSubtitle, #bookSetting div.properties,
+#bookSetting div.reservationTypes, #bookSetting div.calendarsSelect {
+  width: auto;
+}

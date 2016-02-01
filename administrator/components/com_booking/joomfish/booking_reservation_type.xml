@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+  <name>Booking Reservation type</name>
+  <author>Artio s.r.o.</author>
+  <version>1.0.0</version>
+  <description>Definition for the Booking component reservation type</description>
+  <reference>
+  	<table name="booking_reservation_type">
+  		<field type="referenceid" name="id" translate="0">ID</field>
+  		<field type="titletext" name="title" translate="1">Title</field>
+		<field type="textarea" name="description" translate="1">Description</field>
+  	</table>
+  </reference>
+   <translationfilters>
+  	  <keyword>title</keyword>
+  	  <bookitsubject>subject</bookitsubject>
+  	  <published>published</published>
+  	  <changed>created|modified</changed>
+  </translationfilters>
+</joomfish>

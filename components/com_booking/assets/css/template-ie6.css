@@ -1,0 +1,16 @@
+/**
+ * CSS for template, Internet Explorer 6
+ * 
+ * @version $Id$
+ * @package ARTIO Booking
+ * @subpackage assets
+ * @copyright Copyright (C) 2010 ARTIO s.r.o.. All rights reserved.
+ * @author ARTIO s.r.o., http://www.artio.net
+ * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
+ * @link http://www.artio.net Official website
+ */
+@CHARSET "UTF-8";
+
+table.paramlistTemplate td  {
+	border: 1px solid red;	
+}

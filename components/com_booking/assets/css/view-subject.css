@@ -1,0 +1,352 @@
+/**
+ * CSS for edit subject page
+ * 
+ * @version $Id$
+ * @package ARTIO Booking
+ * @subpackage assets
+ * @copyright Copyright (C) 2010 ARTIO s.r.o.. All rights reserved.
+ * @author ARTIO s.r.o., http://www.artio.net
+ * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
+ * @link http://www.artio.net Official website
+ */
+
+@CHARSET "UTF-8";
+
+div.buttonsToolbar {
+	text-align: center;
+	margin: 3px;
+}
+
+table.template {
+  background: none repeat scroll 0 0 #F6F6F6;
+  border: 1px solid #CCCCCC;
+  margin-top: 5px;
+}
+
+table.template tr.row1 td {
+  background-color: #E9E9E9;
+}
+
+table.template th {
+	border-bottom: 1px solid #CCCCCC;
+	border-right: 1px solid #E9E9E9;
+	padding-right: 5px;
+}
+
+table.template th h2 {
+	color: #666666;
+	padding: 2px;
+	margin: 0px;
+	font-size: 11px;
+}
+
+table.template td {
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #E9E9E9;
+	border-right: 1px solid #E9E9E9;
+	color: #666666;
+	text-align: left;
+}
+
+#tprices .discountContainer select[name^="dis_per"] {
+  margin: 0px;
+}
+
+table.template td.label {
+	font-weight: bold;
+	text-align: right;
+}
+
+table.template td.check {
+	width: 10px;
+}
+
+table.template input.text_area,table.template textarea {
+	width: 500px;
+}
+
+table.template textarea {
+	height: 200px;
+}
+
+table.template td.id {
+	width: 30px;
+	padding-top: 4px;
+}
+
+table.template input.title {
+	width: 240px;
+	margin-top: 4px;
+}
+
+table.template input.number {
+  float: left;
+  margin-top: 4px;
+  width: 40px;
+}
+
+.rowTool {
+  float: left;
+  left: 2px;
+  position: relative;
+  top: 4px;
+}
+
+table.template input.time {
+	width: 50px;
+}
+
+table.template td.select select {
+  margin: 3px 0;
+  width: 130px;
+}
+
+table.template td.select select[name^="price-expiration_format"] {
+  margin: 4px 0 0 3px;
+  width: auto;
+}
+
+table.template td.time {
+	width: 70px;
+}
+
+table.template td.date {
+  white-space: nowrap;
+  width: 140px;
+}
+
+table.template td.date input {
+	width: 100px;
+}
+
+table.template td.date input.timePickerMidnight {
+	width:auto;
+}
+
+table.template textarea.description {
+	height: 70px;
+	width: 240px;
+	margin: 4px;
+}
+
+#adminForm div.toolbar-list {
+  float: none;
+  padding: 0;
+  text-align: left;
+}
+
+table.toolbar a {
+  border: 1px solid #FBFBFB;
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+
+table.toolbar td {
+  color: #666666;
+  height: 48px;
+  padding: 1px 1px 1px 4px;
+  text-align: center;
+}
+
+form.property div.main div.toolbarContainer table.toolbar {
+  margin: 0 auto;
+}
+
+table.toolbar span {
+  display: block;
+  float: none;
+  height: 32px;
+  margin: 0 auto;
+  width: 32px;
+}
+
+div.limitLegend {
+  clear: left;
+  padding: 3px;
+}
+#minwidth-body div.limitLegend label {
+  display: block;
+  float: left;
+  white-space: nowrap;
+  width: 50px;
+}
+div.limitLegend label {
+	width:90px;
+	min-width:90px !important;
+}
+div.limitLegend label,
+div.limitLegend input {
+	display:inline-block;
+}
+div.limitLegend input {
+  clear: both;
+  /*display: block;*/
+  width: 55px;
+}
+span.up {
+  background: url("../images/icon-16-arrowUp.png") no-repeat scroll 0 0 transparent;
+  cursor: pointer;
+  display: block;
+  height: 17px;
+  margin-bottom: 5px;
+  width: 16px;
+}
+
+span.down {
+  background: url("../images/icon-16-arrowDown.png") no-repeat scroll 0 0 transparent;
+  cursor: pointer;
+  display: block;
+  height: 17px;
+  margin-top: 10px;
+  width: 16px;
+}
+
+.drop-and-drag {
+  background: url("../images/icon-16-drop-and-drag.png") no-repeat scroll 0 0 transparent;
+  cursor: pointer;
+  display: block;
+  height: 38px;
+  margin: 10px auto 0;
+  width: 16px;
+}
+
+span.checkboxLabel {
+  display: block;
+  padding: 0 5px 5px 25px;
+}
+
+span.inputLabel {
+  float: left;
+  padding: 6px 3px 0 10px;
+}
+
+span.checkboxDayLabel {
+  display: block;
+  padding: 3px 10px 0 20px;
+  text-transform: lowercase;
+}
+
+span.blockLabel {
+  display: block;
+}
+
+span.priceLabel {
+  display: block;
+  padding: 5px 0 10px 50px;
+}
+
+#content-box label.inline {
+	margin: 0px;
+	min-width: 0px; 
+	/*padding: 0px;*/ 
+	clear: none;
+}
+
+#content-box label.inline input[type="radio"] {
+  margin: 0;
+  padding: 0;
+}
+
+#content-box label.inline select {
+  margin: 4px 0 7px 3px;
+}
+
+#content-box .timePickerMidnight {
+	border: none; 
+	width: auto; 
+	background-color: transparent;
+}
+
+#content-box label.input {
+  clear: both;
+  float: none;
+  margin: 0;
+  min-width: 0;
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+#content-box label.input span {
+  display: block;
+  float: left;
+  padding: 0 5px 0 0;
+}
+
+#content-box label.input input {
+  float: right;
+  margin: 0;
+}
+#content-box .deposit-settings label.inline,
+#content-box .basic-price label.inline {
+	min-width:100px;
+	padding:0 0 3px;
+}
+.timePickerDiv div span {
+	display:inline;
+	float:none;
+}
+.timePickerDiv div.picker {
+	padding:5px 0 0;
+}
+label.inline {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+label.inline input.inputCheckbox,label.inline input.inputRadio {
+  float: left;
+  margin: 0;
+}
+label.inline div.checkboxDayLabel,
+label.inline div {
+	display:inline;
+	padding:2px 5px 0 3px;
+	vertical-align:middle;
+}
+
+button.transparent, button.transparent:hover {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  margin: 0;
+  padding: 0;
+}
+
+button.transparent span, button.transparent:hover span {
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 5px 0 0;
+}
+
+div.current select.inline {
+  margin: 4px 0 0;
+}
+
+tbody#tsupplements tr td table {
+  display: block;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+table.template input[name^=supplements-title] {
+  width: 170px;
+}
+
+table.template textarea[name^=supplements-description] {
+  height: 150px;
+  width: 170px;
+}
+
+table.template textarea[name^="supplements-options"] {
+  height: 200px;
+  vertical-align: top;
+  width: 120px;
+}
+
+table.template textarea[name^="supplements-price"] {
+  height: 200px;
+  vertical-align: top;
+  width: 40px;
+}

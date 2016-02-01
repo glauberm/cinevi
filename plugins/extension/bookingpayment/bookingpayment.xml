@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="extension">
+    <name>PLG_EXTENSION_BOOKINGPAYMENT</name>
+    <author>ARTIO s.r.o.</author>
+    <creationDate>2013-07-01</creationDate>
+    <authorEmail>info@artio.cz</authorEmail>
+    <authorUrl>http://www.artio.cz</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_EXTENSION_BOOKINGPAYMENT_DESC</description>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_extension_bookingpayment.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_extension_bookingpayment.sys.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.plg_extension_bookingpayment.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.plg_extension_bookingpayment.sys.ini</language>
+    </languages>
+    <files>
+        <filename plugin="bookingpayment">bookingpayment.php</filename>
+    </files>
+</extension>

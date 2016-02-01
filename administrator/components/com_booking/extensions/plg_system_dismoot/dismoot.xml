@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="system">
+    <name>PLG_SYSTEM_DISMOOT</name>
+    <author>ARTIO s.r.o.</author>
+    <creationDate>2013-07-02</creationDate>
+    <authorEmail>info@artio.cz</authorEmail>
+    <authorUrl>http://www.artio.cz</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_DISMOOT_DESC</description>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_dismoot.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_dismoot.sys.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.plg_system_dismoot.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.plg_system_dismoot.sys.ini</language>
+    </languages>
+    <files>
+        <filename plugin="dismoot">dismoot.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="only_unlink" type="radio" description="PLG_SYSTEM_DISMOOT_FIELD_ONLY_UNLINK_DESC" label="PLG_SYSTEM_DISMOOT_FIELD_ONLY_UNLINK_LABEL" defautl="1">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="brutalforce_unlink" type="radio" description="PLG_SYSTEM_DISMOOT_FIELD_BRUTALFORCE_UNLINK_DESC" label="PLG_SYSTEM_DISMOOT_FIELD_BRUTALFORCE_UNLINK_LABEL" defautl="0">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

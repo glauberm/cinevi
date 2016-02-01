@@ -1,0 +1,200 @@
+/**
+ * Extended search module.
+ *
+ * @package		ARTIO Booking
+ * @subpackage  modules
+ * @copyright	Copyright (C) 2012 ARTIO s.r.o.. All rights reserved.
+ * @author 		ARTIO s.r.o., http://www.artio.net
+ * @link        http://www.artio.net Official website
+ */
+#bookingSearch input,#bookingSearch .calendar_da {
+	background-color: #F1F1F1;
+	border: 1px solid silver;
+}
+
+#bookingSearch label {
+	display: block;
+	float: left;
+	height: 19px;
+	padding-left: 5px;
+	padding-right: 3px;
+	padding-top: 1px;
+}
+
+#bookingSearch .dateRange,#bookingSearch .priceRange,#bookingSearch .templateArea,#bookingSearch .requiredCapacity,#bookingSearch .property {
+	border-bottom: 1px solid silver;
+}
+
+#bookingSearch .priceRange,#bookingSearch .templateArea,#bookingSearch .requiredCapacity {
+	padding-top: 6px;
+}
+
+#bookingSearch .priceRange,#bookingSearch .requiredCapacity,#bookingSearch .dateRange .row {
+	height: 25px;
+}
+
+#bookingSearch .priceRange .dash {
+	float: left;
+	padding: 0 3px;
+}
+
+#bookingSearch .dateRange {
+	padding-top: 10px;
+}
+
+#bookingSearch .dateRange .row label {
+	text-align: right;
+	width: 35px;
+}
+
+#bookingSearch .dateRange .row .calendar {
+	cursor: pointer;
+	float: left;
+	left: 4px;
+	margin: 0 5px 0 0;
+	position: relative;
+	vertical-align: bottom;
+}
+
+#bookingSearch .dateRange .row .calendar_da {
+	display: block;
+	float: left;
+	height: 15px;
+	min-height: 14px;
+	min-width: 80px;
+	overflow: hidden;
+	padding: 2px 3px;
+	text-align: left;
+	white-space: nowrap;
+	width: 100px;
+}
+
+#bookingSearch .dateRange .row .calendar_era {
+	border: 1px solid #CCCCCC;
+	cursor: pointer;
+	float: left;
+	left: 2px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#bookingSearch .priceRange #bookingSearchPriceFrom,#bookingSearch .priceRange #bookingSearchPriceTo {
+	float: left;
+	text-align: right;
+	width: 50px;
+}
+
+#bookingSearch .templateArea {
+	padding-bottom: 6px;
+}
+
+#bookingSearch .templateArea select {
+	width: 100%;
+}
+
+#bookingSearch .requiredCapacity input {
+	width: 50px;
+}
+
+#bookingSearch .toolbar {
+	height: auto;
+	margin: 0 auto;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+#bookingSearch .button {
+	background-color: #F1F1F1;
+	border: 1px solid silver;
+	color: black;
+	cursor: pointer;
+	padding: 2px 5px;
+}
+
+#bookingSearch .toolbar #bookingSearchSubmit.button {
+	float: left;
+}
+
+#bookingSearch .toolbar #bookingSearchReset.button {
+	float: right;
+}
+
+#bookingSearch .toolbar #bookingSearchLogin.button {
+	float: right;
+}
+
+#bookingSearch #locations .location #pickupLocationLabel,#bookingSearch #locations .location #droppoffLocationLabel {
+	display: block;
+    float: left;
+    height: auto;
+    padding: 5px 0;
+    width: 160px;
+}
+
+form#bookingSearch div#locations div.location label#pickupLocationTimeLabel {
+	float: right;
+}
+
+#bookingSearch .toolbar #bookingSearchSubmitLabel.buttonLabel {
+	float: left;
+	height: auto;
+	padding: 5px 0;
+	width: auto;
+}
+
+#bookingSearch .toolbar #bookingSearchLoginLabel.buttonLabel {
+	float: right;
+	height: auto;
+	padding: 5px 0;
+	width: auto;
+}
+
+#bookingSearch .toolbar .wrap {
+	clear: both;
+}
+
+#bookingSearch .property {
+  padding-bottom: 6px;
+}
+
+#bookingSearch .property label {
+	display: block;
+	float: none;
+	height: auto;
+	padding: 5px 0;
+	width: auto;
+}
+
+#bookingSearch .boolean label {
+  float: left;
+  padding-bottom: 0;
+  padding-right: 10px;
+  text-align: right;
+  width: 140px;
+}
+
+#bookingSearch .boolean .option {
+  padding-left: 4px;
+  text-align: left;
+  width: auto;
+}
+
+#bookingSearch .boolean input {
+  float: left;
+  position: relative;
+  top: 5px;
+}
+
+form#bookingSearch div#locations div.location label#pickupLocationTimeLabel,form#bookingSearch div#locations div.location label#droppoffLocationTimeLabel {
+	display: block;
+    float: left;
+    height: auto;
+    padding: 5px 0;
+    width: auto;
+}
+
+form#bookingSearch div#locations div.location select#pickup_location, form#bookingSearch div#locations div.location select#dropoff_location {
+  width: 155px;
+}

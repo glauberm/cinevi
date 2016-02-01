@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field name="id" type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" />
+        <field name="title" type="text" label="JGLOBAL_TITLE" class="inputbox" size="100" required="true" />
+        <field name="pick_up" type="radio" class="inputbox btn-group" label="PICK_UP" >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="drop_off" type="radio" class="inputbox btn-group" label="DROP_OFF" >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+    </fieldset>
+</form>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="system">
+    <name>PLG_SYSTEM_BOOKING</name>
+    <author>ARTIO s.r.o.</author>
+    <creationDate>2013-05-14</creationDate>
+    <authorEmail>info@artio.cz</authorEmail>
+    <authorUrl>http://www.artio.cz</authorUrl>
+    <version>2.0.0</version>
+    <description>PLG_SYSTEM_BOOKING_DESC</description>
+    <languages folder="language">
+        <language tag="cs-CZ">cs-CZ/cs-CZ.plg_system_booking.ini</language>
+        <language tag="cs-CZ">cs-CZ/cs-CZ.plg_system_booking.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_booking.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_booking.sys.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.plg_system_booking.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.plg_system_booking.sys.ini</language>
+    </languages>
+    <files>
+        <filename plugin="booking">booking.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="cron_enabled" type="radio" description="PLG_SYSTEM_BOOKING_FIELD_CRON_ENABLED_DESC" label="PLG_SYSTEM_BOOKING_FIELD_CRON_ENABLED_LABEL" defautl="0">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cron_schedule" type="text" description="PLG_SYSTEM_BOOKING_FIELD_CRON_SCHEDULE_DESC" label="PLG_SYSTEM_BOOKING_FIELD_CRON_SCHEDULE_LABEL" size="1" default="60" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

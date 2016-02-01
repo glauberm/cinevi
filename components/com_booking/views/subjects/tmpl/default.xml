@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="BOOKABLE_ITEM_LIST"/>
+    <fields name="request">
+        <fieldset name="request" addfieldpath="/administrator/components/com_booking/elements">
+            <field name="id" type="subject" use_type="2" label="SELECT_PARENT_ITEM" description="HLP_SELECT_PARENT_ITEM" />
+        </fieldset>
+    </fields>
+    <fields name="params">
+        <fieldset name="basic" label="ITEMS_LIST_OPTION">
+       		<field type="radio" name="list_style" class="btn-group" label="SUBJECTS_LIST_STYLE">
+       			<option value="">JGLOBAL_USE_GLOBAL</option>
+            	<option value="0">TREE</option>
+            	<option value="1">FLAT</option>
+        	</field>        	
+            <field type="radio" name="display_thumbs_subjects_list" class="btn-group" label="SHOW_THUMBNAILS" description="HLP_SHOW_INTROTEXT">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="display_thumbs_subjects_list_width" type="text" label="THUMBNAIL_WIDTH" description="" size="10" />
+            <field name="display_thumbs_subjects_list_height" type="text" label="THUMBNAIL_HEIGHT" description="" size="10" />
+            <field type="radio" name="display_readmore_subjects_list" label="SHOW_INTROTEXT" class="btn-group" description="HLP_INTROTEXT_LENGTH">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field type="radio" name="crop_readmore_subjects_list" label="CROP_INTROTEXT" class="btn-group" description="HLP_CROP_INTROTEXT">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>                    
+            <field name="display_readmore_subjects_list_length" type="text" label="INTROTEXT_LENGTH" description="HLP_INTROTEXT_LENGTH" size="10" />
+            <field name="subjects_properties" type="list" class="chzn-done" label="DISPLAY_PROPERTIES" description="HLP_DISPLAY_PROPERTIES">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">Hide</option>
+                <option value="1">AS_TABLE_WITH_TEXTS</option>
+                <option value="2">AS_ICON_LIST</option>
+            </field>
+            <field name="subjects_list_filter" type="radio" class="btn-group" label="DISPLAY_FILTER" description="HLP_DISPLAY_FILTER">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="subjects_pagination" type="radio" class="btn-group" label="DISPLAY_PAGINATION" description="HLP_DISPLAY_PAGINATION">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="auto">Auto</option>
+                <option value="1">Show</option>
+                <option value="0">Hide</option>
+            </field>
+            <field name="subjects_pagination_start" type="list" label="DEFAULT_PAGINATION" description="HLP_DEFAULT_PAGINATION">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="40">40</option>
+                <option value="80">80</option>
+            </field>
+            <field name="subjects_pagination_selector" type="radio" class="btn-group" label="DISPLAY_PAGINATION_SELECTOR">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="button_bookit" type="radio" class="btn-group" label="DISPLAY_BOOKIT_BUTTON" description="HLP_DISPLAY_BOOKIT_BUTTON">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="subjects_calendar" type="radio" class="btn-group" label="SUBJECTS_CALENDAR" description="HLP_SUBJECTS_CALENDAR">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="subjects_calendar_skin" type="list" label="SUBJECTS_CALENDAR_SKIN" description="HLP_SUBJECTS_CALENDAR_SKIN">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="dhx_skyblue">CALENDAR_SKIN_SKYBLUE</option>
+                <option value="dhx_web">CALENDAR_SKIN_WEB</option>
+                <option value="omega">CALENDAR_SKIN_OMEGA</option>
+            </field>
+            <field name="subjects_calendar_start" type="text" label="SUBJECTS_CALENDAR_START" description="HLP_SUBJECTS_CALENDAR_START" size="10" />
+            <field name="subjects_calendar_deep" type="text" label="SUBJECTS_CALENDAR_DEEP" description="HLP_SUBJECTS_CALENDAR_DEEP" size="10" />
+            <field name="subjects_week" type="radio" class="btn-group" label="SUBJECTS_WEEK" description="HLP_SUBJECTS_WEEK">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="subjects_week_deep" type="text" label="SUBJECTS_WEEK_DEEP" description="HLP_SUBJECTS_WEEK_DEEP" size="10" />
+        </fieldset>
+    </fields>
+</metadata>

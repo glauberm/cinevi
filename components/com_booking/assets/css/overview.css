@@ -1,0 +1,123 @@
+/**
+ * @package        ARTIO Booking
+ * @subpackage		views
+ * @copyright	  	Copyright (C) 2014 ARTIO s.r.o.. All rights reserved.
+ * @author 			ARTIO s.r.o., http://www.artio.net
+ * @license     	GNU/GPL http://www.gnu.org/copyleft/gpl.html
+ * @link        	http://www.artio.net Official website
+ */
+
+#bookingOverview .switchView {
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+#bookingOverview .reservations {
+  position: relative;
+  width: 10px;
+}
+
+#bookingOverview .reservation {
+  background-color: #215E8B;
+  color: white;
+  display: block;
+  height: 15px;
+  line-height: 15px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+#bookingOverview .items {
+  background-color: #CCCCCC;
+  width: 100%;
+}
+
+#bookingOverview td {
+  border: 1px solid white;
+  font-size: 11px;
+  padding: 5px;
+}
+
+#bookingOverview .hour {
+  background-color: white;
+  border: 1px solid black;
+  padding: 0;
+}
+
+#bookingOverview .header {
+  background-color: #215E8B;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 10px;
+  position: relative;
+}
+
+#bookingOverview h2 {
+  float: left;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 0;
+  padding: 0;
+  width: 30%;
+}
+
+#bookingOverview .navigator {
+  float: left;
+  text-align: center;
+  width: 40%;
+}
+
+#bookingOverview .parents {
+  float: right;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+#bookingOverview .parent {
+  cursor: pointer;
+}
+
+#bookingOverview .clr {
+  clear: both;
+}
+
+#bookingOverview .prevMonth {
+  background: url("../images/bookingOverviewPrevMonth.png") no-repeat scroll 0 0 transparent;
+  width: 19px;
+}
+
+#bookingOverview .prevDay, #bookingOverview .prevWeek {
+  background: url("../images/bookingOverviewPrevDay.png") no-repeat scroll 0 0 transparent;
+  width: 14px;
+}
+
+#bookingOverview .nextMonth {
+  background: url("../images/bookingOverviewNextMonth.png") no-repeat scroll 0 0 transparent;
+  width: 19px;
+}
+
+#bookingOverview .nextDay, #bookingOverview .nextWeek {
+  background: url("../images/bookingOverviewNextDay.png") no-repeat scroll 0 0 transparent;
+  width: 14px;
+}
+
+#bookingOverview .prevMonth, #bookingOverview .prevDay, #bookingOverview .prevWeek, #bookingOverview .nextMonth, #bookingOverview .nextDay, #bookingOverview .nextWeek {
+  cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  text-indent: -10000px;
+}
+
+#bookingOverview .currentDay {
+  display: inline-block;
+  padding: 0 5px;
+  vertical-align: top;
+  width: 50%;
+}
+
+#bookingOverview .title {
+  white-space: nowrap;
+}

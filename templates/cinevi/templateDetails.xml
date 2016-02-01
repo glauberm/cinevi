@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="template">
+	<name>cinevi</name>
+	<creationDate>2015-08-15</creationDate>
+	<author>Glauber Mota</author>
+	<authorEmail>glaubernm@gmail.com</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>Glauber Mota</copyright>
+	<license>MIT</license>
+	<version></version>
+	<description>Template do Departamento de Cinema e Vídeo.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>html</folder>
+		<folder>img</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</files>
+	<positions>
+		<position>breadcrumb</position>
+		<position>left</position>
+		<position>right</position>
+		<position>top</position>
+		<position>bottom</position>
+		<position>menu</position>
+		<position>login</position>
+		<position>busca</position>
+		<position>banner</position>
+		<position>footer</position>
+		<position>debug</position>
+	</positions>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="sitetitle"  type="text" default=""
+					label="JGLOBAL_TITLE"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					filter="string" />
+
+				<field name="sitedescription"  type="text" default=""
+					label="JGLOBAL_DESCRIPTION"
+					description="JGLOBAL_SUBHEADING_DESC"
+					filter="string" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

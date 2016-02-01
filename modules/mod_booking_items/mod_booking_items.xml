@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site">
+    <name>MOD_BOOKING_ITEMS</name>
+    <author>ARTIO s.r.o.</author>
+    <creationDate>2013-05-18</creationDate>
+    <authorEmail>info@artio.cz</authorEmail>
+    <authorUrl>http://www.artio.cz</authorUrl>
+    <version>2.0.0</version>
+    <description>MOD_BOOKING_ITEMS_DESC</description>
+    <languages folder="language">
+        <language tag="cs-CZ">cs-CZ/cs-CZ.mod_booking_items.ini</language>
+        <language tag="cs-CZ">cs-CZ/cs-CZ.mod_booking_items.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_booking_items.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_booking_items.sys.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.mod_booking_items.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.mod_booking_items.sys.ini</language>        
+        <language tag="sl-SI">sl-SI/sl-SI.mod_booking_items.ini</language>
+        <language tag="sl-SI">sl-SI/sl-SI.mod_booking_items.sys.ini</language>        
+    </languages>
+    <files>
+        <folder>assets</folder>
+        <folder>tmpl</folder>
+        <file>helper.php</file>
+        <file>index.html</file>
+        <filename module="mod_booking_items">mod_booking_items.php</filename>
+    </files>
+    <config addfieldpath="/administrator/components/com_booking/elements">
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="number_items" type="text" default="5" label="MOD_BOOKING_ITEMS_NUMBER_ITEMS" description="MOD_BOOKING_ITEMS_NUMBER_ITEMS_TIP" size="1" />
+                <field name="number_columns" type="text" default="1" label="MOD_BOOKING_ITEMS_NUMBER_COLUMNS" description="MOD_BOOKING_ITEMS_NUMBER_COLUMNS_TIP" size="1" />
+                <field name="parent_item" type="subject" use_type="2" default="0" label="MOD_BOOKING_ITEMS_PARENT_ITEM" description="MOD_BOOKING_ITEMS_PARENT_ITEM_TIP" />
+                <field name="show_image" type="radio" default="1" label="MOD_BOOKING_ITEMS_SHOW_IMAGE" description="MOD_BOOKING_ITEMS_SHOW_IMAGE_TIP" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="thumb_width" type="text" default="80" label="MOD_BOOKING_ITEMS_SHOW_IMAGE_WIDTH" description="MOD_BOOKING_ITEMS_SHOW_IMAGE_WIDTH_TIP" size="1" />
+                <field name="thumb_height" type="text" default="80" label="MOD_BOOKING_ITEMS_SHOW_IMAGE_HEIGHT" description="MOD_BOOKING_ITEMS_SHOW_IMAGE_HEIGHT_TIP" size="1" />
+                <field name="show_desc" type="radio" default="1" label="MOD_BOOKING_ITEMS_SHOW_DESC" description="MOD_BOOKING_ITEMS_SHOW_DESC_TIP" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="desc_length" type="text" default="100" label="MOD_BOOKING_ITEMS_SHOW_DESC_LENGTH" description="MOD_BOOKING_ITEMS_SHOW_DESC_LENGTH_TIP" size="1" />
+                <field name="show_price" type="radio" default="1" label="MOD_BOOKING_ITEMS_SHOW_PRICE" description="MOD_BOOKING_ITEMS_SHOW_PRICE_TIP" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="show_bookit" type="radio" default="1" label="MOD_BOOKING_ITEMS_SHOW_BOOKIT" description="MOD_BOOKING_ITEMS_SHOW_BOOKIT_TIP" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="ordering" type="list" default="1" label="MOD_BOOKING_ITEMS_ORDERING" description="MOD_BOOKING_ITEMS_ORDERING_TIP" class="btn-group">
+                    <option value="0">MOD_BOOKING_ITEMS_ORDERING_FEATURED</option>
+                    <option value="1">MOD_BOOKING_ITEMS_ORDERING_NEWEST</option>
+                    <option value="2">MOD_BOOKING_ITEMS_ORDERING_ALPHABET</option>
+                    <option value="3">MOD_BOOKING_ITEMS_ORDERING_RANDOM</option>
+                    <option value="4">MOD_BOOKING_ITEMS_ORDERING_POPULAR</option>
+                </field>
+                <field name="item_heading" type="list" default="h4" label="MOD_BOOKING_ITEMS_HEADING" description="MOD_BOOKING_ITEMS_HEADING_TIP">
+                    <option value="h1">JH1</option>
+                    <option value="h2">JH2</option>
+                    <option value="h3">JH3</option>
+                    <option value="h4">JH4</option>
+                    <option value="h5">JH5</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
