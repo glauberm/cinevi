@@ -30,10 +30,10 @@ Class LoadCaptcha extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config load_captcha_action_config', 'load_captcha_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config load_captcha_action_config', 'load_captcha_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][fonts]', array('type' => 'dropdown', 'label' => l_('CF_TRUE_FONTS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_TRUE_FONTS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][refresh_button]', array('type' => 'dropdown', 'label' => l_('CF_REFRESH_BUTTON'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_REFRESH_BUTTON_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][fonts]', array('type' => 'dropdown', 'label' => l_('CF_TRUE_FONTS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_TRUE_FONTS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][refresh_button]', array('type' => 'dropdown', 'label' => l_('CF_REFRESH_BUTTON'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_REFRESH_BUTTON_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

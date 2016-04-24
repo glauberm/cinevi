@@ -135,7 +135,7 @@ class DnaBuilder {
 			ob_start();
 			$action_class::config(isset($configs[$id]) ? $configs[$id] : array());
 			$action_config = ob_get_clean();
-			$action_config = str_replace('{N}', $id, $action_config);
+			$action_config = str_replace('_XNX_', $id, $action_config);
 
 			$body_contents = $action_dna.implode("\n", $action_events).$action_config;
 			if(empty($this->config)){

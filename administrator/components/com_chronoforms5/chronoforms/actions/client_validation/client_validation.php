@@ -95,21 +95,21 @@ jQuery(document).ready(function($){
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config client_validation_action_config', 'client_validation_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config client_validation_action_config', 'client_validation_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][required]', array('type' => 'textarea', 'label' => l_('CF_REQUIRED'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_VALIDATION_FORMAT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][minlength]', array('type' => 'textarea', 'label' => l_('CF_MINLENGTH'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][maxlength]', array('type' => 'textarea', 'label' => l_('CF_MAXLENGTH'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][rangelength]', array('type' => 'textarea', 'label' => l_('CF_RANGELENGTH'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][min]', array('type' => 'textarea', 'label' => l_('CF_MIN'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][max]', array('type' => 'textarea', 'label' => l_('CF_MAX'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][range]', array('type' => 'textarea', 'label' => l_('CF_RANGE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][email]', array('type' => 'textarea', 'label' => l_('CF_EMAIL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][url]', array('type' => 'textarea', 'label' => l_('CF_URL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][number]', array('type' => 'textarea', 'label' => l_('CF_NUMBER'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][date]', array('type' => 'textarea', 'label' => l_('CF_DATE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][digits]', array('type' => 'textarea', 'label' => l_('CF_DIGITS'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][equalTo]', array('type' => 'textarea', 'label' => l_('CF_EQUALTO'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][required]', array('type' => 'textarea', 'label' => l_('CF_REQUIRED'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_VALIDATION_FORMAT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][minlength]', array('type' => 'textarea', 'label' => l_('CF_MINLENGTH'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][maxlength]', array('type' => 'textarea', 'label' => l_('CF_MAXLENGTH'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][rangelength]', array('type' => 'textarea', 'label' => l_('CF_RANGELENGTH'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][min]', array('type' => 'textarea', 'label' => l_('CF_MIN'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][max]', array('type' => 'textarea', 'label' => l_('CF_MAX'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][range]', array('type' => 'textarea', 'label' => l_('CF_RANGE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][email]', array('type' => 'textarea', 'label' => l_('CF_EMAIL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][url]', array('type' => 'textarea', 'label' => l_('CF_URL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][number]', array('type' => 'textarea', 'label' => l_('CF_NUMBER'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][date]', array('type' => 'textarea', 'label' => l_('CF_DATE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][digits]', array('type' => 'textarea', 'label' => l_('CF_DIGITS'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][equalTo]', array('type' => 'textarea', 'label' => l_('CF_EQUALTO'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

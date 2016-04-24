@@ -10,8 +10,10 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
+$jinput = JFactory::getApplication()->input;
+
 // Check if we are saving here.
-if (JRequest::getVar('save')) {
+if ($jinput->get('save', null, null)) {
     customCssSave();
 }
 ?>
@@ -68,7 +70,7 @@ if (JRequest::getVar('save')) {
         $file = 'jevcustom.css';
         $filepath = JPATH_ROOT . '/components/com_jevents/assets/css/' . $file;
         $jinput = JFactory::getApplication()->input;
-        $content = $jinput->get('content', '', 'POST', '', 'RAW');
+        $content = $jinput->post->get('content', '', 'RAW');
 
         $msg = '';
         $msgType = '';

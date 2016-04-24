@@ -55,14 +55,14 @@ Class MetaTagger extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config meta_tagger_action_config', 'meta_tagger_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config meta_tagger_action_config', 'meta_tagger_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][title]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_TITLE'), 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][keywords]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_KEYWORDS'), 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][generator]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_GENERATOR'), 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][description]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_DESC'), 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][robots]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_ROBOTS'), 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][content]', array('type' => 'textarea', 'class' => 'XL', 'rows' => 5, 'cols' => 60, 'label' => l_('CF_META_TAGGER_CONTENT'), 'sublabel' => l_('CF_META_TAGGER_CONTENT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][title]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_TITLE'), 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][keywords]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_KEYWORDS'), 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][generator]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_GENERATOR'), 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][description]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_DESC'), 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][robots]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_META_TAGGER_ROBOTS'), 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][content]', array('type' => 'textarea', 'class' => 'XL', 'rows' => 5, 'cols' => 60, 'label' => l_('CF_META_TAGGER_CONTENT'), 'sublabel' => l_('CF_META_TAGGER_CONTENT_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

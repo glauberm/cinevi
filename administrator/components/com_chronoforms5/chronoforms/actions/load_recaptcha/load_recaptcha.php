@@ -82,20 +82,20 @@ Class LoadRecaptcha extends \GCore\Admin\Extensions\Chronoforms\Action{
     }
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config load_captcha_action_config', 'load_captcha_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config load_captcha_action_config', 'load_captcha_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][public_key]', array('type' => 'text', 'label' => l_('CF_RECAPTCHA_PUBLIC_KEY'), 'class' => 'XL', 'sublabel' => l_('CF_RECAPTCHA_PUBLIC_KEY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][api_server]', array('type' => 'text', 'label' => l_('CF_RECAPTCHA_API_SERVER'), 'class' => 'XL', 'sublabel' => l_('CF_RECAPTCHA_API_SERVER_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][api_secure_server]', array('type' => 'text', 'label' => l_('CF_RECAPTCHA_API_SECURE_SERVER'), 'class' => 'XL', 'sublabel' => l_('CF_RECAPTCHA_API_SECURE_SERVER_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ssl_server]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_SSL_SERVER'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_RECAPTCHA_SSL_SERVER_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][theme]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_THEME'), 'options' => array(
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][public_key]', array('type' => 'text', 'label' => l_('CF_RECAPTCHA_PUBLIC_KEY'), 'class' => 'XL', 'sublabel' => l_('CF_RECAPTCHA_PUBLIC_KEY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][api_server]', array('type' => 'text', 'label' => l_('CF_RECAPTCHA_API_SERVER'), 'class' => 'XL', 'sublabel' => l_('CF_RECAPTCHA_API_SERVER_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][api_secure_server]', array('type' => 'text', 'label' => l_('CF_RECAPTCHA_API_SECURE_SERVER'), 'class' => 'XL', 'sublabel' => l_('CF_RECAPTCHA_API_SECURE_SERVER_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ssl_server]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_SSL_SERVER'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_RECAPTCHA_SSL_SERVER_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][theme]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_THEME'), 'options' => array(
 					'clean' => 'Clean', 
 					'red' => 'Red',
 					'white' => 'White',
 					'blackglass' => 'Blackglass',
 					'custom' => 'Custom'
 				), 'sublabel' => l_('CF_RECAPTCHA_THEME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][lang]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_LANG'), 'options' => array(
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][lang]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_LANG'), 'options' => array(
 					'en' => 'English', 
 					'nt' => 'Dutch',
 					'fr' => 'French',

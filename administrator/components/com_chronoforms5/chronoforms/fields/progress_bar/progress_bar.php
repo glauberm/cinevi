@@ -31,7 +31,7 @@ class ProgressBar {
 	static $configs = array(
 		'width' => array('value' => '30', 'label' => 'Width in %', 'type' => 'text', 'class' => 'S', 'alt' => 'ghost'),
 		'bar_label' => array('value' => '30% Complete', 'label' => 'Bar Label', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
-		//'code' => array('value' => 'The custom element code should go here.', 'label' => 'Code', 'type' => 'textarea', 'id' => 'custom_field_code_{N}', 'rows' => 15, 'cols' => 70, 'alt' => 'ghost', ':data-render' => 'no'),
+		//'code' => array('value' => 'The custom element code should go here.', 'label' => 'Code', 'type' => 'textarea', 'id' => 'custom_field_code__XNX_', 'rows' => 15, 'cols' => 70, 'alt' => 'ghost', ':data-render' => 'no'),
 	);
 	
 	public static function element($data = array()){
@@ -46,7 +46,7 @@ class ProgressBar {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 	
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'progress_bar_origin_config');
 		echo \GCore\Helpers\Html::formSecStart();
 		foreach(self::$configs as $name => $params){

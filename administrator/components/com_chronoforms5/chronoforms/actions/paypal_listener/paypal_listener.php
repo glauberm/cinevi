@@ -91,9 +91,9 @@ Class PaypalListener extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config paypal_listener_action_config', 'paypal_listener_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config paypal_listener_action_config', 'paypal_listener_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][sandbox]', array('type' => 'dropdown', 'label' => l_('CF_PAYPAL_SANDBOX'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_PAYPAL_SANDBOX_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][sandbox]', array('type' => 'dropdown', 'label' => l_('CF_PAYPAL_SANDBOX'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_PAYPAL_SANDBOX_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

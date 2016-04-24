@@ -2,8 +2,8 @@
 /**
  * @package    Joomla.Language
  *
- * @copyright  Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright  Direitos de Autor (C) 2005 - 2015 Open Source Matters, Inc. Todos os direitos reservados.
+ * @license    Licença Pública Geral GNU - versão 2 ou superior; ver LICENSE.txt
  */
 
 defined('_JEXEC') or die;

@@ -34,17 +34,17 @@ Class LoadNocaptcha extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config load_nocaptcha_action_config', 'load_nocaptcha_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config load_nocaptcha_action_config', 'load_nocaptcha_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][site_key]', array('type' => 'text', 'label' => l_('CF_NOCAPTCHA_SITE_KEY'), 'class' => 'XL', 'sublabel' => l_('CF_NOCAPTCHA_SITE_KEY_DESC')));
-		/*echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][theme]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_THEME'), 'options' => array(
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][site_key]', array('type' => 'text', 'label' => l_('CF_NOCAPTCHA_SITE_KEY'), 'class' => 'XL', 'sublabel' => l_('CF_NOCAPTCHA_SITE_KEY_DESC')));
+		/*echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][theme]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_THEME'), 'options' => array(
 					'clean' => 'Clean', 
 					'red' => 'Red',
 					'white' => 'White',
 					'blackglass' => 'Blackglass',
 					'custom' => 'Custom'
 				), 'sublabel' => l_('CF_RECAPTCHA_THEME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][lang]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_LANG'), 'options' => array(
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][lang]', array('type' => 'dropdown', 'label' => l_('CF_RECAPTCHA_LANG'), 'options' => array(
 					'en' => 'English', 
 					'nt' => 'Dutch',
 					'fr' => 'French',

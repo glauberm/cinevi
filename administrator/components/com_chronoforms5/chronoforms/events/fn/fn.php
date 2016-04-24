@@ -14,7 +14,7 @@ class Fn extends \GCore\Admin\Extensions\Chronoforms\Events\Event{
 	static $cat_id = 'basic';
 	static $cat_title = 'Basic';
 	
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('jsevent_config', 'fn_config_'.$k);
 		echo \GCore\Helpers\Html::formSecStart();
 		

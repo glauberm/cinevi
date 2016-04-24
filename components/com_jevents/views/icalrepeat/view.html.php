@@ -35,7 +35,9 @@ class IcalrepeatViewIcalrepeat extends AdminIcalrepeatViewIcalrepeat
 	
 	function edit($tpl = null)
 	{
-		$document = JFactory::getDocument();		
+		$document = JFactory::getDocument();
+		// Set editstrings var just incase and to avoid IDE reporting not set.
+		$editStrings = "";
 		include(JEV_ADMINLIBS."/editStrings.php");		
 		$document->addScriptDeclaration($editStrings);
 
@@ -58,12 +60,12 @@ class IcalrepeatViewIcalrepeat extends AdminIcalrepeatViewIcalrepeat
 		if ($params->get("editpopup",0) && JEVHelper::isEventCreator())
 		{
 			$document->addStyleDeclaration("div#toolbar-box{margin:10px 10px 0px 10px;} div#jevents {margin:0px 10px 10px 10px;} ");
-			$this->toolbarButton("icalevent.close", 'cancel', 'cancel', 'Cancel', false);
+			$this->toolbarButton("icalevent.close", 'cancel', 'cancel', 'JEV_SUBMITCANCEL', false);
 			JRequest::setVar('tmpl', 'component'); //force the component template
 		}
 		else
 		{
-			$this->toolbarButton("icalevent.detail", 'cancel', 'cancel', 'Cancel', false);
+			$this->toolbarButton("icalevent.detail", 'cancel', 'cancel', 'JEV_SUBMITCANCEL', false);
 		}
 		
 		//JToolBarHelper::help( 'screen.icalrepeat.edit', true);		

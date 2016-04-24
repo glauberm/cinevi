@@ -63,10 +63,10 @@ Class LoadSignaturePad extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config load_signature_pad_action_config', 'load_signature_pad_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config load_signature_pad_action_config', 'load_signature_pad_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
 		
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

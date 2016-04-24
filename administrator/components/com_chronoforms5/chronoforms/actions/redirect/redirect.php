@@ -37,11 +37,11 @@ Class Redirect extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config redirect_action_config', 'redirect_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config redirect_action_config', 'redirect_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][url]', array('type' => 'text', 'label' => l_('CF_REDIRECT_URL'), 'class' => 'XL', 'sublabel' => l_('CF_REDIRECT_URL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][extra_params]', array('type' => 'textarea', 'label' => l_('CF_REDIRECT_EXTRA_PARAMS'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_REDIRECT_EXTRA_PARAMS_DESC').l_('CF_EXTRA_PARAMS_LIST_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][url]', array('type' => 'text', 'label' => l_('CF_REDIRECT_URL'), 'class' => 'XL', 'sublabel' => l_('CF_REDIRECT_URL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][extra_params]', array('type' => 'textarea', 'label' => l_('CF_REDIRECT_EXTRA_PARAMS'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_REDIRECT_EXTRA_PARAMS_DESC').l_('CF_EXTRA_PARAMS_LIST_DESC')));
 		
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

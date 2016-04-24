@@ -40,6 +40,7 @@ class Toolbar extends \GCore\Libs\Helper{
 	
 	public static function renderButton($id, $link, $text = '', $image = '', $type = 'submit', $alert = ''){
 		$html_id = 'toolbar-button-'.$id;
+		$alert = empty($alert) ? l_('SELECTION_REQUIRED') : $alert;
 		?>
 		<?php ob_start(); ?>
 			jQuery(document).ready(function($) {

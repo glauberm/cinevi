@@ -58,7 +58,7 @@ class Captcha {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		//back check at v5.0.6
 		if(isset($data['label']) AND !isset($data['inputs']['field']['label'])){
 			$data['inputs']['field']['label'] = $data['label'];

@@ -28,11 +28,11 @@ Class LoadForm extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config load_form_action_config', 'load_form_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config load_form_action_config', 'load_form_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][form_name]', array('type' => 'text', 'label' => l_('CF_LOADFORM_FORM_NAME'), 'class' => 'L', 'sublabel' => l_('CF_LOADFORM_FORM_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][form_event]', array('type' => 'text', 'label' => l_('CF_LOADFORM_FORM_EVENT'), 'class' => 'M', 'sublabel' => l_('CF_LOADFORM_FORM_EVENT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][form_name]', array('type' => 'text', 'label' => l_('CF_LOADFORM_FORM_NAME'), 'class' => 'L', 'sublabel' => l_('CF_LOADFORM_FORM_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][form_event]', array('type' => 'text', 'label' => l_('CF_LOADFORM_FORM_EVENT'), 'class' => 'M', 'sublabel' => l_('CF_LOADFORM_FORM_EVENT_DESC')));
 		
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

@@ -52,9 +52,9 @@ Class CheckSecurityQuestion extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config check_captcha_action_config', 'check_captcha_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config check_captcha_action_config', 'check_captcha_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][error]', array('type' => 'text', 'label' => l_('CF_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_SEC_Q_ERROR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][error]', array('type' => 'text', 'label' => l_('CF_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_SEC_Q_ERROR_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

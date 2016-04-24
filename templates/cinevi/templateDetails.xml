@@ -10,6 +10,8 @@
 	<version></version>
 	<description>Template do Departamento de Cinema e Vídeo.</description>
 	<files>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
 		<folder>html</folder>

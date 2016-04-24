@@ -45,10 +45,10 @@ Class SubmitLimit extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config submit_limit_action_config', 'submit_limit_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config submit_limit_action_config', 'submit_limit_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][limit]', array('type' => 'text', 'class' => 'S', 'label' => l_('CF_SUBMIT_LIMIT_LIMIT'), 'sublabel' => l_('CF_SUBMIT_LIMIT_LIMIT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][message]', array('type' => 'text', 'class' => 'XXL', 'label' => l_('CF_SUBMIT_LIMIT_MSG'), 'sublabel' => l_('CF_SUBMIT_LIMIT_MSG_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][limit]', array('type' => 'text', 'class' => 'S', 'label' => l_('CF_SUBMIT_LIMIT_LIMIT'), 'sublabel' => l_('CF_SUBMIT_LIMIT_LIMIT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][message]', array('type' => 'text', 'class' => 'XXL', 'label' => l_('CF_SUBMIT_LIMIT_MSG'), 'sublabel' => l_('CF_SUBMIT_LIMIT_MSG_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

@@ -49,6 +49,40 @@ if ($params->get("disablerepeats", 0) && !JEVHelper::isEventEditor())
 			</div>
 		</div>
 
+		<?php
+		if ( $params->get("disablemultiday", 0)) {
+		?>
+		<div style="margin:0px">
+			<div class="jevstartdate" style="margin:10px 20px 0px 0px ;display:inline-block;">
+				<?php echo $this->form->getLabel("publish_up"); ?>
+				<?php echo $this->form->getInput("publish_up"); ?>
+			</div>
+
+			<div class='jevstarttime' style="margin:10px 0px 0px 0px ;display:inline-block;">
+				<?php echo $this->form->getLabel("start_time"); ?>
+				<?php echo $this->form->getInput("start_time"); ?>
+			</div>
+
+			<div class='jevendtime' style="margin:10px 20px 0px 0px ;display:inline-block;">
+				<?php echo $this->form->getLabel("end_time"); ?>
+				<?php echo $this->form->getInput("end_time"); ?>
+			</div>
+
+			<div class='jevnoeendtime' style="margin:10px 0px 0px 0px ;display:inline-block;">
+				<?php echo $this->form->getLabel("noendtime"); ?>
+				<?php echo $this->form->getInput("noendtime"); ?>
+			</div>
+
+			<div class="jevenddate" style="display:none">
+				<?php echo $this->form->getLabel("publish_down"); ?>
+				<?php echo $this->form->getInput("publish_down"); ?>
+			</div>
+
+		</div>
+		<?php
+		}
+		else {
+		?>
 		<div style="margin:0px">
 			<div class="jevstartdate" style="margin:10px 20px 0px 0px ;display:inline-block;">
 				<?php echo $this->form->getLabel("publish_up"); ?>
@@ -82,6 +116,9 @@ if ($params->get("disablerepeats", 0) && !JEVHelper::isEventEditor())
 			</div>
 
 		</div>
+		<?php
+		}
+		?>
 		
 
 		<div id="jevmultiday" style="display:<?php echo $this->row->endDate() > $this->row->startDate() ? "block" : "none"; ?>">
@@ -150,9 +187,9 @@ if ($params->get("disablerepeats", 0) && !JEVHelper::isEventEditor())
 				<input class="inputbox" type="text" name="count" id="count" size="3" maxlength="3" value="<?php echo $this->row->count(); ?>" onchange="checkInterval();" /><span id='count_label' style="margin-left:1em"><?php echo JText::_('REPEATS'); ?></span>
 			</fieldset>
 		</div>
-		<div style="float:left;margin-left:20px!important;background-color:#dddddd;" id="cu_until">
-			<fieldset style="background-color:#dddddd">
-				<legend  style="background-color:#dddddd"><input type="radio" name="countuntil" value="until" id="cuu" onclick="toggleCountUntil('cu_until');" /><?php echo JText::_('REPEAT_UNTIL'); ?></legend>
+		<div style="float:left;margin-left:20px!important;" id="cu_until" class="roundedgrey">
+			<fieldset class="roundedgrey">
+				<legend  class="roundedgrey"><input type="radio" name="countuntil" value="until" id="cuu" onclick="toggleCountUntil('cu_until');" /><?php echo JText::_('REPEAT_UNTIL'); ?></legend>
 				<?php
 				$params = JComponentHelper::getParams(JEV_COM_COMPONENT);
 				$minyear = JEVHelper::getMinYear();
@@ -352,6 +389,7 @@ if ($this->row->id() != 0 && $this->row->freq())
 						label.addClass('active btn-danger');
 					}
 					input.prop('checked', true);
+                                        input.trigger('change');
 				}
 			});
 
@@ -378,6 +416,7 @@ if ($this->row->id() != 0 && $this->row->freq())
 					label.removeClass('active btn-success btn-danger btn-primary');
 					input.prop('checked', false);
 					event.stopImmediatePropagation();
+                                        input.trigger('change');
 					return;
 				}
 				if (!input.prop('checked')) {
@@ -391,6 +430,7 @@ if ($this->row->id() != 0 && $this->row->freq())
 				else {
 					label.removeClass('active btn-success btn-danger btn-primary');
 				}
+                                input.trigger('change');
 				// bootstrap takes care of the checkboxes themselves!
 				
 			});

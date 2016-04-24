@@ -140,15 +140,15 @@ Class CsvExport extends \GCore\Admin\Extensions\Chronoforms\Action{
 		array_unshift($tables, '');
 		$tables = array_combine($tables, $tables);
 
-		echo \GCore\Helpers\Html::formStart('action_config csv_export_action_config', 'csv_export_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config csv_export_action_config', 'csv_export_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][tablename]', array('type' => 'dropdown', 'label' => l_('CF_CSV_TABLENAME'), 'options' => $tables, 'sublabel' => l_('CF_CSV_TABLENAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][data_path]', array('type' => 'text', 'class' => 'M', 'label' => l_('CF_CSV_DATA_PATH'), 'sublabel' => l_('CF_CSV_DATA_PATH_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][columns]', array('type' => 'textarea', 'class' => 'XL', 'rows' => 7, 'cols' => 60, 'label' => l_('CF_CSV_COLUMNS'), 'sublabel' => l_('CF_CSV_COLUMNS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][excluded_columns]', array('type' => 'textarea', 'class' => 'XL', 'rows' => 7, 'cols' => 60, 'label' => l_('CF_CSV_EXCLUDED_COLUMNS'), 'sublabel' => l_('CF_CSV_EXCLUDED_COLUMNS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][order_by]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_CSV_ORDER_BY'), 'sublabel' => l_('CF_CSV_ORDER_BY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][delimiter]', array('type' => 'text', 'class' => 'SS', 'label' => l_('CF_CSV_DELIMITER'), 'sublabel' => l_('CF_CSV_DELIMITER_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][tablename]', array('type' => 'dropdown', 'label' => l_('CF_CSV_TABLENAME'), 'options' => $tables, 'sublabel' => l_('CF_CSV_TABLENAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][data_path]', array('type' => 'text', 'class' => 'M', 'label' => l_('CF_CSV_DATA_PATH'), 'sublabel' => l_('CF_CSV_DATA_PATH_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][columns]', array('type' => 'textarea', 'class' => 'XL', 'rows' => 7, 'cols' => 60, 'label' => l_('CF_CSV_COLUMNS'), 'sublabel' => l_('CF_CSV_COLUMNS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][excluded_columns]', array('type' => 'textarea', 'class' => 'XL', 'rows' => 7, 'cols' => 60, 'label' => l_('CF_CSV_EXCLUDED_COLUMNS'), 'sublabel' => l_('CF_CSV_EXCLUDED_COLUMNS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][order_by]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_CSV_ORDER_BY'), 'sublabel' => l_('CF_CSV_ORDER_BY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][delimiter]', array('type' => 'text', 'class' => 'SS', 'label' => l_('CF_CSV_DELIMITER'), 'sublabel' => l_('CF_CSV_DELIMITER_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

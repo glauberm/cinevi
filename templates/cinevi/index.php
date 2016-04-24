@@ -22,6 +22,7 @@ $sitename = $app->get('sitename');
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.min.css');
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/estilos.css');
+// @TODO: Baixar Buenard e carregar localmente
 $doc->addStyleSheet('http://fonts.googleapis.com/css?family=Buenard:400,700');
 $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 
@@ -30,12 +31,21 @@ $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 <!DOCTYPE html>
 <html xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
-
 	<jdoc:include type="head" />
-	<!--<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/estilos.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/estilos.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/media/jui/css/icomoon.css" type="text/css" />-->
-
+	<!-- FAVICONS -->
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $this->baseurl . "/templates/" . $this->template; ?>/favicon-16x16.png">
 </head>
 <body class="site <?php echo $option
 	. ' view-' . $view
@@ -54,18 +64,21 @@ $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 			<header class="header" role="banner">
 				<div class="header-inner text-center clearfix">
 					<a class="brand" href="<?php echo $this->baseurl; ?>/">
-						<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo.png" alt="Departamento de Cinema e Vídeo">
+						<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo2.png" alt="Departamento de Cinema e Vídeo">
 					</a>
 				</div>
 			</header>
 		</div>
-
-		<div id="botao-menu-xs" class="hidden-sm display-xs hidden-md hidden-lg">
-			<div class="container">
-				<button type="button" class="tcon tcon-menu--arrow tcon-menu--arrow360left" aria-label="toggle menu">
-					<span class="tcon-menu__lines" aria-hidden="true"></span>
-					<span class="tcon-visuallyhidden">Menu</span>
-				</button>
+		<div id="faixa-menu-xs" class="hidden-sm display-xs hidden-md hidden-lg">
+			<div class="clearfix">
+				<div id="botao-menu-xs" class="hidden-sm display-xs hidden-md hidden-lg pull-left">
+					<button type="button" aria-label="Menu">
+						<span class="icon-menu-3"></span>
+					</button>
+				</div>
+				<div id="botao-login-xs" class="hidden-sm display-xs hidden-md hidden-lg pull-right">
+					<jdoc:include type="modules" name="login" style="xhtml" />
+				</div>
 			</div>
 		</div>
 
@@ -87,19 +100,16 @@ $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 
 			<!--  Dispositivos Médios -->
 			<div id="botao-menu-sm" class="hidden-xs display-sm hidden-md hidden-lg">
-				<div class="container">
-					<button type="button" class="tcon tcon-menu--arrow tcon-menu--arrow360left" aria-label="toggle menu">
-						<span class="tcon-menu__lines" aria-hidden="true"></span>
-						<span class="tcon-visuallyhidden">Menu</span>
-					</button>
-				</div>
+				<button type="button" aria-label="Menu">
+					<span class="">Menu</span>
+				</button>
 			</div>
 
 			<div id="faixa-logo-sm" class="hidden-xs display-sm hidden-md hidden-lg">
 				<header class="header" role="banner">
 					<div class="header-inner text-center clearfix">
 						<a class="brand" href="<?php echo $this->baseurl; ?>/">
-							<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo.png" alt="Departamento de Cinema e Vídeo">
+							<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/img/logo2.png" alt="Departamento de Cinema e Vídeo">
 						</a>
 					</div>
 				</header>
@@ -148,6 +158,8 @@ $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 							<jdoc:include type="modules" name="banner" style="xhtml" />
 						</div>
 
+						<br class="invisible"/>
+
 						<!-- Breadcrumbs -->
 						<div class="hidden-xs">
 							<jdoc:include type="modules" name="breadcrumb" style="xhtml" />
@@ -189,21 +201,23 @@ $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 
 		<!-- Rodapé .sm -->
 			<footer class="display-sm display-lg display-md hidden-xs" role="contentinfo">
-				<small>&copy; <?php echo date('Y'); ?> Departamento de Cinema e Vídeo</small>
+				<div class="container text-center">
+					<p>&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?><br/>Desenvolvido por <a href="mailto:glaubernm@gmail.com">Glauber Mota</a></p>
+				</div>
 			</footer>
 		<!-- ./Rodapé .sm -->
 
 		<!-- Footer xs -->
 		<footer class="footer hidden-sm hidden-lg hidden-md display-xs" role="contentinfo">
-			<div class="container">
-				<p class="pull-right">
-					<a href="#top" id="back-top">
-						<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
-					</a>
-				</p>
-				<small>
-					&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
-				</small>
+			<div class="container text-center">
+				<div class="clearfix">
+					<div class="pull-left">
+						&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+					</div>
+					<div class="pull-right">
+						Desenvolvido por <a href="mailto:glaubernm@gmail.com">Glauber Mota</a>
+					</div>
+				</div>
 			</div>
 		</footer>
 
@@ -216,7 +230,6 @@ $doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 	<![endif]-->
 	<?php
 		JHtml::_('bootstrap.framework');
-		$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/transformicon.js');
 		$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/jquery.mask.min.js');
 		$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/scripts.js');
 	?>

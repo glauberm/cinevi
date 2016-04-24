@@ -88,24 +88,24 @@ Class ServerValidation extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config server_validation_action_config', 'server_validation_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config server_validation_action_config', 'server_validation_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][action_label]', array('type' => 'text', 'label' => l_('CF_ACTION_LABEL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_LABEL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][default_error]', array('type' => 'text', 'label' => l_('CF_SV_DEFAULT_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_SV_DEFAULT_ERROR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][display_errors_top]', array('type' => 'dropdown', 'label' => l_('CF_SV_TOP_ERRORS'), 'values' => 1, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SV_TOP_ERRORS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][highlight_fields]', array('type' => 'dropdown', 'label' => l_('CF_SV_HIGHLIGHT_FIELDS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SV_HIGHLIGHT_FIELDS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][not_empty]', array('type' => 'textarea', 'label' => l_('CF_NOT_EMPTY'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_NOT_EMPTY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][is_empty]', array('type' => 'textarea', 'label' => l_('CF_EMPTY'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][no_spaces]', array('type' => 'textarea', 'label' => l_('CF_NO_SPACES'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][alpha]', array('type' => 'textarea', 'label' => l_('CF_ALPHA'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][alphanumeric]', array('type' => 'textarea', 'label' => l_('CF_ALPHA_NUMERIC'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][digit]', array('type' => 'textarea', 'label' => l_('CF_DIGIT'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][nodigit]', array('type' => 'textarea', 'label' => l_('CF_NO_DIGIT'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][number]', array('type' => 'textarea', 'label' => l_('CF_NUMBER'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][email]', array('type' => 'textarea', 'label' => l_('CF_EMAIL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][phone]', array('type' => 'textarea', 'label' => l_('CF_PHONE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][phone_inter]', array('type' => 'textarea', 'label' => l_('CF_INT_PHONE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][rules][url]', array('type' => 'textarea', 'label' => l_('CF_URL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][action_label]', array('type' => 'text', 'label' => l_('CF_ACTION_LABEL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_LABEL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][default_error]', array('type' => 'text', 'label' => l_('CF_SV_DEFAULT_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_SV_DEFAULT_ERROR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][display_errors_top]', array('type' => 'dropdown', 'label' => l_('CF_SV_TOP_ERRORS'), 'values' => 1, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SV_TOP_ERRORS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][highlight_fields]', array('type' => 'dropdown', 'label' => l_('CF_SV_HIGHLIGHT_FIELDS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SV_HIGHLIGHT_FIELDS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][not_empty]', array('type' => 'textarea', 'label' => l_('CF_NOT_EMPTY'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_NOT_EMPTY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][is_empty]', array('type' => 'textarea', 'label' => l_('CF_EMPTY'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][no_spaces]', array('type' => 'textarea', 'label' => l_('CF_NO_SPACES'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][alpha]', array('type' => 'textarea', 'label' => l_('CF_ALPHA'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][alphanumeric]', array('type' => 'textarea', 'label' => l_('CF_ALPHA_NUMERIC'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][digit]', array('type' => 'textarea', 'label' => l_('CF_DIGIT'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][nodigit]', array('type' => 'textarea', 'label' => l_('CF_NO_DIGIT'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][number]', array('type' => 'textarea', 'label' => l_('CF_NUMBER'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][email]', array('type' => 'textarea', 'label' => l_('CF_EMAIL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][phone]', array('type' => 'textarea', 'label' => l_('CF_PHONE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][phone_inter]', array('type' => 'textarea', 'label' => l_('CF_INT_PHONE'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][rules][url]', array('type' => 'textarea', 'label' => l_('CF_URL'), 'rows' => 5, 'cols' => 60, 'sublabel' => ''));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

@@ -29,7 +29,7 @@ class Custom {
 	static $configs = array(
 		'label' => array('value' => 'Custom Code', 'label' => 'Label', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
 		'pure_code' => array('values' => 0, 'label' => 'Pure code', 'sublabel' => 'Use the code below only and do NOT embed it inside any containers, if this setting is enabled then it may cause layout problems.', 'type' => 'dropdown', 'options' => array(0 => 'No', 1 => 'Yes'), 'alt' => 'ghost'),
-		'code' => array('value' => 'The custom element code should go here.', 'label' => 'Code', 'type' => 'textarea', 'id' => 'custom_field_code_{N}', 'rows' => 15, 'cols' => 70, 'alt' => 'ghost', ':data-render' => 'no'),
+		'code' => array('value' => 'The custom element code should go here.', 'label' => 'Code', 'type' => 'textarea', 'id' => 'custom_field_code__XNX_', 'rows' => 15, 'cols' => 70, 'alt' => 'ghost', ':data-render' => 'no'),
 	);
 	
 	public static function element($data = array()){
@@ -41,7 +41,7 @@ class Custom {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 	
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'custom_origin_config');
 		echo \GCore\Helpers\Html::formSecStart();
 		foreach(self::$configs as $name => $params){

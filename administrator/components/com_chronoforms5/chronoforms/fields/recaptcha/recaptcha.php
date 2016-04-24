@@ -29,7 +29,7 @@ class Recaptcha {
 		//'label' => array('value' => 'Enter Code', 'label' => 'Label', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
 		'label.text' => array('value' => 'Enter Code', 'label' => 'Label', 'type' => 'text', 'class' => 'L'),
 		'label.position' => array('values' => 'left', 'label' => 'Label position', 'type' => 'dropdown', 'options' => array('left' => 'Left', 'top' => 'Top')),
-		'code' => array('value' => '{ReCaptcha}', 'label' => 'Code', 'type' => 'text', 'id' => 'recaptcha_field_code_{N}', 'readonly' => 'readonly', 'alt' => 'ghost'),
+		'code' => array('value' => '{ReCaptcha}', 'label' => 'Code', 'type' => 'text', 'id' => 'recaptcha_field_code__XNX_', 'readonly' => 'readonly', 'alt' => 'ghost'),
 		'sublabel' => array('value' => '', 'label' => 'Sub Label', 'type' => 'text', 'class' => 'L'),
 	);
 	
@@ -39,7 +39,7 @@ class Recaptcha {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 	
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'recaptcha_origin_config');
 		echo \GCore\Helpers\Html::formSecStart();
 		foreach(self::$configs as $name => $params){

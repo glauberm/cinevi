@@ -128,7 +128,7 @@ class FlatplusModCalView extends DefaultModCalView
 		{
 			$linkprevious = htmlentities(JURI::base() . "index.php?option=$jev_component_name&task=modcal.ajax&day=1&month=$base_prev_month&year=$base_prev_month_year&modid=$this->_modid&tmpl=component" . $this->cat);
 			$scriptlinks .= "linkprevious = '".$linkprevious."';\n";
-			$linkprevious = '<img border="0" title="' . JText::_("JEV_PREVIOUSMONTH") . '" alt="' . JText::_("JEV_LAST_MONTH") . '" class="mod_events_link" src="' . $viewimages . '/mini_arrowleft.gif" onmousedown="callNavigation(\'' . $linkprevious . '\');" />';
+			$linkprevious = '<img border="0" title="' . JText::_("JEV_PREVIOUSMONTH") . '" alt="' . JText::_("JEV_LAST_MONTH") . '" class="mod_events_link" src="' . $viewimages . '/mini_arrowleft.gif" onmousedown="callNavigation(\'' . $linkprevious . '\');" ontouchstart="callNavigation(\'' . $linkprevious . '\');" />';
 		}
 		else
 		{
@@ -159,14 +159,14 @@ class FlatplusModCalView extends DefaultModCalView
 		{
 			$linknext = htmlentities(JURI::base() . "index.php?option=$jev_component_name&task=modcal.ajax&day=1&month=$base_next_month&year=$base_next_month_year&modid=$this->_modid&tmpl=component" . $this->cat);
 			$scriptlinks .= "linknext = '".$linknext."';\n";
-			$linknext = '<img border="0" title="' . JText::_("JEV_NEXT_MONTH") . '" alt="' . JText::_("JEV_NEXT_MONTH") . '" class="mod_events_link" src="' . $viewimages . '/mini_arrowright.gif" onmousedown="callNavigation(\'' . $linknext . '\');" />';
+			$linknext = '<img border="0" title="' . JText::_("JEV_NEXT_MONTH") . '" alt="' . JText::_("JEV_NEXT_MONTH") . '" class="mod_events_link" src="' . $viewimages . '/mini_arrowright.gif" onmousedown="callNavigation(\'' . $linknext . '\');" ontouchstart="callNavigation(\'' . $linknext . '\');" />';
 		}
 		else
 		{
 			$linknext = "";
 		}
 
-		$class= "cal_".$this->base_month."_".$this->_modid;
+		$class= "cal_".$base_month."_".$this->_modid;
 		$content = '
 <div id="flatcal_minical" class="jev_color_' . $colorscheme . '">
 	<table width="' . $width . '" cellspacing="1" cellpadding="0" border="0" align="center" class="flatcal_main_t">
@@ -236,7 +236,13 @@ class FlatplusModCalView extends DefaultModCalView
 							$linkclass = "flatcal_busylink";
 						}
 						$content .= "<td class='" . $class . "'>\n";
-						$tooltip = $this->getTooltip($currentDay, array('class' => $linkclass));
+						// To make sure there are no strict php error messages when currentDay is changed we add second method
+						if (method_exists($this, "getTooltipReference")){
+							$tooltip = $this->getTooltipReference($currentDay, array('class'=>$linkclass));
+						}
+						else {
+							$tooltip = $this->getTooltip($currentDay, array('class'=>$linkclass));
+						}
 						if ($tooltip)
 						{
 							$content .= $tooltip;
@@ -283,6 +289,44 @@ class FlatplusModCalView extends DefaultModCalView
 
 		foreach ($currentDay["events"] as $event) {
 			$link = $event->viewDetailLink($event->yup(), $event->mup(), $event->dup(), true, $this->myItemid);//JRoute::_('index.php?option='.$jev_component_name.'&Itemid='.$this->myItemid.$this->cat.'&task=icalrepeat.detail';
+			$tooltip .= "<a href='".$link."'>". $event->title()."</a><br/>";
+		}
+		$tooltip .= "<hr class='jev-click-to-open'/><small class='jev-click-to-open'>".JText::_("JEV_EVENTS_CLICK_EVENT_FOR_MORE_DETAILS",true)."</small>";
+
+		$tipTitle = '<div class="jevtt_title" >'.JText::_("JEV_EVENTS_THIS_DAY",true) .'</div>';
+		$tipText = '<div class="jevtt_text">'.$tooltip.'</div>';
+		$tooltip	= htmlspecialchars($tipTitle.$tipText,ENT_QUOTES);
+		$link = $this->htmlLinkCloaking($currentDay["link"], $currentDay['d'], $linkattr);
+		$tooltip = '<span class="editlinktip hasjevtip" title="'.$tooltip.'" >'.$link.'</span>';
+
+		static $script;
+		if (!isset($script	)){
+			$script = true;
+			JevHtmlBootstrap::popover('.hasjevtip' , array("trigger"=>"hover focus", "placement"=>"top", "container"=>"body", "delay"=> array( "hide"=> 150 )));
+		}
+
+		return $tooltip;
+	 }
+
+	 protected function getTooltipReference(&$currentDay, $linkattr) {
+		$tooltip = "";
+		if (!isset($currentDay["events"]) || !is_array($currentDay["events"]) ||  count($currentDay["events"])==0){
+			return $tooltip;
+		}
+
+		// This loads jQuery too!
+		JevHtmlBootstrap::framework();
+		// This needs core bootstrap css not our namespaced version!
+                $params = JComponentHelper::getParams(JEV_COM_COMPONENT);
+		if ($params->get("fpcolourscheme", 1)) {
+                    JHtmlBootstrap::loadCss();
+                }
+
+		foreach ($currentDay["events"] as $event) {
+			$link = $event->viewDetailLink($event->yup(), $event->mup(), $event->dup(), true, $this->myItemid);//JRoute::_('index.php?option='.$jev_component_name.'&Itemid='.$this->myItemid.$this->cat.'&task=icalrepeat.detail';
+			if (count ($currentDay["events"])==1 && JComponentHelper::getParams("com_jevents")->get("redirect_detail",1)){
+				$currentDay["link"] = $link;
+			}
 			$tooltip .= "<a href='".$link."'>". $event->title()."</a><br/>";
 		}
 		$tooltip .= "<hr class='jev-click-to-open'/><small class='jev-click-to-open'>".JText::_("JEV_EVENTS_CLICK_EVENT_FOR_MORE_DETAILS",true)."</small>";

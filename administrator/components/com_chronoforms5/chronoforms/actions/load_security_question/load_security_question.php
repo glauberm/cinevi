@@ -39,9 +39,9 @@ Class LoadSecurityQuestion extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config load_captcha_action_config', 'load_captcha_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config load_captcha_action_config', 'load_captcha_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][questions]', array('type' => 'textarea', 'label' => l_('CF_SEC_Q_QUESTIONS'), 'rows' => 10, 'cols' => 70, 'sublabel' => l_('CF_SEC_Q_QUESTIONS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][questions]', array('type' => 'textarea', 'label' => l_('CF_SEC_Q_QUESTIONS'), 'rows' => 10, 'cols' => 70, 'sublabel' => l_('CF_SEC_Q_QUESTIONS_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

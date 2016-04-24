@@ -42,14 +42,14 @@ class Html extends \GCore\Libs\Helper{
 		$attributes = array('src', 'height', 'width', 'border', 'alt', 'rel', 'title', 'style', 'class', 'onclick');
 		$params['src'] = $src;
 		return self::_concat($params, $attributes, '<img ', ' />');
-		break;
+		//break;
 	}
 
 	public static function url($text, $href = '', $params = array()){
 		$attributes = array('href', 'target', 'alt', 'rel', 'title', 'style', 'class', 'onclick');
 		//$params['href'] = $href;
 		return self::_concat($params, $attributes, '<a href="'.$href.'" ', '>'.$text.'</a>');
-		break;
+		//break;
 	}
 
 	public static function styles($styles = array()){
@@ -417,7 +417,7 @@ class Html extends \GCore\Libs\Helper{
 				}
 				break;
 			case 'custom':
-				$tags[] = !empty($params['code']) ? $params['code'] : '';
+				$tags[] = (isset($params['code']) AND strlen($params['code'])) ? $params['code'] : '';
 				break;
 			case 'text':
 			case 'password':

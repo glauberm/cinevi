@@ -24,7 +24,7 @@ defined("GCORE_SITE") or die;
 		ob_start();
 		$class::config(array(), $sub_fields_count);
 		$con = ob_get_clean();
-		$con = str_replace('{N}', $sub_fields_count, $con);
+		$con = str_replace('_XNX_', $sub_fields_count, $con);
 		$con = str_replace('Form[extras][fields]['.$sub_fields_count.']', 'Form[extras][fields]['.$fields_count.'][inputs]['.$field.$sub_fields_count.']', $con);
 		echo '<div class="panel panel-default">';
 		echo '<div class="well well-sm">'.$field.$sub_fields_count.'</div>';

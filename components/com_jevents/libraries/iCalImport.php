@@ -87,6 +87,7 @@ class iCalImport
 				curl_setopt($ch, CURLOPT_POST, 0);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                                curl_setopt($ch, CURLOPT_USERAGENT, "Jevents.net");
 				curl_setopt($ch,CURLOPT_ENCODING,'');
 				$this->rawData = curl_exec($ch);
 				curl_close ($ch);
@@ -173,6 +174,16 @@ class iCalImport
 				//echo "first line = $firstLine<br/>";
 				//echo "raw imported data = ".$this->rawData."<br/>";
 				//exit();
+                                if (JFactory::getUser()->get('isRoot') && JFactory::getApplication()->isAdmin()) {
+                                    $config = JFactory::getConfig();
+                                    $debug = (boolean) $config->get('debug');
+                                       if ($debug){
+                                           echo "Unable to fetch calendar data<br/>";
+                                           echo "Raw Data is ".$this->rawData;
+                                           exit();
+                                       }
+                                    return false;
+                                }
 				JError::raiseWarning(0, 'Not a valid VCALENDAR data file: ' . $this->srcURL);
 				//JError::raiseWarning(0, 'Not a valid VCALENDAR or CSV data file: ' . $this->srcURL);
 				// return false so that we don't remove a valid calendar because of a bad URL load!
@@ -382,18 +393,19 @@ class iCalImport
 				//$value = ereg_replace("[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]","<a href=\"\\0\">\\0</a>", $value);
 				//$value = preg_replace('@(?<![">])\b(?:(?:https?|ftp)://|www\.|ftp\.)[-A-Z0-9+&@#/%=~_|$?!:,.]*[A-Z0-9+&@#/%=~_|$]@',"<a href=\"\\0\">\\0</a>", $value);
 				if (is_string($value) && $key!="UID" && $key!="X-EXTRAINFO"){
-					if (JString::strpos(str_replace(" ","",JString::strtolower($value)),"<ahref=")===false && JString::strpos(str_replace(" ","",JString::strtolower($value)),"<img")===false){
-						// See http://stackoverflow.com/questions/8414675/preg-replace-for-url-and-download-links and http://regexr.com/3bup3 to test this
-						$value = preg_replace('@(https?://([\w-.]+)+(:\d+)?(/([\w/_\.%\-+~=]*(\?\S+)?)?)?)@', '<a href="$1">$1</a>', $value);
+					if (JString::strpos(str_replace(" ","",JString::strtolower($value)),"<ahref=")===false && JString::strpos(str_replace(" ","",JString::strtolower($value)),"<img")===false && (JString::strpos(JString::strtolower($value),"http://")!==false || JString::strpos(JString::strtolower($value),"https://")!==false)){
+                                                // See http://stackoverflow.com/questions/8414675/preg-replace-for-url-and-download-links and http://regexr.com/3bup3 to test this
+                                                $value = preg_replace('@(https?://([\w-.]+)+(:\d+)?(/([\w/_\.%\-+~=]*(\?\S+)?)?)?)@u', '<a href="$1">$1</a>', $value);
 					}
 				}
 
 				// Fix some stupid Microsoft IIS driven calendars which don't encode the data properly!
 				// see section 2 of http://www.the-art-of-web.com/html/character-codes/
 				if ($key=="DESCRIPTION" || $key=="SUMMARY"){
-					$len = JString::strlen($value);
+					$len = strlen($value);
 					$ulen = JString::strlen($value);
 					// Can cause problems with multibyte strings so skip this
+                                        // we need to check this since some UTF-8 characters from Google get truncates otherwise
 					if ($len == $ulen){
 						$value =str_replace(array("\205","\221","\222","\223","\224","\225","\226","\227","\240"),array("...","'","'",'"','"',"*","-","--"," "),$value);
 					}

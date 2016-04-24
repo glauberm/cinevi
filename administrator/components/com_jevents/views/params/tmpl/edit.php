@@ -26,6 +26,11 @@ foreach (JEV_CommonFunctions::getJEventsViewList() as $viewfile)
 		$haslayouts = true;
 	}
 }
+$hasPlugins = false;
+$plugins = JPluginHelper::getPlugin("jevents");
+if (count($plugins)){
+    $hasPlugins = true;
+}
 ?>
 <!-- Set Difficulty : -->
 
@@ -367,11 +372,12 @@ foreach (JEV_CommonFunctions::getJEventsViewList() as $viewfile)
 
 	<input type="hidden" name="id" value="<?php echo $this->component->id; ?>" />
 	<input type="hidden" name="component" value="<?php echo $this->component->option; ?>" />
-
+        <input type="hidden" name="jform_title" id="jform_title" value="com_jevents"/>
 	<input type="hidden" name="controller" value="component" />
 	<input type="hidden" name="option" value="<?php echo JEV_COM_COMPONENT; ?>" />
 	<input type="hidden" name="task" value="" />
 	<?php echo JHTML::_('form.token'); ?>
+        
 </form>
 
 

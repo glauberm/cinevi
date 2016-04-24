@@ -31,8 +31,8 @@ class Dropdown {
 	);
 
 	static $configs = array(
-		'name' => array('value' => 'dropdown{N}', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
-		'id' => array('value' => 'dropdown{N}', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
+		'name' => array('value' => 'dropdown_XNX_', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
+		'id' => array('value' => 'dropdown_XNX_', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
 		'options' => array('value' => "0=No\n1=Yes", 'label' => 'Options', 'type' => 'textarea', 'rows' => 5, 'alt' => 'options', 'class' => 'L', 'sublabel' => 'In Multiline format, value=Title'),
 		'empty' => array('value' => '', 'label' => 'Empty Option', 'type' => 'text', 'class' => 'L'),
 		'values' => array('value' => '', 'label' => 'Selected Values', 'type' => 'textarea', 'alt' => 'multiline', 'class' => 'L', 'sublabel' => 'In Multiline format'),
@@ -55,7 +55,7 @@ class Dropdown {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'dropdown_origin_config');
 		?>
 		<ul class="nav nav-tabs">

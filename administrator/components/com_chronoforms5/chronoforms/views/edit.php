@@ -28,7 +28,7 @@ defined("GCORE_SITE") or die;
 	$doc->addJsFile(\GCore\C::get('GCORE_FRONT_URL').'extensions/editors/assets/tinymce/tinymce.min.js');
 
 	$save_ext = '';
-	$save_ext .= 'jQuery("#admin_form :input[name*=\'{N}\']").remove();'; //remove the default fields/actions fields to save some post data space
+	$save_ext .= 'jQuery("#admin_form :input[name*=\'_XNX_\']").remove();'; //remove the default fields/actions fields to save some post data space
 	if($chronoforms_settings->get('wizard.safe_save', 1)){
 		if(!(int)$chronoforms_settings->get('wizard.safe_save_chunk_size', 0)){
 			$save_ext .= '
@@ -256,7 +256,7 @@ jQuery(window).scroll(function(){
 			var locale_name = $('#locale_name').val();
 			if(locale_name == '')return false;
 			$('#locales_tabs_heads').append('<li><a href="#locale-'+locale_name+'" data-g-toggle="tab">'+locale_name+'</a></li>');
-			var tab_content = $('#locale_generic_config').html().replace(/{N}/ig, $('#locale_name').val());
+			var tab_content = $('#locale_generic_config').html().replace(/_XNX_/ig, $('#locale_name').val());
 			$('#locales_tabs_contents').append('<div class="tab-pane" id="locale-'+locale_name+'">'+tab_content+'</div>');
 			//$('#locales_tabs_heads a:last').tab('show');
 			$('#locales_tabs_heads').gtabs({
@@ -662,7 +662,7 @@ jQuery(window).scroll(function(){
 			new_container.find('.panel-heading').append('<div class="clearfix"></div>');
 
 			var $new_container_config = $('#container_origin_config').clone().removeAttr('id').addClass('config_box');
-			$new_container_config.html($new_container_config.html().replace(/{N}/ig, fields_count));
+			$new_container_config.html($new_container_config.html().replace(/_XNX_/ig, fields_count));
 			$new_container_config.css({'display':'none'});
 			$new_container_config.find('[id^=container_id]').first().val(container_number);
 
@@ -690,10 +690,10 @@ jQuery(window).scroll(function(){
 			}
 
 			var $new_element = $('#'+field_type+'_origin').clone().removeAttr('id');
-			$new_element.html($new_element.html().replace(/{N}/ig, fields_count));
+			$new_element.html($new_element.html().replace(/_XNX_/ig, fields_count));
 
 			var $new_element_config = $('#'+field_type+'_origin_config').clone().removeAttr('id').addClass('config_box');
-			$new_element_config.html($new_element_config.html().replace(/{N}/ig, fields_count));
+			$new_element_config.html($new_element_config.html().replace(/_XNX_/ig, fields_count));
 
 			$new_element_config.find('[id^=container_id]').first().val(container_number);
 
@@ -942,10 +942,10 @@ jQuery(window).scroll(function(){
 					var field_type = ui.draggable.attr('id');
 
 					//var $new_element = $('#'+field_type+'_origin').clone().removeAttr('id');
-					//$new_element.html($new_element.html().replace(/{N}/ig, fields_count));
+					//$new_element.html($new_element.html().replace(/_XNX_/ig, fields_count));
 
 					var $new_element_config = ui.draggable.find('.jsevent_config').clone().addClass('panel-body');
-					$new_element_config.html($new_element_config.html().replace(/{N}/ig, jsevents_count));
+					$new_element_config.html($new_element_config.html().replace(/_XNX_/ig, jsevents_count));
 
 					//$new_element_config.find('[id^=container_id]').first().val(container_number);
 
@@ -1133,16 +1133,16 @@ jQuery(window).scroll(function(){
 				action_events.each(function(i, action_event){
 					$(action_event).find('.events_dna').attr('name', droppable_dna+'['+$(action_event).attr('title')+']');
 				});
-				action_events = $($('<div/>').append(action_events).html().replace(/{N}/ig, action_count));
+				action_events = $($('<div/>').append(action_events).html().replace(/_XNX_/ig, action_count));
 				form_action.find('.panel-body').append(action_events);
 
 
-				action_config = $($('<div/>').append(action_config).html().replace(/{N}/ig, action_count));
+				action_config = $($('<div/>').append(action_config).html().replace(/_XNX_/ig, action_count));
 				form_action.find('.panel-body').append(action_config);
 
 				//form_action.append('<div class="clear">&nbsp;</div>');
 				$(this).append(form_action);
-				//$(this).append($('<div/>').append(form_action).html().replace(/{N}/ig, action_count));
+				//$(this).append($('<div/>').append(form_action).html().replace(/_XNX_/ig, action_count));
 				action_count = action_count + 1;
 
 				ChronoformWizard.initialize_actions_droppables(ChronoformWizard.actions_drop_settings);
@@ -1314,7 +1314,7 @@ jQuery(window).scroll(function(){
 															$config_templates = array();
 															if(!empty($this->data['Form']['extras']['fields'])){
 																foreach($this->data['Form']['extras']['fields'] as $f_k => $f_info){
-																	if(strpos($f_k, '{N}') !== false){
+																	if(strpos($f_k, '_XNX_') !== false){
 																		unset($this->data['Form']['extras']['fields'][$f_k]);
 																	}
 																}
@@ -1437,7 +1437,7 @@ jQuery(window).scroll(function(){
 																			echo '<div class="field_config_replacer" field_id="'.$k.'"></div>';
 																		}
 																		$element_config = ob_get_clean();
-																		echo str_replace('{N}', $k, $element_config);
+																		echo str_replace('_XNX_', $k, $element_config);
 																		echo '</div>';
 																	}
 																}
@@ -1503,7 +1503,7 @@ jQuery(window).scroll(function(){
 														<?php
 															if(!empty($this->data['Form']['extras']['jsevents'])){
 																foreach($this->data['Form']['extras']['jsevents'] as $f_k => $f_info){
-																	if(strpos($f_k, '{N}') !== false){
+																	if(strpos($f_k, '_XNX_') !== false){
 																		unset($this->data['Form']['extras']['jsevents'][$f_k]);
 																	}
 																}
@@ -1533,7 +1533,7 @@ jQuery(window).scroll(function(){
 																	ob_start();
 																	$class::config($wizard_jsevent, $k);
 																	$element_config = ob_get_clean();
-																	echo str_replace('{N}', $k, $element_config);
+																	echo str_replace('_XNX_', $k, $element_config);
 																	echo '</div>';
 																	echo '</div>';
 																}
@@ -1592,9 +1592,9 @@ jQuery(window).scroll(function(){
 														$action_class::config();
 														$action_config = ob_get_clean();
 														if(isset($action_class->defaults)){
-															$action_config = \GCore\Helpers\DataLoader::load($action_config, array('Form' => array('extras' => array('actions_config' => array('{N}' => $action_class->defaults)))));
+															$action_config = \GCore\Helpers\DataLoader::load($action_config, array('Form' => array('extras' => array('actions_config' => array('_XNX_' => $action_class->defaults)))));
 														}
-														$action_config = str_replace('{N}', str_replace('_', '', $easy_action_id), $action_config);
+														$action_config = str_replace('_XNX_', str_replace('_', '', $easy_action_id), $action_config);
 														if(property_exists($action_class, 'setup')):
 														?>
 														<div id="<?php echo $easy_action_name.$easy_action_id; ?>" class="tab-pane <?php echo (empty($counter)) ? 'active' : ''; ?>">
@@ -1677,7 +1677,7 @@ jQuery(window).scroll(function(){
 																				$e_cl = array('bad_event', 'danger');
 																			}
 																		?>
-																		<div class="form_event <?php echo $e_cl[0]; ?> alert alert-<?php echo $e_cl[1]; ?> hidden_event" title="<?php echo $event; ?>" id="cfactionevent_<?php echo $action; ?>_{N}_<?php echo $event; ?>">
+																		<div class="form_event <?php echo $e_cl[0]; ?> alert alert-<?php echo $e_cl[1]; ?> hidden_event" title="<?php echo $event; ?>" id="cfactionevent_<?php echo $action; ?>__XNX__<?php echo $event; ?>">
 																			<label class="form_event_label label label-<?php echo $e_cl[1]; ?>">On <?php echo \GCore\Libs\Str::camilize($event); ?></label>
 																			<input type="hidden" value="" class="events_dna" alt="ghost" name="">
 																		</div>
@@ -1688,7 +1688,7 @@ jQuery(window).scroll(function(){
 																	$action_class::config();
 																	$default_action_contents = ob_get_clean();
 																	if(isset($action_class->defaults)){
-																		echo \GCore\Helpers\DataLoader::load($default_action_contents, array('Form' => array('extras' => array('actions_config' => array('{N}' => $action_class->defaults)))));
+																		echo \GCore\Helpers\DataLoader::load($default_action_contents, array('Form' => array('extras' => array('actions_config' => array('_XNX_' => $action_class->defaults)))));
 																	}else{
 																		echo $default_action_contents;
 																	}
@@ -1880,13 +1880,13 @@ jQuery(window).scroll(function(){
 <div id="locale_generic_config" class="generic_config" title="Generic" style="display:none;">
 	<?php echo $this->Html->formStart(); ?>
 	<?php echo $this->Html->formSecStart(); ?>
-	<?php echo $this->Html->formLine('Form[extras][locales][{N}][lang_tag]', array('type' => 'text', 'label' => l_('CF_LANG_TAG'), 'sublabel' => l_('CF_LANG_TAG_DESC'))); ?>
-	<?php echo $this->Html->formLine('Form[extras][locales][{N}][strict]', array('type' => 'dropdown', 'label' => l_('CF_LANG_STRICT'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_LANG_STRICT_DESC'))); ?>
-	<?php echo $this->Html->formLine('Form[extras][locales][{N}][strings]', array('type' => 'textarea', 'style' => 'width:auto;', 'rows' => 10, 'cols' => 80, 'label' => l_('CF_LANG_STRINGS'), 'sublabel' => l_('CF_LANG_STRINGS_DESC'))); ?>
+	<?php echo $this->Html->formLine('Form[extras][locales][_XNX_][lang_tag]', array('type' => 'text', 'label' => l_('CF_LANG_TAG'), 'sublabel' => l_('CF_LANG_TAG_DESC'))); ?>
+	<?php echo $this->Html->formLine('Form[extras][locales][_XNX_][strict]', array('type' => 'dropdown', 'label' => l_('CF_LANG_STRICT'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_LANG_STRICT_DESC'))); ?>
+	<?php echo $this->Html->formLine('Form[extras][locales][_XNX_][strings]', array('type' => 'textarea', 'style' => 'width:auto;', 'rows' => 10, 'cols' => 80, 'label' => l_('CF_LANG_STRINGS'), 'sublabel' => l_('CF_LANG_STRINGS_DESC'))); ?>
 
 	<?php echo $this->Html->formSecEnd(); ?>
 	<?php echo $this->Html->formEnd(); ?>
-	<a class="remove_locale_button btn btn-danger" onclick="remove_locale('{N}');" href="#">
+	<a class="remove_locale_button btn btn-danger" onclick="remove_locale('_XNX_');" href="#">
 		<?php echo l_('REMOVE_LOCALE'); ?>
 	</a>
 </div>

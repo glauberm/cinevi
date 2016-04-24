@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 $form = $this->form;
 if ($this->hasActions) : ?>
 <div class="fabrikActions form-actions">
-	<div class="row-fluid">
+	<div class="row">
 		<?php if ( $form->submitButton || $form->applyButton || $form->copyButton ): ?>
 			<div class="span4">
 				<div class="btn-group">

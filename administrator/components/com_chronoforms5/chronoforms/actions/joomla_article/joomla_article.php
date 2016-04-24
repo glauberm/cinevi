@@ -57,16 +57,16 @@ Class JoomlaArticle extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config joomla_article_action_config', 'joomla_article_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config joomla_article_action_config', 'joomla_article_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][title]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_TITLE'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_TITLE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][fulltext]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_FULLTEXT'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_FULLTEXT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][introtext]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_INTROTEXT'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_INTROTEXT_DESC')));
-		//echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][created_by_alias]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_CREATEDBY_ALIAS'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_CREATEDBY_ALIAS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][state]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_ARTICLE_STATE'), 'values' => 0, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_ARTICLE_STATE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][catid]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_CATID'), 'value' => 0, 'sublabel' => l_('CF_JOOMLA_ARTICLE_CATID_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][access]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_ACCESS'), 'value' => 1, 'sublabel' => l_('CF_JOOMLA_ARTICLE_ACCESS_DESC')));
-		//echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][sectionid]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_SECTIONID'), 'value' => 0, 'sublabel' => l_('CF_JOOMLA_ARTICLE_SECTIONID_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][title]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_TITLE'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_TITLE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][fulltext]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_FULLTEXT'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_FULLTEXT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][introtext]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_INTROTEXT'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_INTROTEXT_DESC')));
+		//echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][created_by_alias]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_CREATEDBY_ALIAS'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_ARTICLE_CREATEDBY_ALIAS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][state]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_ARTICLE_STATE'), 'values' => 0, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_ARTICLE_STATE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][catid]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_CATID'), 'value' => 0, 'sublabel' => l_('CF_JOOMLA_ARTICLE_CATID_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][access]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_ACCESS'), 'value' => 1, 'sublabel' => l_('CF_JOOMLA_ARTICLE_ACCESS_DESC')));
+		//echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][sectionid]', array('type' => 'text', 'label' => l_('CF_JOOMLA_ARTICLE_SECTIONID'), 'value' => 0, 'sublabel' => l_('CF_JOOMLA_ARTICLE_SECTIONID_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

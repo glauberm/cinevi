@@ -80,19 +80,19 @@ Class Autocompleter extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config autocompleter_action_config', 'autocompleter_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config autocompleter_action_config', 'autocompleter_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][field_selector]', array('type' => 'text', 'label' => l_('CF_AC_FIELD_SELECTOR'), 'class' => 'L', 'sublabel' => l_('CF_AC_FIELD_SELECTOR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][field_name]', array('type' => 'text', 'label' => l_('CF_AC_FIELD_NAME'), 'class' => 'M', 'sublabel' => l_('CF_AC_FIELD_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][results_url]', array('type' => 'text', 'label' => l_('CF_AC_RESULTS_URL'), 'class' => 'XXL', 'sublabel' => l_('CF_AC_RESULTS_URL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][results_event]', array('type' => 'text', 'label' => l_('CF_AC_RESULTS_EVENT'), 'class' => 'L', 'sublabel' => l_('CF_AC_RESULTS_EVENT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][length]', array('type' => 'text', 'label' => l_('CF_AC_LENGTH'), 'value' => '2', 'sublabel' => l_('CF_AC_LENGTH_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][multiple]', array('type' => 'dropdown', 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'label' => l_('CF_AC_MULTIPLE'), 'sublabel' => l_('CF_AC_MULTIPLE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][field_selector]', array('type' => 'text', 'label' => l_('CF_AC_FIELD_SELECTOR'), 'class' => 'L', 'sublabel' => l_('CF_AC_FIELD_SELECTOR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][field_name]', array('type' => 'text', 'label' => l_('CF_AC_FIELD_NAME'), 'class' => 'M', 'sublabel' => l_('CF_AC_FIELD_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][results_url]', array('type' => 'text', 'label' => l_('CF_AC_RESULTS_URL'), 'class' => 'XXL', 'sublabel' => l_('CF_AC_RESULTS_URL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][results_event]', array('type' => 'text', 'label' => l_('CF_AC_RESULTS_EVENT'), 'class' => 'L', 'sublabel' => l_('CF_AC_RESULTS_EVENT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][length]', array('type' => 'text', 'label' => l_('CF_AC_LENGTH'), 'value' => '2', 'sublabel' => l_('CF_AC_LENGTH_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][multiple]', array('type' => 'dropdown', 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'label' => l_('CF_AC_MULTIPLE'), 'sublabel' => l_('CF_AC_MULTIPLE_DESC')));
 		
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][no_matches_msg]', array('type' => 'text', 'label' => l_('CF_AC_NOMATCHES_MSG'), 'class' => 'L', 'sublabel' => l_('CF_AC_NOMATCHES_MSG_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][searching_msg]', array('type' => 'text', 'label' => l_('CF_AC_SEARCHING_MSG'), 'class' => 'L', 'sublabel' => l_('CF_AC_SEARCHING_MSG_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ajax_error_msg]', array('type' => 'text', 'label' => l_('CF_AC_AJAX_ERROR_MSG'), 'class' => 'L', 'sublabel' => l_('CF_AC_AJAX_ERROR_MSG_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][no_matches_msg]', array('type' => 'text', 'label' => l_('CF_AC_NOMATCHES_MSG'), 'class' => 'L', 'sublabel' => l_('CF_AC_NOMATCHES_MSG_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][searching_msg]', array('type' => 'text', 'label' => l_('CF_AC_SEARCHING_MSG'), 'class' => 'L', 'sublabel' => l_('CF_AC_SEARCHING_MSG_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ajax_error_msg]', array('type' => 'text', 'label' => l_('CF_AC_AJAX_ERROR_MSG'), 'class' => 'L', 'sublabel' => l_('CF_AC_AJAX_ERROR_MSG_DESC')));
 		
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

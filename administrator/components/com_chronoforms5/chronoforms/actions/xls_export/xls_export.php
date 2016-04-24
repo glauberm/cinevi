@@ -118,18 +118,18 @@ Class XlsExport extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config csv_export_action_config', 'csv_export_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config csv_export_action_config', 'csv_export_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][data_path]', array('type' => 'text', 'class' => 'M', 'label' => l_('CF_XLS_DATA_PATH'), 'sublabel' => l_('CF_XLS_DATA_PATH_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][list_fields]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_LIST_FIELDS'), 'sublabel' => l_('CF_XLS_LIST_FIELDS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][list_headers]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_LIST_HEADERS'), 'sublabel' => l_('CF_XLS_LIST_HEADERS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][file_name]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_FILE_NAME'), 'sublabel' => l_('CF_XLS_FILE_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][post_file_name]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_POST_FILE_NAME'), 'sublabel' => l_('CF_XLS_POST_FILE_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][before_headers]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_BEFORE_HEADERS'), 'sublabel' => l_('CF_XLS_BEFORE_HEADERS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][save_file]', array('type' => 'dropdown', 'label' => l_('CF_XLS_SAVE_FILE'), 'sublabel' => l_('CF_XLS_SAVE_FILE_DESC'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][save_path]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_SAVE_PATH'), 'sublabel' => l_('CF_XLS_SAVE_PATH_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][add_bom]', array('type' => 'dropdown', 'label' => l_('CF_XLS_ADD_BOM'), 'sublabel' => l_('CF_XLS_ADD_BOM_DESC'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][data_path]', array('type' => 'text', 'class' => 'M', 'label' => l_('CF_XLS_DATA_PATH'), 'sublabel' => l_('CF_XLS_DATA_PATH_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][list_fields]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_LIST_FIELDS'), 'sublabel' => l_('CF_XLS_LIST_FIELDS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][list_headers]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_LIST_HEADERS'), 'sublabel' => l_('CF_XLS_LIST_HEADERS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][file_name]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_FILE_NAME'), 'sublabel' => l_('CF_XLS_FILE_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][post_file_name]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_POST_FILE_NAME'), 'sublabel' => l_('CF_XLS_POST_FILE_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][before_headers]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_BEFORE_HEADERS'), 'sublabel' => l_('CF_XLS_BEFORE_HEADERS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][save_file]', array('type' => 'dropdown', 'label' => l_('CF_XLS_SAVE_FILE'), 'sublabel' => l_('CF_XLS_SAVE_FILE_DESC'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][save_path]', array('type' => 'text', 'class' => 'XL', 'label' => l_('CF_XLS_SAVE_PATH'), 'sublabel' => l_('CF_XLS_SAVE_PATH_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][add_bom]', array('type' => 'dropdown', 'label' => l_('CF_XLS_ADD_BOM'), 'sublabel' => l_('CF_XLS_ADD_BOM_DESC'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

@@ -22,7 +22,7 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 		if (!array_key_exists($template_name, $templates))
 		{
 
-			$db->setQuery("SELECT * FROM #__jev_defaults WHERE state=1 AND name= " . $db->Quote($template_name) . " AND " . 'language in (' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ')');
+			$db->setQuery("SELECT * FROM #__jev_defaults WHERE state=1 AND name= " . $db->Quote($template_name) . " AND value<>'' AND " . 'language in (' . $db->quote(JFactory::getLanguage()->getTag()) . ',' . $db->quote('*') . ')');
 			$rawtemplates = $db->loadObjectList();
 			$templates[$template_name] = array();
 			if ($rawtemplates){
@@ -55,7 +55,9 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 				if (JFile::exists($templatefile))
 				{
 					$loadedFromFile = true;
-					$templates[$template_name]['*'] = array();
+                                        if (!isset($templates[$template_name]['*'])){
+                                            $templates[$template_name]['*'] = array();
+                                        }
 					$templates[$template_name]['*'][0] =new stdClass();
 					$templates[$template_name]['*'][0]->value = file_get_contents($templatefile);
 					$templates[$template_name]['*'][0]->params = null;
@@ -377,7 +379,7 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 					{
 						$db = JFactory::getDBO();
 						$arr_catids = array();
-						$catsql = "SELECT cat.id, cat.title as name FROM #__categories  as cat WHERE cat.extension='com_jevents' ";
+						$catsql = "SELECT cat.id, cat.title as name, cat.params FROM #__categories  as cat WHERE cat.extension='com_jevents' ";
 						$db->setQuery($catsql);
 						$allcat_catids = $db->loadObjectList('id');
 					}
@@ -411,6 +413,29 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 					$blank[] = "";
 					break;
 
+				case "{{RGBA}}":
+					$bgcolor = $event->bgcolor();
+					$search[] = $strippedmatch;
+					$bgcolor = $bgcolor == "" ? "#ffffff" : $bgcolor;
+                                        // skip the #
+                                        if (strlen($bgcolor) == 7){
+                                            $bgcolor = substr($bgcolor, 1);
+                                        }
+                                        if (strlen($bgcolor) == 6)
+                                            list($r, $g, $b) = array($bgcolor[0].$bgcolor[1],
+                                                                     $bgcolor[2].$bgcolor[3],
+                                                                     $bgcolor[4].$bgcolor[5]);
+                                        elseif (strlen($bgcolor) == 3)
+                                            list($r, $g, $b) = array($bgcolor[0].$bgcolor[0], $bgcolor[1].$bgcolor[1], $bgcolor[2].$bgcolor[2]);
+                                        else
+                                            return false;
+
+                                        $r = hexdec($r); $g = hexdec($g); $b = hexdec($b);
+                                        $replace[] = "rgba($r, $g, $b, 0.3)";
+                                        
+					$blank[] = "";
+					break;
+                                    
 				case "{{FGCOLOUR}}":
 					$search[] = "{{FGCOLOUR}}";
 					$replace[] = $event->fgcolor();
@@ -516,23 +541,28 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 					{
 						$db = JFactory::getDBO();
 						$arr_catids = array();
-						$catsql = "SELECT cat.id, cat.title as name FROM #__categories  as cat WHERE cat.extension='com_jevents' ";
+						$catsql = "SELECT cat.id, cat.title as name, cat.params FROM #__categories  as cat WHERE cat.extension='com_jevents' ";
 						$db->setQuery($catsql);
 						$allcat_catids = $db->loadObjectList('id');
 					}
-					$db = JFactory::getDbo();
-					$db->setQuery("Select params from #__jevents_catmap  WHERE evid = " . $event->ev_id());
-					$data = $db->loadColumn();
-                                        $output = "";
 
-                                        if (is_array($data)) {
-                                                foreach ($data as $cat){
-                                                        $params = json_decode($cat->params);
-                                                        if (isset($params->image) && $params->image!=""){ 
-                                                                $output .= "<img src = '".JURI::root().$params->image."' class='catimage'  alt='categoryimage' />";
-                                                        }							
-                                                }
-                                        }
+					$db = JFactory::getDbo();
+					$db->setQuery("Select catid from #__jevents_catmap  WHERE evid = " . $event->ev_id());
+					$allcat_eventcats = $db->loadColumn();
+
+					$output = "";
+					if (is_array($allcat_eventcats)) {
+						foreach ($allcat_eventcats as $catid)
+						{
+							if (isset($allcat_catids[$catid]))
+							{
+								$params = json_decode($allcat_catids[$catid]->params);
+								if (isset($params->image) && $params->image!=""){
+									$output .= "<img src = '".JURI::root().$params->image."' class='catimage'  alt='categoryimage' />";
+								}
+							}
+						}
+					}
                                         
 					$replace[] = $output;
 					$blank[] = "";
@@ -1298,29 +1328,51 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 					{
 						foreach ($fieldNameArray[$classname][$layout]["values"] as $fieldname)
 						{
-							if (!JString::strpos($template_value, $fieldname) !== false)
-							{
-								continue;
-							}
-							$search[] = "{{" . $fieldname . "}}";
-							// is the event detail hidden - if so then hide any custom fields too!
-							if (!isset($event->_privateevent) || $event->_privateevent != 3)
-							{
-								$replace[] = call_user_func(array($classname, "substitutefield"), $event, $fieldname);
-								if (is_callable(array($classname, "blankfield")))
-								{
-									$blank[] = call_user_func(array($classname, "blankfield"), $event, $fieldname);
-								}
-								else
-								{
-									$blank[] = "";
-								}
-							}
-							else
-							{
-								$blank[] = "";
-								$replace[] = "";
-							}
+                                                        $fieldnames = array();
+                                                        // Special case where $fielename has option value in it e.g. sizedimages 
+                                                        if (strpos($fieldname, ";")>0){
+                                                            $temp = explode(";", $fieldname);
+                                                            $fn = $temp[0];
+                                                            // What is the list of them 
+                                                            $temp = array();
+                                                            preg_match_all('@\{{'.$fn.';(.*?)[#|}}]@', $template_value, $temp);
+                                                            if (count($temp)==2 && count($temp[1])){
+                                                                $fieldnames = array();
+                                                                foreach ($temp[1] as $tmp){
+                                                                    $fieldnames[] = $fn.";".$tmp;
+                                                                }
+                                                            }
+                                                        }
+                                                        else {
+                                                            $fieldnames = array($fieldname);
+                                                        }
+
+                                                        foreach ($fieldnames as $fn){
+                                                            if (!JString::strpos($template_value, $fn) !== false)
+                                                            {
+                                                                    continue;
+                                                            }
+                                                            
+                                                            $search[] = "{{" . $fn . "}}";
+                                                            // is the event detail hidden - if so then hide any custom fields too!
+                                                            if (!isset($event->_privateevent) || $event->_privateevent != 3)
+                                                            {
+                                                                    $replace[] = call_user_func(array($classname, "substitutefield"), $event, $fn);
+                                                                    if (is_callable(array($classname, "blankfield")))
+                                                                    {
+                                                                            $blank[] = call_user_func(array($classname, "blankfield"), $event, $fn);
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                            $blank[] = "";
+                                                                    }
+                                                            }
+                                                            else
+                                                            {
+                                                                    $blank[] = "";
+                                                                    $replace[] = "";
+                                                            }
+                                                        }
 						}
 					}
 				}
@@ -1430,7 +1482,7 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 		if ($template_name!="month.calendar_cell" && $template_name!="month.calendar_tip"){
 			$template_value = str_replace(array("[[","]]"), array("{","}"), $template_value);
 		}
-		
+
 		//We add new line characters again to avoid being marked as SPAM when using tempalte in emails
 		// do this before calling content plugins in case these add javascript etc. to layout
 		$template_value = preg_replace("@(<\s*(br)*\s*\/\s*(p|td|tr|table|div|ul|li|ol|dd|dl|dt)*\s*>)+?@i","$1\n",$template_value);
@@ -1561,7 +1613,7 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 			else if (count($parts) == 3)
 			{
 				$fmt = $parts[1];
-				
+
 				// Must get this each time otherwise modules can't set their own timezone
 				$compparams = JComponentHelper::getParams(JEV_COM_COMPONENT);
 				$jtz = $compparams->get("icaltimezonelive", "");
@@ -1571,7 +1623,7 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 				}
 				else
 				{
-					$jtz = new DateTimeZone(@date_default_timezone_get());					
+					$jtz = new DateTimeZone(@date_default_timezone_get());
 				}
 				$outputtz = str_replace(array("}}","}"),"",$parts[2]);
 
@@ -1607,7 +1659,7 @@ function DefaultLoadedFromTemplate($view, $template_name, $event, $mask, $templa
 				$offset1 = $indate->getOffset();
 
 				// set the new timezone
-				$indate->setTimezone($outputtz);				
+				$indate->setTimezone($outputtz);
 				$offset2 = $indate->getOffset();;
 
 				$indate = $indate->getTimestamp()+$offset2-$offset1;

@@ -3,13 +3,11 @@
  * @package     Joomla.Site
  * @subpackage  mod_articles_news
  *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
-
-$images = json_decode($item->images);
 
 $item_heading = $params->get('item_heading', 'h4');
 ?>
@@ -24,8 +22,6 @@ $item_heading = $params->get('item_heading', 'h4');
 		<?php echo $item->title; ?>
 	<?php endif; ?>
 	</<?php echo $item_heading; ?>>
-	
-	<a href="<?php echo $item->link; ?>" alt="<?php echo $item->title; ?>"><img class="img-responsive" src="<?php echo htmlspecialchars($images->image_intro); ?>" alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>"/></a>
 
 <?php endif; ?>
 
@@ -38,7 +34,5 @@ $item_heading = $params->get('item_heading', 'h4');
 <?php echo $item->introtext; ?>
 
 <?php if (isset($item->link) && $item->readmore != 0 && $params->get('readmore')) : ?>
-	<?php echo '<a class="btn btn-xs btn-primary readmore" href="' . $item->link . '">Saiba Mais</a>'; ?>
+	<?php echo '<a class="readmore" href="' . $item->link . '">' . $item->linkText . '</a>'; ?>
 <?php endif; ?>
-
-<hr>

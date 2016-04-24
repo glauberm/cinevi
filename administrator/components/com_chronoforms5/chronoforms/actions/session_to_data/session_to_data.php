@@ -45,11 +45,11 @@ Class SessionToData extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config session_to_data_action_config', 'session_to_data_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config session_to_data_action_config', 'session_to_data_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][clear]', array('type' => 'dropdown', 'label' => l_('CF_SESSION_CLEAR'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SESSION_CLEAR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][key]', array('type' => 'text', 'label' => l_('CF_SESSION_KEY'), 'sublabel' => l_('CF_SESSION_KEY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][overwrite_old_data]', array('type' => 'dropdown', 'label' => l_('CF_SESSION_DATA_OVERWRITE_OLD_DATA'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SESSION_DATA_OVERWRITE_OLD_DATA_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][clear]', array('type' => 'dropdown', 'label' => l_('CF_SESSION_CLEAR'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SESSION_CLEAR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][key]', array('type' => 'text', 'label' => l_('CF_SESSION_KEY'), 'sublabel' => l_('CF_SESSION_KEY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][overwrite_old_data]', array('type' => 'dropdown', 'label' => l_('CF_SESSION_DATA_OVERWRITE_OLD_DATA'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_SESSION_DATA_OVERWRITE_OLD_DATA_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

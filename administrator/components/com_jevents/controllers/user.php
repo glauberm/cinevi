@@ -25,12 +25,14 @@ class AdminUserController extends JControllerLegacy   {
 	function __construct( ){
 		parent::__construct();
 		$this->registerDefaultTask( 'showUser' );
+		$jinput = JFactory::getApplication()->input;
 
-		$this->task =  JRequest::getVar( 'task', '' );
-		$this->cid =  JRequest::getVar( 'cid', array(0) );
+		$this->task =  $jinput->get('task', '', "cmd");
+		$this->cid =  $jinput->get('cid', array(0), "array");
 		if (!is_array( $this->cid )) {
 			$this->cid = array(0);
 		}
+                JArrayHelper::toInteger($this->cid);
 
 		$this->registerTask( 'overview', 'showUsers' );
 		$this->registerTask( 'list', 'showUsers' );

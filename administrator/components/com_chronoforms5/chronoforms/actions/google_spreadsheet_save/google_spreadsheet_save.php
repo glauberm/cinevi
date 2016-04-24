@@ -44,14 +44,14 @@ Class GoogleSpreadsheetSave extends \GCore\Admin\Extensions\Chronoforms\Action{
 		array_unshift($tables, '');
 		$tables = array_combine($tables, $tables);
 
-		echo \GCore\Helpers\Html::formStart('action_config google_spreadsheet_save_action_config', 'google_spreadsheet_save_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config google_spreadsheet_save_action_config', 'google_spreadsheet_save_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][username]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_USERNAME'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_USERNAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][password]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_PASSWORD'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_PASSWORD_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][spreadsheet]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_SPREADSHEET'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_SPREADSHEET_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][worksheet]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_WORKSHEET'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_WORKSHEET_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][data_path]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_DATA_PATH'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_DATA_PATH_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][username]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_USERNAME'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_USERNAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][password]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_PASSWORD'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_PASSWORD_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][spreadsheet]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_SPREADSHEET'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_SPREADSHEET_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][worksheet]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_WORKSHEET'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_WORKSHEET_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][data_path]', array('type' => 'text', 'label' => l_('CF_GSPREADSHEET_SAVE_DATA_PATH'), 'class' => 'L', 'sublabel' => l_('CF_GSPREADSHEET_SAVE_DATA_PATH_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

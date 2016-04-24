@@ -57,7 +57,7 @@ class Multi {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 	
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo '<div class="original_element_config">';//\GCore\Helpers\Html::formSecStart('original_element_config', 'multi_origin_config');
 		$sub_fields_count = $k;
 		$fields = !empty($data['inputs']) ? $data['inputs'] : array();
@@ -68,7 +68,7 @@ class Multi {
 			ob_start();
 			$class::config($field, $sub_fields_count);
 			$con = ob_get_clean();
-			$con = str_replace('{N}', $sub_fields_count, $con);
+			$con = str_replace('_XNX_', $sub_fields_count, $con);
 			$con = str_replace('Form[extras][fields]['.$sub_fields_count.']', 'Form[extras][fields]['.$k.'][inputs]['.$sub_id.']', $con);
 			$con = str_replace('-'.$sub_fields_count, '-'.$k.'-'.$i, $con);//fix for tabs
 			$con = str_replace('original_element_config', '', $con);

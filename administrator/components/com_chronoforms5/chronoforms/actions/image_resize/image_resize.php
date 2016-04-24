@@ -291,69 +291,69 @@ Class ImageResize extends \GCore\Admin\Extensions\Chronoforms\Action{
     }
 	
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config image_resize_action_config', 'image_resize_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config image_resize_action_config', 'image_resize_action_config__XNX_');
 		?>
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#general-{N}" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_GENERAL'); ?></a></li>
-			<li><a href="#big-img-{N}" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_BIG_IMG'); ?></a></li>
-			<li><a href="#med-img-{N}" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_MED_IMG'); ?></a></li>
-			<li><a href="#small-img-{N}" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_SMALL_IMG'); ?></a></li>
+			<li class="active"><a href="#general-_XNX_" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_GENERAL'); ?></a></li>
+			<li><a href="#big-img-_XNX_" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_BIG_IMG'); ?></a></li>
+			<li><a href="#med-img-_XNX_" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_MED_IMG'); ?></a></li>
+			<li><a href="#small-img-_XNX_" data-g-toggle="tab"><?php echo l_('CF_IMG_RES_SMALL_IMG'); ?></a></li>
 		</ul>
 		<div class="tab-content">
-			<div id="general-{N}" class="tab-pane active">
+			<div id="general-_XNX_" class="tab-pane active">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][photo]', array('type' => 'text', 'label' => l_('CF_IMG_RES_PHOTO'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_PHOTO_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][delete_original]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_DELETE_ORIG'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_DELETE_ORIG_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][quality]', array('type' => 'text', 'label' => l_('CF_IMG_RES_QUALITY'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_QUALITY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][photo]', array('type' => 'text', 'label' => l_('CF_IMG_RES_PHOTO'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_PHOTO_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][delete_original]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_DELETE_ORIG'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_DELETE_ORIG_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][quality]', array('type' => 'text', 'label' => l_('CF_IMG_RES_QUALITY'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_QUALITY_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="big-img-{N}" class="tab-pane">
+			<div id="big-img-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_directory]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_DIR'), 'class' => 'L', 'sublabel' => l_('CF_IMG_RES_IMG_DIR_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_use]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMAGE_USE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_IMAGE_USE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_prefix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_PREFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_PREFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_suffix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_SUFFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_SUFFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_height]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_HEIGHT'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_HEIGHT_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_width]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_WIDTH'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_WIDTH_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_r]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_R'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_R_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_g]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_G'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_G_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_b]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_B'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_B_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][big_image_method]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMG_METHOD'), 'options' => array(0 => l_('CF_IMG_RES_RESIZE'), 1 => l_('CF_IMG_RES_RESIZE_CROP')), 'sublabel' => l_('CF_IMG_RES_IMG_METHOD_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_directory]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_DIR'), 'class' => 'L', 'sublabel' => l_('CF_IMG_RES_IMG_DIR_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_use]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMAGE_USE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_IMAGE_USE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_prefix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_PREFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_PREFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_suffix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_SUFFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_SUFFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_height]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_HEIGHT'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_HEIGHT_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_width]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_WIDTH'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_WIDTH_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_r]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_R'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_R_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_g]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_G'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_G_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_b]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_B'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_B_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][big_image_method]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMG_METHOD'), 'options' => array(0 => l_('CF_IMG_RES_RESIZE'), 1 => l_('CF_IMG_RES_RESIZE_CROP')), 'sublabel' => l_('CF_IMG_RES_IMG_METHOD_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="med-img-{N}" class="tab-pane">
+			<div id="med-img-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_directory]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_DIR'), 'class' => 'L', 'sublabel' => l_('CF_IMG_RES_IMG_DIR_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_use]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMAGE_USE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_IMAGE_USE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_prefix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_PREFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_PREFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_suffix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_SUFFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_SUFFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_height]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_HEIGHT'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_HEIGHT_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_width]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_WIDTH'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_WIDTH_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_r]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_R'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_R_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_g]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_G'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_G_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_b]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_B'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_B_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][med_image_method]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMG_METHOD'), 'options' => array(0 => l_('CF_IMG_RES_RESIZE'), 1 => l_('CF_IMG_RES_RESIZE_CROP')), 'sublabel' => l_('CF_IMG_RES_IMG_METHOD_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_directory]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_DIR'), 'class' => 'L', 'sublabel' => l_('CF_IMG_RES_IMG_DIR_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_use]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMAGE_USE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_IMAGE_USE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_prefix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_PREFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_PREFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_suffix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_SUFFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_SUFFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_height]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_HEIGHT'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_HEIGHT_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_width]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_WIDTH'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_WIDTH_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_r]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_R'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_R_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_g]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_G'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_G_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_b]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_B'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_B_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][med_image_method]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMG_METHOD'), 'options' => array(0 => l_('CF_IMG_RES_RESIZE'), 1 => l_('CF_IMG_RES_RESIZE_CROP')), 'sublabel' => l_('CF_IMG_RES_IMG_METHOD_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="small-img-{N}" class="tab-pane">
+			<div id="small-img-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_directory]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_DIR'), 'class' => 'L', 'sublabel' => l_('CF_IMG_RES_IMG_DIR_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_use]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMAGE_USE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_IMAGE_USE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_prefix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_PREFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_PREFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_suffix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_SUFFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_SUFFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_height]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_HEIGHT'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_HEIGHT_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_width]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_WIDTH'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_WIDTH_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_r]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_R'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_R_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_g]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_G'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_G_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_b]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_B'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_B_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][small_image_method]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMG_METHOD'), 'options' => array(0 => l_('CF_IMG_RES_RESIZE'), 1 => l_('CF_IMG_RES_RESIZE_CROP')), 'sublabel' => l_('CF_IMG_RES_IMG_METHOD_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_directory]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_DIR'), 'class' => 'L', 'sublabel' => l_('CF_IMG_RES_IMG_DIR_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_use]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMAGE_USE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_IMG_RES_IMAGE_USE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_prefix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_PREFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_PREFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_suffix]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_SUFFIX'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_SUFFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_height]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_HEIGHT'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_HEIGHT_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_width]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_WIDTH'), 'class' => 'M', 'sublabel' => l_('CF_IMG_RES_IMG_WIDTH_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_r]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_R'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_R_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_g]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_G'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_G_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_b]', array('type' => 'text', 'label' => l_('CF_IMG_RES_IMG_B'), 'class' => 'SS', 'sublabel' => l_('CF_IMG_RES_IMG_B_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][small_image_method]', array('type' => 'dropdown', 'label' => l_('CF_IMG_RES_IMG_METHOD'), 'options' => array(0 => l_('CF_IMG_RES_RESIZE'), 1 => l_('CF_IMG_RES_RESIZE_CROP')), 'sublabel' => l_('CF_IMG_RES_IMG_METHOD_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>

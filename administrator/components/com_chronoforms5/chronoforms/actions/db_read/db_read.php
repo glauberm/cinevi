@@ -18,7 +18,7 @@ Class DbRead extends \GCore\Admin\Extensions\Chronoforms\Action{
 	var $defaults = array(
 		'tablename' => '',
 		'enabled' => 1,
-		'model_id' => 'Data{N}',
+		'model_id' => 'Data_XNX_',
 		'load_under_modelid' => 1,
 		'multi_read' => 0,
 		'ndb_enable' => 0,
@@ -168,7 +168,7 @@ Class DbRead extends \GCore\Admin\Extensions\Chronoforms\Action{
 			$ndb_tables = array($data['ndb_table_name'] => $data['ndb_table_name']);
 		}
 
-		echo \GCore\Helpers\Html::formStart('action_config db_read_action_config', 'db_read_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config db_read_action_config', 'db_read_action_config__XNX_');
 		?>
 		<script>
 			function db_read_ndb_load_tables(elem, SID){
@@ -210,66 +210,66 @@ Class DbRead extends \GCore\Admin\Extensions\Chronoforms\Action{
 			}
 		</script>
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#basic-{N}" data-g-toggle="tab"><?php echo l_('CF_BASIC'); ?></a></li>
-			<li><a href="#relations-{N}" data-g-toggle="tab"><?php echo l_('CF_RELATIONS'); ?></a></li>
-			<li><a href="#external-{N}" data-g-toggle="tab"><?php echo l_('CF_EXTERNAL_DB'); ?></a></li>
+			<li class="active"><a href="#basic-_XNX_" data-g-toggle="tab"><?php echo l_('CF_BASIC'); ?></a></li>
+			<li><a href="#relations-_XNX_" data-g-toggle="tab"><?php echo l_('CF_RELATIONS'); ?></a></li>
+			<li><a href="#external-_XNX_" data-g-toggle="tab"><?php echo l_('CF_EXTERNAL_DB'); ?></a></li>
 		</ul>
 		<div class="tab-content">
-			<div id="basic-{N}" class="tab-pane active">
+			<div id="basic-_XNX_" class="tab-pane active">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][action_label]', array('type' => 'text', 'label' => l_('CF_ACTION_LABEL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_LABEL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][tablename]', array('type' => 'dropdown', 'label' => l_('CF_TABLENAME'), 'options' => $tables, 'sublabel' => l_('CF_DB_READ_TABLENAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][multi_read]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_MULTI'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_READ_MULTI_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][load_under_modelid]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_UNDER_MODELID'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_READ_UNDER_MODELID_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][model_id]', array('type' => 'text', 'label' => l_('CF_MODEL_ID'), 'sublabel' => l_('CF_DB_READ_MODEL_ID_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][fields]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_DB_READ_FIELDS'), 'sublabel' => l_('CF_DB_READ_FIELDS_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][order]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_DB_READ_ORDER'), 'sublabel' => l_('CF_DB_READ_ORDER_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][group]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_DB_READ_GROUP'), 'sublabel' => l_('CF_DB_READ_GROUP_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][conditions]', array('type' => 'textarea', 'rows' => 8, 'cols' => 70, 'label' => l_('CF_DB_READ_CONDITIONS'), 'sublabel' => l_('CF_DB_READ_CONDITIONS_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][action_label]', array('type' => 'text', 'label' => l_('CF_ACTION_LABEL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_LABEL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][tablename]', array('type' => 'dropdown', 'label' => l_('CF_TABLENAME'), 'options' => $tables, 'sublabel' => l_('CF_DB_READ_TABLENAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][multi_read]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_MULTI'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_READ_MULTI_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][load_under_modelid]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_UNDER_MODELID'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_READ_UNDER_MODELID_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][model_id]', array('type' => 'text', 'label' => l_('CF_MODEL_ID'), 'sublabel' => l_('CF_DB_READ_MODEL_ID_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][fields]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_DB_READ_FIELDS'), 'sublabel' => l_('CF_DB_READ_FIELDS_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][order]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_DB_READ_ORDER'), 'sublabel' => l_('CF_DB_READ_ORDER_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][group]', array('type' => 'text', 'class' => 'L', 'label' => l_('CF_DB_READ_GROUP'), 'sublabel' => l_('CF_DB_READ_GROUP_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][conditions]', array('type' => 'textarea', 'rows' => 8, 'cols' => 70, 'label' => l_('CF_DB_READ_CONDITIONS'), 'sublabel' => l_('CF_DB_READ_CONDITIONS_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="relations-{N}" class="tab-pane">
+			<div id="relations-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enable_relations]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_ENABLE_RELATIONS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_READ_ENABLE_RELATIONS_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enable_relations]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_ENABLE_RELATIONS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_READ_ENABLE_RELATIONS_DESC')));
 			
 			if(empty($data['relations'])){
 				$data['relations'] = array(array());
 			}
 			foreach($data['relations'] as $i => $relation){
 				echo '<div class="panel panel-default"><div class="panel-body">';
-				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][relations]['.$i.'][model]', array('type' => 'text', 'label' => l_('CF_DB_READ_RELATIONS_MODEL'), 'class' => 'M', 'sublabel' => l_('CF_DB_READ_RELATIONS_MODEL_DESC')));
-				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][relations]['.$i.'][tablename]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_RELATIONS_TABLENAME'), 'options' => $tables, 'sublabel' => l_('CF_DB_READ_RELATIONS_TABLENAME_DESC')));
-				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][relations]['.$i.'][type]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_RELATIONS_TYPE'), 'options' => array('hasOne' => l_('hasOne'), 'hasMany' => l_('hasMany'), 'belongsTo' => l_('belongsTo')), 'sublabel' => l_('CF_DB_READ_RELATIONS_TYPE_DESC')));
-				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][relations]['.$i.'][fkey]', array('type' => 'text', 'label' => l_('CF_DB_READ_RELATIONS_FKEY'), 'class' => 'M', 'sublabel' => l_('CF_DB_READ_RELATIONS_FKEY_DESC')));
-				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][relations]['.$i.'][join_conditions]', array('type' => 'textarea', 'rows' => 3, 'cols' => 70, 'label' => l_('CF_DB_READ_RELATIONS_JOIN_CONDITIONS'), 'sublabel' => l_('CF_DB_READ_RELATIONS_JOIN_CONDITIONS_DESC')));
+				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][relations]['.$i.'][model]', array('type' => 'text', 'label' => l_('CF_DB_READ_RELATIONS_MODEL'), 'class' => 'M', 'sublabel' => l_('CF_DB_READ_RELATIONS_MODEL_DESC')));
+				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][relations]['.$i.'][tablename]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_RELATIONS_TABLENAME'), 'options' => $tables, 'sublabel' => l_('CF_DB_READ_RELATIONS_TABLENAME_DESC')));
+				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][relations]['.$i.'][type]', array('type' => 'dropdown', 'label' => l_('CF_DB_READ_RELATIONS_TYPE'), 'options' => array('hasOne' => l_('hasOne'), 'hasMany' => l_('hasMany'), 'belongsTo' => l_('belongsTo')), 'sublabel' => l_('CF_DB_READ_RELATIONS_TYPE_DESC')));
+				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][relations]['.$i.'][fkey]', array('type' => 'text', 'label' => l_('CF_DB_READ_RELATIONS_FKEY'), 'class' => 'M', 'sublabel' => l_('CF_DB_READ_RELATIONS_FKEY_DESC')));
+				echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][relations]['.$i.'][join_conditions]', array('type' => 'textarea', 'rows' => 3, 'cols' => 70, 'label' => l_('CF_DB_READ_RELATIONS_JOIN_CONDITIONS'), 'sublabel' => l_('CF_DB_READ_RELATIONS_JOIN_CONDITIONS_DESC')));
 				echo '</div></div>';
 			}
 			echo \GCore\Helpers\Html::formLine('process_relations', array('type' => 'multi', 'layout' => 'wide',
 				'inputs' => array(
-					array('type' => 'button', 'name' => 'add_relation', 'class' => 'btn btn-success', 'value' => l_('CF_DB_READ_ADD_RELATION'), 'id' => 'add_relation_{N}', 'onclick' => 'addRelation(this, \'{N}\');'),
-					array('type' => 'button', 'name' => 'remove_relation', 'class' => 'btn btn-danger', 'value' => l_('CF_DB_READ_REMOVE_RELATION'), 'id' => 'remove_relation_{N}', 'onclick' => 'removeRelation(this, \'{N}\');'),
+					array('type' => 'button', 'name' => 'add_relation', 'class' => 'btn btn-success', 'value' => l_('CF_DB_READ_ADD_RELATION'), 'id' => 'add_relation__XNX_', 'onclick' => 'addRelation(this, \'_XNX_\');'),
+					array('type' => 'button', 'name' => 'remove_relation', 'class' => 'btn btn-danger', 'value' => l_('CF_DB_READ_REMOVE_RELATION'), 'id' => 'remove_relation__XNX_', 'onclick' => 'removeRelation(this, \'_XNX_\');'),
 				)
 			));
 			
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="external-{N}" class="tab-pane">
+			<div id="external-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_enable]', array('type' => 'dropdown', 'label' => l_('CF_DB_SAVE_EXTERNAL_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_ENABLED_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_driver]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_DRIVER'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_DRIVER_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_host]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_HOST'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_HOST_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_database]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_NAME'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_user]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_USER'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_USER_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_password]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_PASSWORD'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_PASSWORD_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_prefix]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_PREFIX'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_PREFIX_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_load_tables]', array('type' => 'button', 'value' => l_('CF_DB_SAVE_EXTERNAL_DB_LOAD_TABLES'), 'onclick' => 'db_read_ndb_load_tables(this, \'{N}\')', 'sublabel' => ''));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ndb_table_name]', array('type' => 'dropdown', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_TABLE'), 'id' => 'db_read_ndb_table_name_{N}', 'options' => $ndb_tables, 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_TABLE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_enable]', array('type' => 'dropdown', 'label' => l_('CF_DB_SAVE_EXTERNAL_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_ENABLED_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_driver]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_DRIVER'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_DRIVER_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_host]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_HOST'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_HOST_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_database]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_NAME'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_user]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_USER'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_USER_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_password]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_PASSWORD'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_PASSWORD_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_prefix]', array('type' => 'text', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_PREFIX'), 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_PREFIX_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_load_tables]', array('type' => 'button', 'value' => l_('CF_DB_SAVE_EXTERNAL_DB_LOAD_TABLES'), 'onclick' => 'db_read_ndb_load_tables(this, \'_XNX_\')', 'sublabel' => ''));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ndb_table_name]', array('type' => 'dropdown', 'label' => l_('CF_DB_SAVE_EXTERNAL_DB_TABLE'), 'id' => 'db_read_ndb_table_name__XNX_', 'options' => $ndb_tables, 'sublabel' => l_('CF_DB_SAVE_EXTERNAL_DB_TABLE_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>

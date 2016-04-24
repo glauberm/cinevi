@@ -28,8 +28,8 @@ class CheckboxGroup {
 	);
 
 	static $configs = array(
-		'name' => array('value' => 'checkbox_group{N}[]', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
-		'id' => array('value' => 'checkbox_group{N}', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
+		'name' => array('value' => 'checkbox_group_XNX_[]', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
+		'id' => array('value' => 'checkbox_group_XNX_', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
 		'options' => array('value' => "No=No\nYes=Yes", 'label' => 'Options', 'type' => 'textarea', 'rows' => 5, 'alt' => 'options', 'class' => 'L', 'sublabel' => 'In Multiline format, value=Title'),
 		'values' => array('value' => '', 'label' => 'Selected Values', 'type' => 'textarea', 'alt' => 'multiline', 'class' => 'L', 'sublabel' => 'In Multiline format'),
 		'label.text' => array('value' => 'Checkbox Group', 'label' => 'Label', 'type' => 'text', 'class' => 'L'),
@@ -52,7 +52,7 @@ class CheckboxGroup {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'checkbox_group_origin_config');
 		?>
 		<ul class="nav nav-tabs">

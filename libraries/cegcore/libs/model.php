@@ -1244,7 +1244,9 @@ class Model {
 										$default_conditions = array($foreignKey => $parent, 'NOT' => array($this->pkey => $ids));
 										$info['conditions'] = !empty($info['conditions']) ? array_merge($info['conditions'], $default_conditions) : $default_conditions;
 										$cache_result = $this->find('first', $info);
-										$className->updateAll(array($field => $cache_result[$this->alias][$field]), array($className->pkey => $parent), array_merge(array('modified' => false, 'cleanlist' => array($field), 'validate' => false, 'callbacks' => false, 'recursive' => -1)));
+										if(!empty($cache_result)){
+											$className->updateAll(array($field => $cache_result[$this->alias][$field]), array($className->pkey => $parent), array_merge(array('modified' => false, 'cleanlist' => array($field), 'validate' => false, 'callbacks' => false, 'recursive' => -1)));
+										}
 									}
 								}
 							}
@@ -1313,7 +1315,7 @@ class Model {
 			return $this->save(array(
 				$this->pkey => $this->id, 
 				$fieldname => $fieldvalue
-			), array('whitelist' => array($this->pkey, $fieldname), 'modified' => false, 'validate' => false, 'callbacks' => false));
+			), array('whitelist' => array($this->pkey, $fieldname), 'modified' => false, 'validate' => false, 'callbacks' => false, 'recursive' => -1));
 		}
 		return false;
 	}
@@ -1603,8 +1605,10 @@ class Model {
 							if(in_array($field, $className->table_fields)){
 								$info['conditions'] = !empty($info['conditions']) ? array_merge($info['conditions'], array($foreignKey => $this->data[$foreignKey])) : array($foreignKey => $this->data[$foreignKey]);
 								$cache_result = $this->find('first', $info);
-								if(!empty($this->id)){
-									$className->updateAll(array($field => $cache_result[$this->alias][$field]), array($className->pkey => $this->data[$foreignKey]), array_merge(array('modified' => false, 'cleanlist' => array($field), 'validate' => false, 'callbacks' => false, 'recursive' => -1)));
+								if(!empty($cache_result)){
+									if(!empty($this->id)){
+										$className->updateAll(array($field => $cache_result[$this->alias][$field]), array($className->pkey => $this->data[$foreignKey]), array_merge(array('modified' => false, 'cleanlist' => array($field), 'validate' => false, 'callbacks' => false, 'recursive' => -1)));
+									}
 								}
 								//check if this is an updated record and lets do cache processing for the old parent which this model belongs to
 								if(!$this->created AND !empty($info['xforeignKey']) AND !empty($this->data[$info['xforeignKey']])){
@@ -1612,8 +1616,10 @@ class Model {
 									if($this->data[$xforeignKey] != $this->data[$foreignKey]){
 										$info['conditions'] = !empty($info['conditions']) ? array_merge($info['conditions'], array($foreignKey => $this->data[$xforeignKey])) : array($foreignKey => $this->data[$xforeignKey]);
 										$cache_result = $this->find('first', $info);
-										if(!empty($this->id)){
-											$className->updateAll(array($field => $cache_result[$this->alias][$field]), array($className->pkey => $this->data[$xforeignKey]), array_merge(array('modified' => false, 'cleanlist' => array($field), 'validate' => false, 'callbacks' => false, 'recursive' => -1)));
+										if(!empty($cache_result)){
+											if(!empty($this->id)){
+												$className->updateAll(array($field => $cache_result[$this->alias][$field]), array($className->pkey => $this->data[$xforeignKey]), array_merge(array('modified' => false, 'cleanlist' => array($field), 'validate' => false, 'callbacks' => false, 'recursive' => -1)));
+											}
 										}
 									}
 								}

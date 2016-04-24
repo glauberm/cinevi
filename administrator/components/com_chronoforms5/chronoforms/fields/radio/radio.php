@@ -28,8 +28,8 @@ class Radio {
 	);
 
 	static $configs = array(
-		'name' => array('value' => 'radio{N}', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
-		'id' => array('value' => 'radio{N}', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
+		'name' => array('value' => 'radio_XNX_', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
+		'id' => array('value' => 'radio_XNX_', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
 		'options' => array('value' => "0=No\n1=Yes", 'label' => 'Options', 'type' => 'textarea', 'rows' => 5, 'alt' => 'options', 'class' => 'L', 'sublabel' => 'In Multiline format, value=Title'),
 		'value' => array('value' => '', 'label' => 'Checked Value', 'type' => 'text', 'class' => 'L'),
 		'label.text' => array('value' => 'Radio Label', 'label' => 'Label', 'type' => 'text', 'class' => 'L'),
@@ -52,7 +52,7 @@ class Radio {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'radio_origin_config');
 		?>
 		<ul class="nav nav-tabs">

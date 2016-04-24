@@ -26,8 +26,8 @@ class Submit {
 
 	static $configs = array(
 		'render_type' => array('value' => 'submit', 'type' => 'hidden', 'class' => 'L'),
-		'name' => array('value' => 'button{N}', 'label' => 'Name', 'type' => 'text', 'class' => 'element_field_name'),
-		'id' => array('value' => 'button{N}', 'label' => 'ID', 'type' => 'text', 'class' => 'L'),
+		'name' => array('value' => 'button_XNX_', 'label' => 'Name', 'type' => 'text', 'class' => 'element_field_name'),
+		'id' => array('value' => 'button_XNX_', 'label' => 'ID', 'type' => 'text', 'class' => 'L'),
 		'type' => array('values' => 'submit', 'label' => 'Type', 'type' => 'dropdown', 'options' => array('submit' => 'submit', 'reset' => 'reset', 'button' => 'button')),
 		'value' => array('value' => 'Submit', 'label' => 'Value/Label', 'type' => 'text', 'class' => 'L'),
 		'class' => array('value' => 'btn btn-default', 'label' => 'Class', 'type' => 'text', 'class' => 'L'),
@@ -45,7 +45,7 @@ class Submit {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'submit_origin_config');
 		echo \GCore\Helpers\Html::formSecStart();
 		foreach(self::$configs as $name => $params){

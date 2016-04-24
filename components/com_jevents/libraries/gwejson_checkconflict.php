@@ -172,7 +172,10 @@ function simulateSaveEvent($requestObject)
 	$row = false;
 
 	// do dry run of event saving!
-	if ($event = SaveIcalEvent::save($array, $queryModel, $rrule, true))
+	ob_start();
+	$event = SaveIcalEvent::save($array, $queryModel, $rrule, true);
+	ob_end_clean();
+	if ($event)
 	{
 
 		$row = new jIcalEventDB($event);
@@ -562,8 +565,6 @@ function checkRepeatOverlaps($repeat, & $returnData, $eventid, $requestObject)
 			}
 			$sql .= " LIMIT 100";
 			
-
-			
 			$db->setQuery($sql);
 			$conflicts = $db->loadObjectList();
 			if ($conflicts && count($conflicts) > 0)
@@ -577,6 +578,7 @@ function checkRepeatOverlaps($repeat, & $returnData, $eventid, $requestObject)
 							$catname[] = $catinfo[$cc]->title;
 						}
 					}
+					//TODO $testevent is not set? We need to look at actually setting it as it is pointless at present.
 					$cat = count($catname)>0 ? implode(", ",$catname) : $testevent->getCategoryName();
 					$conflict->conflictCause = JText::sprintf("JEV_CATEGORY_CLASH", $cat);
 				}

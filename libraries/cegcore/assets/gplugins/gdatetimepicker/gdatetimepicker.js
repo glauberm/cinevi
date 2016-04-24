@@ -56,6 +56,13 @@ jQuery.gdatetimepicker = {
 		}
 		return result;
 	}
+	
+	Date.prototype.strtotime = function(date, format_string){
+		var parsed_date = {};
+		parsed_date = Date.parse_date(date, format_string);
+		var timestamp = (parsed_date.Y * 365 * 24 * 60 * 60) + (parsed_date.m * 24 * 60 * 60) + (parsed_date.d * 24 * 60 * 60);
+		return timestamp;
+	}
 
 	$.fn.gdatetimepicker = function(options, params){
 		if(this.length > 0){
@@ -170,6 +177,12 @@ jQuery.gdatetimepicker = {
 			$(picker.element).data('content', contents);
 			$(picker.element).gtooltip({'tipclass':'gtooltip gdatetimepicker-panel', 'tid':'dp', 'trigger':'manual', 'closable': 1, 'on_close': 'destroy'});
 			$(picker.element).gtooltip('show', {'tid':'dp'});
+			
+			$(picker.element).on('close.gtooltip', function(){
+				picker.shown = false;
+			});
+			
+			picker.box().css('z-index', '5000');
 			
 			picker.shown = true;
 		},

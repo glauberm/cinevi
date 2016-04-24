@@ -36,9 +36,9 @@ Class JoomlaPlugins extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config joomla_plugins_action_config', 'joomla_plugins_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config joomla_plugins_action_config', 'joomla_plugins_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dummy]', array('type' => 'hidden', /*'label' => l_('CF_EVENTLOOP_EVENT'), 'class' => 'M', 'sublabel' => l_('CF_EVENTLOOP_EVENT_DESC')*/));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dummy]', array('type' => 'hidden', /*'label' => l_('CF_EVENTLOOP_EVENT'), 'class' => 'M', 'sublabel' => l_('CF_EVENTLOOP_EVENT_DESC')*/));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

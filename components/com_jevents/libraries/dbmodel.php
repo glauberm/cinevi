@@ -2282,7 +2282,11 @@ class JEventsDBModel
 						foreach (get_object_vars($translations[$icalrows[$i]->_evdet_id]) as $k=>$v){
 							$k = "_".$k;
 							if ($v !="" && isset($icalrows[$i]->$k)){
-								$icalrows[$i]->$k = $v;
+                                                            // hard coded workaround for translated locations overwritng usefuldata
+                                                            if ($k == "_location" && is_numeric($v)){
+                                                                continue;
+                                                            }
+                                                            $icalrows[$i]->$k = $v;
 							}
 						}
 					}
@@ -2292,6 +2296,7 @@ class JEventsDBModel
 		if (!$is_array) {
 			$icalrows = $icalrows[0];
 		}
+
 	}
 
 	function listIcalEventsByDay($targetdate)
@@ -2402,7 +2407,8 @@ class JEventsDBModel
 					. "\n , HOUR(rpt.startrepeat) as hup, MINUTE(rpt.startrepeat ) as minup, SECOND(rpt.startrepeat ) as sup"
 					. "\n , HOUR(rpt.endrepeat  ) as hdn, MINUTE(rpt.endrepeat   ) as mindn, SECOND(rpt.endrepeat   ) as sdn";
 		}
-		$query .= "\n FROM #__jevents_repetition as rpt"
+                // suggest an index to ensure the group by gets the correct row
+		$query .= "\n FROM #__jevents_repetition as rpt  use INDEX (eventstart)"
 				. "\n LEFT JOIN #__jevents_vevent as ev ON rpt.eventid = ev.ev_id"
 				. "\n LEFT JOIN #__jevents_icsfile as icsf ON icsf.ics_id=ev.icsid "
 				. "\n LEFT JOIN #__jevents_vevdetail as det ON det.evdet_id = rpt.eventdetail_id"
@@ -3672,6 +3678,7 @@ class JEventsDBModel
 		// get extra data and conditionality from plugins
 		$extrawhere = array();
 		$extrajoin = array();
+		$extratables = array();
 		$extrafields = "";  // must have comma prefix		
 		$needsgroup = false;
 
@@ -3882,7 +3889,7 @@ class JEventsDBModel
 		$rows = $db->loadObjectList();
 		if (count($rows) > 0)
 		{
-			JError::raiseNotice(1, JText::_("This event has changed - this is occurance is now the closest to the date you searched for"));
+			JFactory::getApplication()->enqueueMessage(JText::_('THIS_EVENT_HAS_CHANGED_THIS_OCCURANCE_IS_NOW_THE_CLOSEST_TO_THE_DATE_YOU_SEARCHED_FOR'), 'notice');
 			return $rows[0]->rp_id;
 		}
 

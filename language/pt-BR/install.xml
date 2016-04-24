@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<extension version="3.4" client="site" type="language" method="upgrade">
-	<name>Português Brasileiro (pt-BR)</name>
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" client="site" type="language" method="upgrade">
+	<name>Português do Brasil (pt-BR)</name>
 	<tag>pt-BR</tag>
-	<version>3.4.4.1</version>
-	<creationDate>07 SEP 2015</creationDate>
-	<author>Equipe de Tradução pt-BR</author>
-	<authorEmail>pt-br@joomlacarioca.com.br</authorEmail>
-	<authorUrl>https://brasil.joomla.com</authorUrl>
-	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. Todos os Direitos reservados</copyright>
-	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<description>Idioma Português Brasileiro - Site</description>
+	<version>3.5.1.1</version>
+	<creationDate>2016-04-07</creationDate>
+	<author>Equipe de Tradução Português Brasileiro</author>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<copyright>Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>pt-BR site language</description>
 	<files>
 		<filename>pt-BR.com_ajax.ini</filename>
 		<filename>pt-BR.com_config.ini</filename>
@@ -28,6 +28,7 @@
 		<filename>pt-BR.files_joomla.sys.ini</filename>
 		<filename>pt-BR.finder_cli.ini</filename>
 		<filename>pt-BR.ini</filename>
+		<filename>pt-BR.lib_fof.ini</filename>
 		<filename>pt-BR.lib_fof.sys.ini</filename>
 		<filename>pt-BR.lib_idna_convert.sys.ini</filename>
 		<filename>pt-BR.lib_joomla.ini</filename>
@@ -92,7 +93,6 @@
 		<filename>pt-BR.tpl_beez3.sys.ini</filename>
 		<filename>pt-BR.tpl_protostar.ini</filename>
 		<filename>pt-BR.tpl_protostar.sys.ini</filename>
-		<filename>index.html</filename>
 		<filename file="meta">install.xml</filename>
 		<filename file="meta">pt-BR.xml</filename>
 	</files>

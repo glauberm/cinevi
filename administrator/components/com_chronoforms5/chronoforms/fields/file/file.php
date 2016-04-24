@@ -26,8 +26,8 @@ class File {
 	);
 
 	static $configs = array(
-		'name' => array('value' => 'file{N}', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
-		'id' => array('value' => 'file{N}', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
+		'name' => array('value' => 'file_XNX_', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'sublabel' => 'No spaces or special characters.'),
+		'id' => array('value' => 'file_XNX_', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
 		'label.text' => array('value' => 'File Label', 'label' => 'Label', 'type' => 'text', 'class' => 'L'),
 		'label.position' => array('values' => 'left', 'label' => 'Label position', 'type' => 'dropdown', 'options' => array('left' => 'Left', 'top' => 'Top')),
 		'sublabel' => array('value' => '', 'label' => 'Sub Label', 'type' => 'text', 'class' => 'L'),
@@ -48,7 +48,7 @@ class File {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'file_origin_config');
 		?>
 		<ul class="nav nav-tabs">

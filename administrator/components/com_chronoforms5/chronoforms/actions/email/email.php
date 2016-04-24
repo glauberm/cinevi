@@ -18,7 +18,7 @@ Class Email extends \GCore\Admin\Extensions\Chronoforms\Action{
 		$doc->_('jquery');
 		$doc->addJsCode('
 			jQuery(document).ready(function($){
-				$("#email_template_loader_{N}").on("click", function(){
+				$("#email_template_loader__XNX_").on("click", function(){
 					$.ajax({
 						url: "'.r_("index.php?ext=chronoforms&act=action_fn&action_name=email&fn=generate_email&tvout=ajax").'",
 						data: obj
@@ -34,67 +34,67 @@ Class Email extends \GCore\Admin\Extensions\Chronoforms\Action{
 			});
 		');
 		*/
-		echo \GCore\Helpers\Html::formStart('action_config email_action_config', 'email_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config email_action_config', 'email_action_config__XNX_');
 		?>
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#basic-{N}" data-g-toggle="tab"><?php echo l_('CF_BASIC'); ?></a></li>
-			<li><a href="#advanced-{N}" data-g-toggle="tab"><?php echo l_('CF_ADVANCED'); ?></a></li>
-			<li><a href="#encryption-{N}" data-g-toggle="tab"><?php echo l_('CF_ENCRYPTION'); ?></a></li>
-			<li><a href="#body-template-{N}" data-g-toggle="tab"><?php echo l_('CF_EMAIL_BODY_TEMPLATE'); ?></a></li>
+			<li class="active"><a href="#basic-_XNX_" data-g-toggle="tab"><?php echo l_('CF_BASIC'); ?></a></li>
+			<li><a href="#advanced-_XNX_" data-g-toggle="tab"><?php echo l_('CF_ADVANCED'); ?></a></li>
+			<li><a href="#encryption-_XNX_" data-g-toggle="tab"><?php echo l_('CF_ENCRYPTION'); ?></a></li>
+			<li><a href="#body-template-_XNX_" data-g-toggle="tab"><?php echo l_('CF_EMAIL_BODY_TEMPLATE'); ?></a></li>
 		</ul>
 		<div class="tab-content">
-			<div id="basic-{N}" class="tab-pane active">
+			<div id="basic-_XNX_" class="tab-pane active">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][action_label]', array('type' => 'text', 'label' => l_('CF_ACTION_LABEL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_LABEL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_ENABLED_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][to]', array('type' => 'text', 'label' => l_('CF_TO'), 'class' => 'XL', 'sublabel' => l_('CF_TO_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][subject]', array('type' => 'text', 'label' => l_('CF_SUBJECT'), 'class' => 'XL', 'sublabel' => l_('CF_SUBJECT_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][from_name]', array('type' => 'text', 'label' => l_('CF_FROM_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_FROM_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][from_email]', array('type' => 'text', 'label' => l_('CF_FROM_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_FROM_EMAIL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][email_type]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_TYPE'), 'options' => array('html' => l_('CF_HTML'), 'text' => l_('CF_TEXT')), 'sublabel' => l_('CF_EMAIL_TYPE_DESC')));
-			//echo \GCore\Helpers\Html::formLine('email_template_loader', array('type' => 'custom', 'code' => '<input type="button" class="email_template_loader" id="email_template_loader_{N}" value="'.l_('CF_GENERATE_TEMPLATE').'" />', 'sublabel' => l_('CF_GENERATE_TEMPLATE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][template_generation]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_TEMPLATE_GENERATION'), 'values' => 0, 'options' => array(0 => l_('CF_CUSTOM'), 1 => l_('CF_AUTO')), 'sublabel' => l_('CF_EMAIL_TEMPLATE_GENERATION_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][load_editor]', array('type' => 'button', 'class' => 'btn btn-primary', 'value' => l_('CF_LOAD_EDITOR'), 'onclick' => 'toggleEditor(this, \'email_template_{N}\');'));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][template]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE'), 'id' => 'email_template_{N}', 'style' => 'width:auto;', 'rows' => 20, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][attach]', array('type' => 'textarea', 'label' => l_('CF_ATTACHMENT_FILES'), 'rows' => 3, 'cols' => 70, 'sublabel' => l_('CF_ATTACHMENT_FILES_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][action_label]', array('type' => 'text', 'label' => l_('CF_ACTION_LABEL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_LABEL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_ENABLED_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][to]', array('type' => 'text', 'label' => l_('CF_TO'), 'class' => 'XL', 'sublabel' => l_('CF_TO_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][subject]', array('type' => 'text', 'label' => l_('CF_SUBJECT'), 'class' => 'XL', 'sublabel' => l_('CF_SUBJECT_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][from_name]', array('type' => 'text', 'label' => l_('CF_FROM_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_FROM_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][from_email]', array('type' => 'text', 'label' => l_('CF_FROM_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_FROM_EMAIL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][email_type]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_TYPE'), 'options' => array('html' => l_('CF_HTML'), 'text' => l_('CF_TEXT')), 'sublabel' => l_('CF_EMAIL_TYPE_DESC')));
+			//echo \GCore\Helpers\Html::formLine('email_template_loader', array('type' => 'custom', 'code' => '<input type="button" class="email_template_loader" id="email_template_loader__XNX_" value="'.l_('CF_GENERATE_TEMPLATE').'" />', 'sublabel' => l_('CF_GENERATE_TEMPLATE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][template_generation]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_TEMPLATE_GENERATION'), 'values' => 0, 'options' => array(0 => l_('CF_CUSTOM'), 1 => l_('CF_AUTO')), 'sublabel' => l_('CF_EMAIL_TEMPLATE_GENERATION_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][load_editor]', array('type' => 'button', 'class' => 'btn btn-primary', 'value' => l_('CF_LOAD_EDITOR'), 'onclick' => 'toggleEditor(this, \'email_template__XNX_\');'));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][template]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE'), 'id' => 'email_template__XNX_', 'style' => 'width:auto;', 'rows' => 20, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][attach]', array('type' => 'textarea', 'label' => l_('CF_ATTACHMENT_FILES'), 'rows' => 3, 'cols' => 70, 'sublabel' => l_('CF_ATTACHMENT_FILES_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="advanced-{N}" class="tab-pane">
+			<div id="advanced-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dto]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_TO'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_TO_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dsubject]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_SUBJECT'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_SUBJECT_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][reply_name]', array('type' => 'text', 'label' => l_('CF_REPLY_TO_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_REPLY_TO_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][reply_email]', array('type' => 'text', 'label' => l_('CF_REPLY_TO_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_REPLY_TO_EMAIL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dreply_name]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_REPLY_TO_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_REPLY_TO_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dreply_email]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_REPLY_TO_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_REPLY_TO_EMAIL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dfrom_name]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_FROM_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_FROM_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dfrom_email]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_FROM_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_FROM_EMAIL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][cc]', array('type' => 'text', 'label' => l_('CF_CC'), 'class' => 'XL', 'sublabel' => l_('CF_CC_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][bcc]', array('type' => 'text', 'label' => l_('CF_BCC'), 'class' => 'XL', 'sublabel' => l_('CF_BCC_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dcc]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_CC'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_CC_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dbcc]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_BCC'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_BCC_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][append_ip_address]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_APPEND_IP_ADDRESS'), 'values' => 1, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_EMAIL_APPEND_IP_ADDRESS_DESC')));
-			echo \GCore\Helpers\Html::input('Form[extras][actions_config][{N}][__action_title__]', array('type' => 'hidden', 'value' => 'email'));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dto]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_TO'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_TO_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dsubject]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_SUBJECT'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_SUBJECT_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][reply_name]', array('type' => 'text', 'label' => l_('CF_REPLY_TO_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_REPLY_TO_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][reply_email]', array('type' => 'text', 'label' => l_('CF_REPLY_TO_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_REPLY_TO_EMAIL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dreply_name]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_REPLY_TO_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_REPLY_TO_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dreply_email]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_REPLY_TO_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_REPLY_TO_EMAIL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dfrom_name]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_FROM_NAME'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_FROM_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dfrom_email]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_FROM_EMAIL'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_FROM_EMAIL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][cc]', array('type' => 'text', 'label' => l_('CF_CC'), 'class' => 'XL', 'sublabel' => l_('CF_CC_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][bcc]', array('type' => 'text', 'label' => l_('CF_BCC'), 'class' => 'XL', 'sublabel' => l_('CF_BCC_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dcc]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_CC'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_CC_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dbcc]', array('type' => 'text', 'label' => l_('CF_DYNAMIC_BCC'), 'class' => 'XL', 'sublabel' => l_('CF_DYNAMIC_BCC_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][append_ip_address]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_APPEND_IP_ADDRESS'), 'values' => 1, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_EMAIL_APPEND_IP_ADDRESS_DESC')));
+			echo \GCore\Helpers\Html::input('Form[extras][actions_config][_XNX_][__action_title__]', array('type' => 'hidden', 'value' => 'email'));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="encryption-{N}" class="tab-pane">
+			<div id="encryption-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][encrypt_enabled]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_ENABLE_ENCRYPTION'), 'values' => 0, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_EMAIL_ENABLE_ENCRYPTION_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][gpg_sec_key]', array('type' => 'text', 'label' => l_('CF_EMAIL_ENCRYPTION_KEY'), 'class' => 'XL', 'sublabel' => l_('CF_EMAIL_ENCRYPTION_KEY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][encrypt_enabled]', array('type' => 'dropdown', 'label' => l_('CF_EMAIL_ENABLE_ENCRYPTION'), 'values' => 0, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_EMAIL_ENABLE_ENCRYPTION_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][gpg_sec_key]', array('type' => 'text', 'label' => l_('CF_EMAIL_ENCRYPTION_KEY'), 'class' => 'XL', 'sublabel' => l_('CF_EMAIL_ENCRYPTION_KEY_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="body-template-{N}" class="tab-pane">
+			<div id="body-template-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][template_header]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE_HEADER'), 'rows' => 5, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_HEADER_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][template_body]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE_BODY'), 'rows' => 5, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_BODY_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][template_footer]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE_FOOTER'), 'rows' => 5, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_FOOTER_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][template_header]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE_HEADER'), 'rows' => 5, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_HEADER_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][template_body]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE_BODY'), 'rows' => 5, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_BODY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][template_footer]', array('type' => 'textarea', 'label' => l_('CF_EMAIL_TEMPLATE_FOOTER'), 'rows' => 5, 'cols' => 70, 'sublabel' => l_('CF_EMAIL_TEMPLATE_FOOTER_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>

@@ -198,19 +198,19 @@ Class FileUpload extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config file_upload_action_config', 'file_upload_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config file_upload_action_config', 'file_upload_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][files]', array('type' => 'textarea', 'label' => l_('CF_FILES_CONFIG'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_FILES_CONFIG_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][upload_path]', array('type' => 'text', 'label' => l_('CF_UPLOAD_PATH'), 'class' => 'XL', 'sublabel' => l_('CF_UPLOAD_PATH_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][max_size]', array('type' => 'text', 'label' => l_('CF_MAX_FILE_SIZE'), 'sublabel' => l_('CF_MAX_FILE_SIZE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][min_size]', array('type' => 'text', 'label' => l_('CF_MIN_FILE_SIZE'), 'sublabel' => l_('CF_MIN_FILE_SIZE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][max_error]', array('type' => 'text', 'label' => l_('CF_MAX_SIZE_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_MAX_SIZE_ERROR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][min_error]', array('type' => 'text', 'label' => l_('CF_MIN_SIZE_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_MIN_SIZE_ERROR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][type_error]', array('type' => 'text', 'label' => l_('CF_FILE_TYPE_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_FILE_TYPE_ERROR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][array_fields]', array('type' => 'text', 'label' => l_('CF_FILE_ARRAY_FIELDS'), 'class' => 'XL', 'sublabel' => l_('CF_FILE_ARRAY_FIELDS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][dynamic_file_name]', array('type' => 'textarea', 'label' => l_('CF_FILE_DYNAMIC_FILE_NAME'), 'rows' => 5, 'cols' => 70, 'placeholder' => '<?php return date("YmdHis")."_".$file_name;', 'sublabel' => l_('CF_FILE_DYNAMIC_FILE_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][extensions_separator]', array('type' => 'text', 'label' => l_('CF_FILE_UPLOAD_EXT_SEPARATOR'), 'class' => 'S', 'sublabel' => l_('CF_FILE_UPLOAD_EXT_SEPARATOR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][files]', array('type' => 'textarea', 'label' => l_('CF_FILES_CONFIG'), 'rows' => 5, 'cols' => 60, 'sublabel' => l_('CF_FILES_CONFIG_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][upload_path]', array('type' => 'text', 'label' => l_('CF_UPLOAD_PATH'), 'class' => 'XL', 'sublabel' => l_('CF_UPLOAD_PATH_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][max_size]', array('type' => 'text', 'label' => l_('CF_MAX_FILE_SIZE'), 'sublabel' => l_('CF_MAX_FILE_SIZE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][min_size]', array('type' => 'text', 'label' => l_('CF_MIN_FILE_SIZE'), 'sublabel' => l_('CF_MIN_FILE_SIZE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][max_error]', array('type' => 'text', 'label' => l_('CF_MAX_SIZE_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_MAX_SIZE_ERROR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][min_error]', array('type' => 'text', 'label' => l_('CF_MIN_SIZE_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_MIN_SIZE_ERROR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][type_error]', array('type' => 'text', 'label' => l_('CF_FILE_TYPE_ERROR'), 'class' => 'XL', 'sublabel' => l_('CF_FILE_TYPE_ERROR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][array_fields]', array('type' => 'text', 'label' => l_('CF_FILE_ARRAY_FIELDS'), 'class' => 'XL', 'sublabel' => l_('CF_FILE_ARRAY_FIELDS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][dynamic_file_name]', array('type' => 'textarea', 'label' => l_('CF_FILE_DYNAMIC_FILE_NAME'), 'rows' => 5, 'cols' => 70, 'placeholder' => '<?php return date("YmdHis")."_".$file_name;', 'sublabel' => l_('CF_FILE_DYNAMIC_FILE_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][extensions_separator]', array('type' => 'text', 'label' => l_('CF_FILE_UPLOAD_EXT_SEPARATOR'), 'class' => 'S', 'sublabel' => l_('CF_FILE_UPLOAD_EXT_SEPARATOR_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

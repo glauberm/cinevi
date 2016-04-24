@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<extension version="3.4" client="administrator" type="language" method="upgrade">
-	<name>Português Brasileiro (pt-BR)</name>
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" client="administrator" type="language" method="upgrade">
+	<name>Português do Brasil (pt-BR)</name>
 	<tag>pt-BR</tag>
-	<version>3.4.4.1</version>
-	<creationDate>07 SEP 2015</creationDate>
-	<author>Equipe de Tradução pt-BR</author>
+	<version>3.5.1.1</version>
+	<creationDate>2016-04-07</creationDate>
+	<author>Equipe de Tradução Português do Brasil</author>
 	<authorEmail>pt-br@joomlacarioca.com.br</authorEmail>
 	<authorUrl>http://brasil.joomla.com</authorUrl>
-	<copyright>Copyright (C) 2005 - 2015 Open Source Matters. Todos os Direitos reservados</copyright>
-	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<description>Idioma Português Brasileiro - Administrador</description>
+	<copyright>Copyright (C) 2005-2016 Open Source Matters. Todos os direitos reservados.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>Brazilian Portuguese Site language for Joomla 3. 5. 0</description>
 	<files>
 		<filename>pt-BR.com_admin.ini</filename>
 		<filename>pt-BR.com_admin.sys.ini</filename>
@@ -141,10 +141,12 @@
 		<filename>pt-BR.plg_editors-xtd_article.sys.ini</filename>
 		<filename>pt-BR.plg_editors-xtd_image.ini</filename>
 		<filename>pt-BR.plg_editors-xtd_image.sys.ini</filename>
+		<filename>pt-BR.plg_editors-xtd_module.ini</filename>
+		<filename>pt-BR.plg_editors-xtd_module.sys.ini</filename>
 		<filename>pt-BR.plg_editors-xtd_pagebreak.ini</filename>
 		<filename>pt-BR.plg_editors-xtd_pagebreak.sys.ini</filename>
 		<filename>pt-BR.plg_editors-xtd_readmore.ini</filename>
-		<filename>pt-BR.plg_editors-xtd_readmore.sys.ini</filename>	
+		<filename>pt-BR.plg_editors-xtd_readmore.sys.ini</filename>
 		<filename>pt-BR.plg_extension_joomla.ini</filename>
 		<filename>pt-BR.plg_extension_joomla.sys.ini</filename>
 		<filename>pt-BR.plg_finder_categories.ini</filename>
@@ -199,6 +201,10 @@
 		<filename>pt-BR.plg_system_remember.sys.ini</filename>
 		<filename>pt-BR.plg_system_sef.ini</filename>
 		<filename>pt-BR.plg_system_sef.sys.ini</filename>
+		<filename>pt-BR.plg_system_stats.ini</filename>
+		<filename>pt-BR.plg_system_stats.sys.ini</filename>
+		<filename>pt-BR.plg_system_updatenotification.ini</filename>
+		<filename>pt-BR.plg_system_updatenotification.sys.ini</filename>
 		<filename>pt-BR.plg_twofactorauth_totp.ini</filename>
 		<filename>pt-BR.plg_twofactorauth_totp.sys.ini</filename>
 		<filename>pt-BR.plg_twofactorauth_yubikey.ini</filename>
@@ -213,9 +219,8 @@
 		<filename>pt-BR.tpl_hathor.sys.ini</filename>
 		<filename>pt-BR.tpl_isis.ini</filename>
 		<filename>pt-BR.tpl_isis.sys.ini</filename>
-		<filename file="meta">install.xml</filename>
 		<filename file="meta">pt-BR.xml</filename>
-		<filename>index.html</filename>
+		<filename file="meta">install.xml</filename>
 	</files>
 	<params />
 </extension>

@@ -403,19 +403,19 @@ Class JoomlaRegistration extends \GCore\Admin\Extensions\Chronoforms\Action{
 			$rules[$group['Group']['id']] = $group['Group']['title'];
 		}
 		
-		echo \GCore\Helpers\Html::formStart('action_config check_captcha_action_config', 'check_captcha_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config check_captcha_action_config', 'check_captcha_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][name]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_NAME'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][username]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_USERNAME'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_USERNAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][email]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_EMAIL'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_EMAIL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][password]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_PASSWORD'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_PASSWORD_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][password2]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_CONFIRM_PASSWORD'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_CONFIRM_PASSWORD_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][new_usertype][]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_USER_GROUPS'), 'multiple' => 'multiple', 'size' => 7, 'options' => $rules, 'sublabel' => l_('CF_JOOMLA_REG_USER_GROUPS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][useractivation]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_USER_ACTIVATION'), 'options' => array(0 => l_('CF_JOOMLA_REG_AUTO'), 1 => l_('CF_JOOMLA_REG_USER'), 2 => l_('CF_JOOMLA_REG_ADMIN')), 'sublabel' => l_('CF_JOOMLA_REG_USER_ACTIVATION_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][random_password]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_RANDOM_PASS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_RANDOM_PASS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][auto_login]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_AUTO_LOGIN'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_AUTO_LOGIN_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][send_joo_activation]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_SEND_JOO_ACTIVATION'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_SEND_JOO_ACTIVATION_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enable_cb_support]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_ENABLE_CB_SUPPORT'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_ENABLE_CB_SUPPORT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][name]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_NAME'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][username]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_USERNAME'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_USERNAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][email]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_EMAIL'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_EMAIL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][password]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_PASSWORD'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_PASSWORD_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][password2]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_CONFIRM_PASSWORD'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_CONFIRM_PASSWORD_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][new_usertype][]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_USER_GROUPS'), 'multiple' => 'multiple', 'size' => 7, 'options' => $rules, 'sublabel' => l_('CF_JOOMLA_REG_USER_GROUPS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][useractivation]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_USER_ACTIVATION'), 'options' => array(0 => l_('CF_JOOMLA_REG_AUTO'), 1 => l_('CF_JOOMLA_REG_USER'), 2 => l_('CF_JOOMLA_REG_ADMIN')), 'sublabel' => l_('CF_JOOMLA_REG_USER_ACTIVATION_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][random_password]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_RANDOM_PASS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_RANDOM_PASS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][auto_login]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_AUTO_LOGIN'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_AUTO_LOGIN_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][send_joo_activation]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_SEND_JOO_ACTIVATION'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_SEND_JOO_ACTIVATION_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enable_cb_support]', array('type' => 'dropdown', 'label' => l_('CF_JOOMLA_REG_ENABLE_CB_SUPPORT'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_JOOMLA_REG_ENABLE_CB_SUPPORT_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

@@ -31,7 +31,7 @@ class SecurityQuestion {
 
 	static $configs = array(
 		'name' => array('value' => 'chrono_security_answer', 'label' => 'Field Name', 'type' => 'text', 'class' => 'element_field_name L', 'readonly' => 'readonly'),
-		'id' => array('value' => 'chrono_security_answer{N}', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
+		'id' => array('value' => 'chrono_security_answer_XNX_', 'label' => 'Field ID', 'type' => 'text', 'class' => 'L'),
 		'label.text' => array('value' => '{chrono_security_question}', 'label' => 'Label', 'type' => 'text', 'class' => 'L', 'readonly' => 'readonly'),
 		'label.position' => array('values' => 'left', 'label' => 'Label position', 'type' => 'dropdown', 'options' => array('left' => 'Left', 'top' => 'Top')),
 		'sublabel' => array('value' => '', 'label' => 'Sub Label', 'type' => 'text', 'class' => 'L'),
@@ -49,7 +49,7 @@ class SecurityQuestion {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'security_question_origin_config');
 		?>
 		<ul class="nav nav-tabs">

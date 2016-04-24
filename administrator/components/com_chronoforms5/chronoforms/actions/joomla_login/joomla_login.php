@@ -43,10 +43,10 @@ Class JoomlaLogin extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config joomla_login_action_config', 'joomla_login_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config joomla_login_action_config', 'joomla_login_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][username]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_USERNAME'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_USERNAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][password]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_PASSWORD'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_PASSWORD_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][username]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_USERNAME'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_USERNAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][password]', array('type' => 'text', 'label' => l_('CF_JOOMLA_REG_PASSWORD'), 'class' => 'M', 'sublabel' => l_('CF_JOOMLA_REG_PASSWORD_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

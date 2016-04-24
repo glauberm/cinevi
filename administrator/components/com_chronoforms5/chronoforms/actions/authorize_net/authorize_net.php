@@ -564,30 +564,30 @@ Class AuthorizeNet extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config authorize_net_action_config', 'authorize_net_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config authorize_net_action_config', 'authorize_net_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_card_num]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_CARDNUM'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_CARDNUM_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_exp_date_m]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_EXPDATE_M'), 'class' => 'L', 'sublabel' => l_('CF_AUTHORIZE_EXPDATE_M_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_exp_date_y]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_EXPDATE_Y'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_EXPDATE_Y_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_description]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_DESC'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_DESC_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_amount]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_AMOUNT'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_AMOUNT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_first_name]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_FIRST_NAME'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_FIRST_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_last_name]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_LAST_NAME'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_LAST_NAME_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_address]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_ADDRESS'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_ADDRESS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_city]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_CITY'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_CITY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_state]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_STATE'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_STATE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_zip]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_ZIP'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_ZIP_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_invoice_num]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_INVOICE_NUM'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_INVOICE_NUM_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_country]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_COUNTRY'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_COUNTRY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_phone]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_PHONE'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_PHONE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_email]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_EMAIL'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_EMAIL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][error_retires]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_ERROR_RETIRES'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_ERROR_RETIRES_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][transkey]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_TRANSKEY'), 'class' => 'L', 'sublabel' => l_('CF_AUTHORIZE_TRANSKEY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][loginid]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_LOGINID'), 'class' => 'L', 'sublabel' => l_('CF_AUTHORIZE_LOGINID_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][auto_add_error]', array('type' => 'dropdown', 'label' => l_('CF_AUTHORIZE_AUTO_ERROR'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_AUTHORIZE_AUTO_ERROR_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][extra_params]', array('type' => 'textarea', 'label' => l_('CF_AUTHORIZE_EXTRA_PARAMS'), 'rows' => 5, 'cols' => 40, 'sublabel' => l_('CF_AUTHORIZE_EXTRA_PARAMS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][debugging]', array('type' => 'dropdown', 'label' => l_('CF_AUTHORIZE_DEBUG'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_AUTHORIZE_DEBUG_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][testing]', array('type' => 'dropdown', 'label' => l_('CF_AUTHORIZE_TEST'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_AUTHORIZE_TEST_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_card_num]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_CARDNUM'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_CARDNUM_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_exp_date_m]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_EXPDATE_M'), 'class' => 'L', 'sublabel' => l_('CF_AUTHORIZE_EXPDATE_M_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_exp_date_y]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_EXPDATE_Y'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_EXPDATE_Y_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_description]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_DESC'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_DESC_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_amount]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_AMOUNT'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_AMOUNT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_first_name]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_FIRST_NAME'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_FIRST_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_last_name]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_LAST_NAME'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_LAST_NAME_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_address]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_ADDRESS'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_ADDRESS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_city]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_CITY'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_CITY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_state]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_STATE'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_STATE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_zip]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_ZIP'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_ZIP_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_invoice_num]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_INVOICE_NUM'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_INVOICE_NUM_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_country]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_COUNTRY'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_COUNTRY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_phone]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_PHONE'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_PHONE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_email]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_EMAIL'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_EMAIL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][error_retires]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_ERROR_RETIRES'), 'class' => 'M', 'sublabel' => l_('CF_AUTHORIZE_ERROR_RETIRES_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][transkey]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_TRANSKEY'), 'class' => 'L', 'sublabel' => l_('CF_AUTHORIZE_TRANSKEY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][loginid]', array('type' => 'text', 'label' => l_('CF_AUTHORIZE_LOGINID'), 'class' => 'L', 'sublabel' => l_('CF_AUTHORIZE_LOGINID_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][auto_add_error]', array('type' => 'dropdown', 'label' => l_('CF_AUTHORIZE_AUTO_ERROR'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_AUTHORIZE_AUTO_ERROR_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][extra_params]', array('type' => 'textarea', 'label' => l_('CF_AUTHORIZE_EXTRA_PARAMS'), 'rows' => 5, 'cols' => 40, 'sublabel' => l_('CF_AUTHORIZE_EXTRA_PARAMS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][debugging]', array('type' => 'dropdown', 'label' => l_('CF_AUTHORIZE_DEBUG'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_AUTHORIZE_DEBUG_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][testing]', array('type' => 'dropdown', 'label' => l_('CF_AUTHORIZE_TEST'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_AUTHORIZE_TEST_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

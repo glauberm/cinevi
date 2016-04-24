@@ -50,10 +50,10 @@ Class MultiPage extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config multi_page_action_config', 'multi_page_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config multi_page_action_config', 'multi_page_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][reset]', array('type' => 'dropdown', 'label' => l_('CF_MULTIPAGE_RESET'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_MULTIPAGE_RESET_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][reset]', array('type' => 'dropdown', 'label' => l_('CF_MULTIPAGE_RESET'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_MULTIPAGE_RESET_DESC')));
 		
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

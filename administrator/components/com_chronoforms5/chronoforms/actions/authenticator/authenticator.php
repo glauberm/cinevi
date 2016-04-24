@@ -44,11 +44,11 @@ Class Authenticator extends \GCore\Admin\Extensions\Chronoforms\Action{
 		}
 		$rules['owner'] = 'Owner';
 
-		echo \GCore\Helpers\Html::formStart('action_config authenticator_action_config', 'authenticator_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config authenticator_action_config', 'authenticator_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][owner_id_index]', array('type' => 'text', 'label' => l_('CF_OWNER_ID_INDEX'), 'default' => '', 'sublabel' => l_('CF_OWNER_ID_INDEX_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][owner_id_index]', array('type' => 'text', 'label' => l_('CF_OWNER_ID_INDEX'), 'default' => '', 'sublabel' => l_('CF_OWNER_ID_INDEX_DESC')));
 		foreach($rules as $g_id => $g_name){
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][access]['.$g_id.']', array('type' => 'dropdown', 'label' => $g_name, 'class' => 'M', 'options' => array(0 => l_('INHERITED'), '' => l_('NOT_SET'), 1 => l_('ALLOWED'), -1 => l_('DENIED'))));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][access]['.$g_id.']', array('type' => 'dropdown', 'label' => $g_name, 'class' => 'M', 'options' => array(0 => l_('INHERITED'), '' => l_('NOT_SET'), 1 => l_('ALLOWED'), -1 => l_('DENIED'))));
 		}
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

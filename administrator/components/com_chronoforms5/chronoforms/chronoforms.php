@@ -87,7 +87,7 @@ class Chronoforms extends \GCore\Libs\GController {
 		$jsevents = \GCore\Libs\Folder::getFiles(dirname(__FILE__).DS.'events'.DS);
 		foreach($jsevents as $k => $jsevent){
 			$jsevents[$k] = str_replace(dirname(__FILE__).DS.'events'.DS, '', $jsevent);
-			if(strpos($jsevent, '.php') !== false){
+			if(strpos($jsevent, '.') !== false){
 				unset($jsevents[$k]);
 			}
 		}
@@ -125,7 +125,7 @@ class Chronoforms extends \GCore\Libs\GController {
 		
 		if(!empty($this->data['Form']['extras']['fields'])){
 			foreach($this->data['Form']['extras']['fields'] as $f_k => $f_info){
-				if(strpos($f_k, '{N}') !== false){
+				if(strpos($f_k, '_XNX_') !== false){
 					unset($this->data['Form']['extras']['fields'][$f_k]);
 				}
 			}
@@ -178,7 +178,7 @@ class Chronoforms extends \GCore\Libs\GController {
 					$result = \GCore\Libs\Arr::setVal($result, $new_path, $existing_results);
 					continue;
 				}
-				if(in_array('{N}', $new_path) !== false){
+				if(in_array('_XNX_', $new_path) !== false){
 					continue;
 				}
 				$result = \GCore\Libs\Arr::setVal($result, $new_path, \GCore\Libs\Arr::getVal($dummy, $new_path));
@@ -248,7 +248,7 @@ class Chronoforms extends \GCore\Libs\GController {
 			$pkey = '';
 			foreach($this->data['columns'] as $k => $column){
 				$pcs = array();
-				if($column['enabled'] == 1 AND !empty($column['name']) AND !empty($column['type'])){
+				if(isset($column['enabled']) AND $column['enabled'] == 1 AND !empty($column['name']) AND !empty($column['type'])){
 					$pcs[] = '`'.$column['name'].'`';
 					$pcs[] = $column['type'].(!empty($column['length']) ? '('.$column['length'].')' : '');
 					$pcs[] = !empty($column['null']) ? 'DEFAULT NULL' : 'NOT NULL';
@@ -316,9 +316,9 @@ class Chronoforms extends \GCore\Libs\GController {
 		$output = base64_encode(serialize($forms));
 
 		//download the file
-		if(ereg('Opera(/| )([0-9].[0-9]{1,2})', $_SERVER['HTTP_USER_AGENT'])){
+		if(preg_replace('Opera(/| )([0-9].[0-9]{1,2})', $_SERVER['HTTP_USER_AGENT'])){
 			$UserBrowser = 'Opera';
-		}elseif(ereg('MSIE ([0-9].[0-9]{1,2})', $_SERVER['HTTP_USER_AGENT'])){
+		}elseif(preg_replace('MSIE ([0-9].[0-9]{1,2})', $_SERVER['HTTP_USER_AGENT'])){
 			$UserBrowser = 'IE';
 		}else{
 			$UserBrowser = '';
@@ -738,7 +738,7 @@ class Chronoforms extends \GCore\Libs\GController {
 			ob_start();
 			$class::config($wizard_field, $k);
 			$element_config = ob_get_clean();
-			$contents = str_replace('{N}', $k, $element_config);
+			$contents = str_replace('_XNX_', $k, $element_config);
 			$contents =  \GCore\Libs\Str::replacer($contents, \GCore\Libs\Request::raw(), array('escape' => true));
 			$contents = \GCore\Helpers\DataLoader::load($contents, \GCore\Libs\Request::raw());
 			echo $contents;

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<access component="com_booking">
-    <section name="payment">
-        <action name="booking.payment.pay" title="COM_BOOKING_ACTION_PAY" description="COM_BOOKING_ACTION_PAY_DESC" />
-    </section>
-</access>

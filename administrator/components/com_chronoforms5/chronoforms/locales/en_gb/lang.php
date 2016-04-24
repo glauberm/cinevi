@@ -50,7 +50,7 @@ class Lang {
 	const CF_MULTI_SAVE = "Multi save";
 	const CF_MULTI_SAVE_DESC = "Save multiple records, this should be disabled in most cases, unless your form submits numerically indexed list of records.";
 	const CF_MODEL_ID = "Model ID";
-	const CF_MODEL_ID_DESC = "A unique identifier/Alias for your table/data";
+	const CF_MODEL_ID_DESC = "A unique identifier/Alias for your table/data, this ID should not be used in any other DB Read/Save in the same form.";
 	const CF_FORCE_SAVE = "Force save";
 	const CF_FORCE_SAVE_DESC = "Save a new record all the time, even if a primary key value exists, and never update any existing record.";
 	const CF_CONTENT = "Content";
@@ -258,7 +258,7 @@ class Lang {
 	const CF_DB_READ_GROUP_DESC = "GROUP BY fields list, comma separated";
 	const CF_DB_READ_CONDITIONS = "Conditions";
 	const CF_DB_READ_CONDITIONS_DESC = "conditions array returned using PHP in array format, e.g: < ?php return array('field' => 'value'); ?>";
-	const CF_DB_READ_MODEL_ID_DESC = "Model ID title which will be used to load the data, if left empty then 'Data' will be used";
+	const CF_DB_READ_MODEL_ID_DESC = "Model ID title which will be used to load the data, if left empty then 'Data' will be used, this ID should not be used in any other DB Read/Save in the same form.";
 	const CF_DB_READ_ENABLE_RELATIONS = "Enable relations";
 	const CF_DB_READ_ENABLE_RELATIONS_DESC = "Enable the configured relations with the action's database table.";
 	const CF_DB_READ_RELATIONS_MODEL = "Model";

@@ -61,12 +61,12 @@ Class Curl extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config curl_action_config', 'curl_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config curl_action_config', 'curl_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][target_url]', array('type' => 'text', 'label' => l_('CF_CURL_TARGET_URL'), 'class' => 'XL', 'sublabel' => l_('CF_CURL_TARGET_URL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][header_in_response]', array('type' => 'dropdown', 'label' => l_('CF_CURL_HEADER_RESPONSE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_CURL_HEADER_RESPONSE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][content]', array('type' => 'textarea', 'label' => l_('CF_CURL_PARAMS'), 'rows' => '10', 'cols' => '60', 'sublabel' => l_('CF_CURL_PARAMS_DESC').l_('CF_EXTRA_PARAMS_LIST_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][target_url]', array('type' => 'text', 'label' => l_('CF_CURL_TARGET_URL'), 'class' => 'XL', 'sublabel' => l_('CF_CURL_TARGET_URL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][header_in_response]', array('type' => 'dropdown', 'label' => l_('CF_CURL_HEADER_RESPONSE'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_CURL_HEADER_RESPONSE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][content]', array('type' => 'textarea', 'label' => l_('CF_CURL_PARAMS'), 'rows' => '10', 'cols' => '60', 'sublabel' => l_('CF_CURL_PARAMS_DESC').l_('CF_EXTRA_PARAMS_LIST_DESC')));
 
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

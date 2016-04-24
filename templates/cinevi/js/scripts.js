@@ -7,75 +7,55 @@
 
 		/* Menu */
 
-		/* transformicons */
-		transformicons.add('.tcon');
-
 		/* grudar no topo */
-
 		$(window).scroll( function () {
 			if ($(window).scrollTop() > $('#faixa-logo-xs').height()) {
-				$('#botao-menu-xs').addClass('fixed');
+				$('#faixa-menu-xs').addClass('fixed');
 			} else {
-				$('#botao-menu-xs').removeClass('fixed');
+				$('#faixa-menu-xs').removeClass('fixed');
 			}
 		});
 
 		/* Menu Lateral */
-
-		$('#botao-menu-sm').click(function () {
-
-			if($('#menu-sm').hasClass('aberto'))
-			{
+		$('#botao-menu-sm').click(function ()
+		{
+			$('#menu-sm').animate({
+				left: "0"
+			}, 400, function() {
+				$(this).addClass('aberto');
+				$('#botao-menu-sm').addClass('ativo');
+				$('body').css('overflow', 'hidden');
+			});
+			$('#menu-sm .moduletable ul li').click(function() {
 				$('#menu-sm').animate({
 					left: "-100%"
 				}, 400, function() {
 					$(this).removeClass('aberto');
-					$('#botao-menu-sm').removeClass('ativo');
 					$('body').css('overflow', 'auto');
 				});
-
-			} else
-			{
-				$('#menu-sm').animate({
-					left: "0"
-				}, 400, function() {
-					$(this).addClass('aberto');
-					$('#botao-menu-sm').addClass('ativo');
-					$('body').css('overflow', 'hidden');
-				});
-			}
-
+			});
 		});
 
-		$('#botao-menu-xs').click(function () {
+		$('#botao-menu-xs').click(function ()
+		{
+			$('#menu-xs').animate({
+				left: "0"
+			}, 400, function() {
+				$(this).addClass('aberto');
+				$('body').css('overflow', 'hidden');
+			});
 
-			if($('#menu-xs').hasClass('aberto'))
-			{
+			$('#menu-xs .moduletable ul li').click(function() {
 				$('#menu-xs').animate({
 					left: "-100%"
 				}, 400, function() {
 					$(this).removeClass('aberto');
-					$('#botao-menu-xs').css('backgroundColor','#006888');
 					$('body').css('overflow', 'auto');
 				});
-
-			} else
-			{
-
-				$('#botao-menu-xs').css('backgroundColor','transparent');
-
-				$('#menu-xs').animate({
-					left: "0"
-				}, 400, function() {
-					$(this).addClass('aberto');
-					$('body').css('overflow', 'hidden');
-				});
-			}
-
+			});
 		});
 
 		/* Máscaras dos inputs */
-
 		$('.telefone').mask('(00) 00000-0000');
 		$('.matricula').mask('000000000');
 		$('.periodo-entrada').mask('0000/0');
@@ -86,7 +66,6 @@
 		});
 
 		/* Busca */
-
 		$('#barra-lateral .header-search .form-control').focus(function () {
 			$(this).parent().parent().parent().parent('.header-search').css('opacity','1');
 		});
@@ -95,5 +74,8 @@
 			$(this).parent().parent().parent().parent('.header-search').css('opacity','');
 		});
 
+		/* Fix: Fabrik Form */
+		$('textarea.fabrikinput').addClass('form-control');
+		$('fieldset.fabrikGroup .row-fluid').removeClass('row-fluid').addClass('row');
 	})
 })(jQuery);

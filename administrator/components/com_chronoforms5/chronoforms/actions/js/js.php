@@ -41,11 +41,11 @@ Class Js extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config js_action_config', 'js_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config js_action_config', 'js_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][content]', array('type' => 'textarea', 'label' => l_('CF_JS_CONTENT'), 'class' => 'XL', 'rows' => 10, 'sublabel' => l_('CF_JS_CONTENT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][files]', array('type' => 'textarea', 'label' => l_('CF_JS_FILES'), 'class' => 'XL', 'rows' => 10, 'sublabel' => l_('CF_JS_FILES_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][content]', array('type' => 'textarea', 'label' => l_('CF_JS_CONTENT'), 'class' => 'XL', 'rows' => 10, 'sublabel' => l_('CF_JS_CONTENT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][files]', array('type' => 'textarea', 'label' => l_('CF_JS_FILES'), 'class' => 'XL', 'rows' => 10, 'sublabel' => l_('CF_JS_FILES_DESC')));
 
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

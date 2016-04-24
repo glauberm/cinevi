@@ -376,6 +376,13 @@ function checkDates(elem){
 	checkEndTime();
 	checkUntil();
 	updateRepeatWarning();
+        // update the by day type checkboxes
+        fixRepeatDates();
+        try {
+		initialiseBootstrapButtons()
+	}
+	catch(e) {};
+
 }
 
 function reformatStartEndDates() {
@@ -424,7 +431,13 @@ function setEndDateWhenNotRepeating(){
 	
 	endDate = new Date();
 	endDate = endDate.dateFromYMD(end_date.value);	
-	
+
+	// if the end date is not visible then always set the end date to match the start date
+	enddate_container = jQuery('.jevenddate');
+	if (enddate_container.css("display")=="none"){
+		end_date.value = start_date.value;
+	}
+
 	if (startDate>endDate){
 		end_date.value = start_date.value;
 		normaliseElem(end_date);
@@ -656,20 +669,26 @@ function toggleNoEndTime(){
 function toggleGreyBackground(inputtype,inputelem, tomatch) {
 	if (inputtype==tomatch){
 		inputelem.disabled = false;
-		inputelem.closest('fieldset').css("background-color","#ffffff");
+		//inputelem.closest('fieldset').css("background-color","#ffffff");
+                inputelem.closest('fieldset').removeClass("roundedgrey");
 		inputelem.closest('fieldset').css("opacity","1");
 		if (inputelem.closest('fieldset').find('legend')){
-			inputelem.closest('fieldset').find('legend').css("background-color","#ffffff");
-			jevjq("#"+inputtype).css("background-color","#ffffff");
+			//inputelem.closest('fieldset').find('legend').css("background-color","#ffffff");
+			//jevjq("#"+inputtype).css("background-color","#ffffff");
+			inputelem.closest('fieldset').find('legend').removeClass("roundedgrey");
+			jevjq("#"+inputtype).removeClass("roundedgrey");
 		}
 	}
 	else {
 		inputelem.disabled = true;
-		inputelem.closest('fieldset').css("background-color","#dddddd");
+		//inputelem.closest('fieldset').css("background-color","#dddddd");
+                inputelem.closest('fieldset').addClass("roundedgrey");
 		inputelem.closest('fieldset').css("opacity","0.7");
 		if (inputelem.closest('fieldset').find('legend')){
-			inputelem.closest('fieldset').find('legend').css("background-color","#dddddd");
-			jevjq("#"+inputtype).css("background-color","#dddddd");
+			//inputelem.closest('fieldset').find('legend').css("background-color","#dddddd");
+			//jevjq("#"+inputtype).css("background-color","#dddddd");
+			inputelem.closest('fieldset').find('legend').addClass("roundedgrey");
+			jevjq("#"+inputtype).addClass("roundedgrey");
 		}
 	}
 }
@@ -797,6 +816,7 @@ function toggleFreq(freq , setup)
 				weekofmonth.style.display="none";
 				// always set week nums false for weekly events
 				toggleWeekNums(false);
+                                fixRepeatDates(false);
 			}
 			break;
 		case "DAILY":

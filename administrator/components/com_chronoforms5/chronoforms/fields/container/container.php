@@ -26,8 +26,8 @@ class Container {
 	);
 
 	static $configs = array(
-		'label' => array('value' => 'Container #{N}', 'label' => 'Label', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost', 'id' => 'container_label_config_{N}'),
-		'container_type' => array('value' => '', 'label' => 'Type', 'type' => 'dropdown', 'alt' => 'ghost', 'onclick' => 'container_enable_tab(this, \'{N}\')', 'id' => 'container_type_config_{N}', 'options' => array(
+		'label' => array('value' => 'Container #_XNX_', 'label' => 'Label', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost', 'id' => 'container_label_config__XNX_'),
+		'container_type' => array('value' => '', 'label' => 'Type', 'type' => 'dropdown', 'alt' => 'ghost', 'onclick' => 'container_enable_tab(this, \'_XNX_\')', 'id' => 'container_type_config__XNX_', 'options' => array(
 			'' => 'None (Holder)',
 			'page' => 'Page',
 			'div' => 'DIV',
@@ -44,8 +44,8 @@ class Container {
 			'multiplier' => 'Multiplier',
 			'multiplier-contents' => 'Multiplier Contents',
 		)),
-		'title' => array('value' => 'Container #{N}', 'label' => 'Title', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
-		'id' => array('value' => 'chronoform-container-{N}', 'label' => 'ID', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
+		'title' => array('value' => 'Container #_XNX_', 'label' => 'Title', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
+		'id' => array('value' => 'chronoform-container-_XNX_', 'label' => 'ID', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
 		'class' => array('value' => 'chronoform-container', 'label' => 'Class', 'type' => 'text', 'class' => 'L', 'alt' => 'ghost'),
 		'start_code' => array('value' => '', 'label' => 'Start code', 'type' => 'textarea', 'cols' => 60, 'rows' => 5, 'alt' => 'ghost', 'sublabel' => 'The start code for a custom container.'),
 		'end_code' => array('value' => '', 'label' => 'End code', 'type' => 'textarea', 'cols' => 60, 'rows' => 5, 'alt' => 'ghost', 'sublabel' => 'The end code for a custom container.'),
@@ -58,7 +58,7 @@ class Container {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config', 'container_origin_config');
 		?>
 		<script>
@@ -90,7 +90,7 @@ class Container {
 			foreach(self::$configs as $name => $params){
 				$params['value'] = isset($data[$name]) ? (($params['type'] == 'text') ? htmlspecialchars($data[$name]) : $data[$name]) : (isset($params['value']) ? $params['value'] : '');
 				$params['values'] = isset($data[$name]) ? $data[$name] : (isset($params['values']) ? $params['values'] : '');
-				echo \GCore\Helpers\Html::formLine('Form[extras][fields]['.$k.']['.$name.']', str_replace('{N}', $k, $params));
+				echo \GCore\Helpers\Html::formLine('Form[extras][fields]['.$k.']['.$name.']', str_replace('_XNX_', $k, $params));
 			}
 
 			//echo \GCore\Helpers\Html::input('Form[extras][fields]['.$k.'][code]', array('type' => 'hidden', 'alt' => 'ghost', 'value' => 'My container code here'));

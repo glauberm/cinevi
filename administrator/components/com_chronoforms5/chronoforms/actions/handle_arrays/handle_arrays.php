@@ -18,13 +18,13 @@ Class HandleArrays extends \GCore\Admin\Extensions\Chronoforms\Action{
 	var $config;
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config handle_arrays_action_config', 'handle_arrays_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config handle_arrays_action_config', 'handle_arrays_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][skip_associative]', array('type' => 'dropdown', 'label' => l_('CF_HANDLE_ARRAYS_SKIP_ASSOCIATIVE'), 'values' => 1, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_HANDLE_ARRAYS_SKIP_ASSOCIATIVE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][fields_list]', array('type' => 'text', 'label' => l_('CF_FIELDS_LIST'), 'class' => 'XL', 'sublabel' => l_('CF_FIELDS_LIST_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][delimiter]', array('type' => 'text', 'label' => l_('CF_DELIMITER'), 'value' => ',', 'class' => 'SS', 'sublabel' => l_('CF_DELIMITER_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][skipped]', array('type' => 'text', 'label' => l_('CF_SKIPPED_FIELDS'), 'class' => 'XL', 'sublabel' => l_('CF_SKIPPED_FIELDS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][enabled]', array('type' => 'dropdown', 'label' => l_('CF_ENABLED'), 'options' => array(0 => l_('NO'), 1 => l_('YES'))));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][skip_associative]', array('type' => 'dropdown', 'label' => l_('CF_HANDLE_ARRAYS_SKIP_ASSOCIATIVE'), 'values' => 1, 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_HANDLE_ARRAYS_SKIP_ASSOCIATIVE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][fields_list]', array('type' => 'text', 'label' => l_('CF_FIELDS_LIST'), 'class' => 'XL', 'sublabel' => l_('CF_FIELDS_LIST_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][delimiter]', array('type' => 'text', 'label' => l_('CF_DELIMITER'), 'value' => ',', 'class' => 'SS', 'sublabel' => l_('CF_DELIMITER_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][skipped]', array('type' => 'text', 'label' => l_('CF_SKIPPED_FIELDS'), 'class' => 'XL', 'sublabel' => l_('CF_SKIPPED_FIELDS_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

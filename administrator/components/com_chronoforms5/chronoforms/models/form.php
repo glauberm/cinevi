@@ -26,13 +26,13 @@ class Form extends \GCore\Libs\GModel {
 
 	function beforeSave(&$data, &$params, $mode){
 		foreach($data['extras']['actions_config'] as $f_k => $f_info){
-			if(strpos($f_k, '{N}') !== false){
+			if(strpos($f_k, '_XNX_') !== false){
 				unset($data['extras']['actions_config'][$f_k]);
 			}
 		}
 		if(!empty($data['extras']['fields']) AND $data['form_type'] == '1'){
 			foreach($data['extras']['fields'] as $f_k => $f_info){
-				if(strpos($f_k, '{N}') !== false){
+				if(strpos($f_k, '_XNX_') !== false){
 					unset($data['extras']['fields'][$f_k]);
 				}
 			}

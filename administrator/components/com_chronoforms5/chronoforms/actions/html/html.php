@@ -779,20 +779,20 @@ Class Html extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config html_action_config', 'html_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config html_action_config', 'html_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
 
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][page]', array('type' => 'text', 'label' => l_('CF_PAGE'), 'value' => 1, 'sublabel' => l_('CF_PAGE_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][submit_event]', array('type' => 'text', 'label' => l_('CF_SUBMIT_EVENT'), 'value' => 'submit', 'sublabel' => l_('CF_SUBMIT_EVENT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][form_method]', array('type' => 'dropdown', 'label' => l_('CF_FORM_METHOD'), 'options' => array('file' => 'File', 'post' => 'Post', 'get' => 'Get'), 'sublabel' => l_('CF_FORM_METHOD_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][action_url]', array('type' => 'text', 'label' => l_('CF_ACTION_URL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_URL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][form_class]', array('type' => 'text', 'label' => l_('CF_FORM_CLASS'), 'value' => 'chronoform', 'sublabel' => l_('CF_FORM_CLASS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][form_tag_attach]', array('type' => 'text', 'label' => l_('CF_FORM_TAG_ATTACHMENT'), 'class' => 'XL', 'rows' => 1, 'sublabel' => l_('CF_FORM_TAG_ATTACHMENT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][required_labels_identify]', array('type' => 'dropdown', 'label' => l_('CF_REQUIRED_LABELS_IDENTIFY'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 1, 'sublabel' => l_('CF_REQUIRED_LABELS_IDENTIFY_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][relative_url]', array('type' => 'dropdown', 'label' => l_('CF_RELATIVE_URL'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 1, 'sublabel' => l_('CF_RELATIVE_URL_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][ajax_submit]', array('type' => 'dropdown', 'label' => l_('CF_AJAX_SUBMIT'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 0, 'sublabel' => l_('CF_AJAX_SUBMIT_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][add_form_tags]', array('type' => 'dropdown', 'label' => l_('CF_ADD_FORM_TAGS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 1, 'sublabel' => l_('CF_ADD_FORM_TAGS_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][xhtml_url]', array('type' => 'dropdown', 'label' => l_('CF_HTML_XHTML_URL'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 0, 'sublabel' => l_('CF_HTML_XHTML_URL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][page]', array('type' => 'text', 'label' => l_('CF_PAGE'), 'value' => 1, 'sublabel' => l_('CF_PAGE_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][submit_event]', array('type' => 'text', 'label' => l_('CF_SUBMIT_EVENT'), 'value' => 'submit', 'sublabel' => l_('CF_SUBMIT_EVENT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][form_method]', array('type' => 'dropdown', 'label' => l_('CF_FORM_METHOD'), 'options' => array('file' => 'File', 'post' => 'Post', 'get' => 'Get'), 'sublabel' => l_('CF_FORM_METHOD_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][action_url]', array('type' => 'text', 'label' => l_('CF_ACTION_URL'), 'class' => 'XL', 'sublabel' => l_('CF_ACTION_URL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][form_class]', array('type' => 'text', 'label' => l_('CF_FORM_CLASS'), 'value' => 'chronoform', 'sublabel' => l_('CF_FORM_CLASS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][form_tag_attach]', array('type' => 'text', 'label' => l_('CF_FORM_TAG_ATTACHMENT'), 'class' => 'XL', 'rows' => 1, 'sublabel' => l_('CF_FORM_TAG_ATTACHMENT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][required_labels_identify]', array('type' => 'dropdown', 'label' => l_('CF_REQUIRED_LABELS_IDENTIFY'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 1, 'sublabel' => l_('CF_REQUIRED_LABELS_IDENTIFY_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][relative_url]', array('type' => 'dropdown', 'label' => l_('CF_RELATIVE_URL'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 1, 'sublabel' => l_('CF_RELATIVE_URL_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][ajax_submit]', array('type' => 'dropdown', 'label' => l_('CF_AJAX_SUBMIT'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 0, 'sublabel' => l_('CF_AJAX_SUBMIT_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][add_form_tags]', array('type' => 'dropdown', 'label' => l_('CF_ADD_FORM_TAGS'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 1, 'sublabel' => l_('CF_ADD_FORM_TAGS_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][xhtml_url]', array('type' => 'dropdown', 'label' => l_('CF_HTML_XHTML_URL'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'values' => 0, 'sublabel' => l_('CF_HTML_XHTML_URL_DESC')));
 
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();

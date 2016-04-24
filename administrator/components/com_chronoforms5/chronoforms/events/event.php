@@ -43,7 +43,7 @@ class Event {
 		}
 	}
 	
-	public static function _fields($data = array(), $k = '{N}'){		
+	public static function _fields($data = array(), $k = '_XNX_'){		
 		return array(
 			array('name' => 'Form[extras][jsevents]['.$k.'][event]', 'type' => 'dropdown', 'class' => 'events_event_selection', 'label' => array('position' => 'top', 'text' => 'On'), 'sublabel' => 'Event', 'options' => array(
 				'' => '',

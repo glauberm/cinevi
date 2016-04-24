@@ -175,7 +175,7 @@ class DataLoader {
 				$updated_field = $field;
 				$sel_pat = '/<select([^>]*?)>/is';
 				preg_match_all($sel_pat, $field, $sel_matches);
-				$extracted_options = preg_replace(array('/'.preg_quote($sel_matches[0][0]).'/is', '/<\/select>/i'), array('', ''), $field);
+				$extracted_options = preg_replace(array('/'.preg_quote($sel_matches[0][0], '/').'/is', '/<\/select>/i'), array('', ''), $field);
 
 				$n_pat = '/ name=("|\')(.*?)("|\')/i';
 				$v_pat = '/ value=("|\')(.*?)(\1)/i';

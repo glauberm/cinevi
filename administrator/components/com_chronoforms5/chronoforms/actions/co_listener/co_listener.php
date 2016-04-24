@@ -50,10 +50,10 @@ Class CoListener extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config co_listener_action_config', 'co_listener_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config co_listener_action_config', 'co_listener_action_config__XNX_');
 		echo \GCore\Helpers\Html::formSecStart();
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][sid]', array('type' => 'text', 'label' => l_('CF_2CO_SID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_SID_DESC')));
-		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][secret]', array('type' => 'text', 'label' => l_('CF_2CO_SECRET'), 'class' => 'M', 'sublabel' => l_('CF_2CO_SECRET_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][sid]', array('type' => 'text', 'label' => l_('CF_2CO_SID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_SID_DESC')));
+		echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][secret]', array('type' => 'text', 'label' => l_('CF_2CO_SECRET'), 'class' => 'M', 'sublabel' => l_('CF_2CO_SECRET_DESC')));
 		echo \GCore\Helpers\Html::formSecEnd();
 		echo \GCore\Helpers\Html::formEnd();
 	}

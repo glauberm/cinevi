@@ -172,74 +172,74 @@ Class CoSender extends \GCore\Admin\Extensions\Chronoforms\Action{
 	}
 	
 	public static function config(){
-		echo \GCore\Helpers\Html::formStart('action_config co_sender_action_config', 'co_sender_action_config_{N}');
+		echo \GCore\Helpers\Html::formStart('action_config co_sender_action_config', 'co_sender_action_config__XNX_');
 		?>
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#basic-{N}" data-g-toggle="tab"><?php echo l_('CF_BASIC'); ?></a></li>
-			<li><a href="#hosted_checkout-{N}" data-g-toggle="tab"><?php echo l_('CF_2CO_PARAMETER_SET_HS'); ?></a></li>
-			<li><a href="#customer_info-{N}" data-g-toggle="tab"><?php echo l_('CF_2CO_CUSTOMER_INFO'); ?></a></li>
-			<li><a href="#advanced-{N}" data-g-toggle="tab"><?php echo l_('CF_ADVANCED'); ?></a></li>
+			<li class="active"><a href="#basic-_XNX_" data-g-toggle="tab"><?php echo l_('CF_BASIC'); ?></a></li>
+			<li><a href="#hosted_checkout-_XNX_" data-g-toggle="tab"><?php echo l_('CF_2CO_PARAMETER_SET_HS'); ?></a></li>
+			<li><a href="#customer_info-_XNX_" data-g-toggle="tab"><?php echo l_('CF_2CO_CUSTOMER_INFO'); ?></a></li>
+			<li><a href="#advanced-_XNX_" data-g-toggle="tab"><?php echo l_('CF_ADVANCED'); ?></a></li>
 		</ul>
 		<div class="tab-content">
-			<div id="basic-{N}" class="tab-pane active">
+			<div id="basic-_XNX_" class="tab-pane active">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][sid]', array('type' => 'text', 'label' => l_('CF_2CO_SID'), 'class' => 'L', 'sublabel' => l_('CF_2CO_SID_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][product_id]', array('type' => 'text', 'label' => l_('CF_2CO_PRODUCT_ID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PRODUCT_ID_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][quantity]', array('type' => 'text', 'label' => l_('CF_2CO_QUANTITY'), 'class' => 'L', 'sublabel' => l_('CF_2CO_QUANTITY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][sid]', array('type' => 'text', 'label' => l_('CF_2CO_SID'), 'class' => 'L', 'sublabel' => l_('CF_2CO_SID_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][product_id]', array('type' => 'text', 'label' => l_('CF_2CO_PRODUCT_ID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PRODUCT_ID_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][quantity]', array('type' => 'text', 'label' => l_('CF_2CO_QUANTITY'), 'class' => 'L', 'sublabel' => l_('CF_2CO_QUANTITY_DESC')));
 			
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][parameter_set]', array('type' => 'dropdown', 'label' => l_('CF_2CO_PARAMETER_SET'), 'options' => array('' => l_('CF_2CO_PARAMETER_SET_PNP'), '2CO' => l_('CF_2CO_PARAMETER_SET_HS')), 'sublabel' => l_('CF_2CO_PARAMETER_SET_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][parameter_set]', array('type' => 'dropdown', 'label' => l_('CF_2CO_PARAMETER_SET'), 'options' => array('' => l_('CF_2CO_PARAMETER_SET_PNP'), '2CO' => l_('CF_2CO_PARAMETER_SET_HS')), 'sublabel' => l_('CF_2CO_PARAMETER_SET_DESC')));
 			
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][skip_landing]', array('type' => 'dropdown', 'label' => l_('CF_2CO_SKIP_LANDING'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_2CO_SKIP_LANDING_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][routine]', array('type' => 'dropdown', 'label' => l_('CF_2CO_ROUTINE'), 'options' => array('M' => 'Multi Page (Default)', 'S' => 'Single Page'), 'sublabel' => l_('CF_2CO_ROUTINE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][extra_params]', array('type' => 'textarea', 'label' => l_('CF_2CO_EXTRA_PARAMS'), 'rows' => 5, 'cols' => 40, 'sublabel' => l_('CF_2CO_EXTRA_PARAMS_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][debug_only]', array('type' => 'dropdown', 'label' => l_('CF_2CO_DEBUG'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_2CO_DEBUG_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][skip_landing]', array('type' => 'dropdown', 'label' => l_('CF_2CO_SKIP_LANDING'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_2CO_SKIP_LANDING_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][routine]', array('type' => 'dropdown', 'label' => l_('CF_2CO_ROUTINE'), 'options' => array('M' => 'Multi Page (Default)', 'S' => 'Single Page'), 'sublabel' => l_('CF_2CO_ROUTINE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][extra_params]', array('type' => 'textarea', 'label' => l_('CF_2CO_EXTRA_PARAMS'), 'rows' => 5, 'cols' => 40, 'sublabel' => l_('CF_2CO_EXTRA_PARAMS_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][debug_only]', array('type' => 'dropdown', 'label' => l_('CF_2CO_DEBUG'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_2CO_DEBUG_DESC')));
 			
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="hosted_checkout-{N}" class="tab-pane">
+			<div id="hosted_checkout-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_type]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_TYPE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_TYPE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_name]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_NAME'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_quantity]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_QUANTITY'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_QUANTITY_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_price]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_PRICE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_PRICE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_tangible]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_TANGIBLE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_TANGIBLE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_product_id]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_PID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_PID_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_description]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_DESC'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_DESC_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_recurrence]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_RECURRENCE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_RECURRENCE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][hs_duration]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_DURATION'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_DURATION_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_type]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_TYPE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_TYPE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_name]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_NAME'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_quantity]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_QUANTITY'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_QUANTITY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_price]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_PRICE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_PRICE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_tangible]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_TANGIBLE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_TANGIBLE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_product_id]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_PID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_PID_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_description]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_DESC'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_DESC_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_recurrence]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_RECURRENCE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_RECURRENCE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][hs_duration]', array('type' => 'text', 'label' => l_('CF_2CO_HS_ITEM_DURATION'), 'class' => 'M', 'sublabel' => l_('CF_2CO_HS_ITEM_DURATION_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="customer_info-{N}" class="tab-pane">
+			<div id="customer_info-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][card_holder_name]', array('type' => 'text', 'label' => l_('CF_2CO_CARD_HOLDER_NAME'), 'class' => 'M', 'sublabel' => l_('CF_2CO_CARD_HOLDER_NAME_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][street_address]', array('type' => 'text', 'label' => l_('CF_2CO_ADDRESS'), 'class' => 'M', 'sublabel' => l_('CF_2CO_ADDRESS_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][street_address2]', array('type' => 'text', 'label' => l_('CF_2CO_ADDRESS2'), 'class' => 'M', 'sublabel' => l_('CF_2CO_ADDRESS2_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][city]', array('type' => 'text', 'label' => l_('CF_2CO_CITY'), 'class' => 'M', 'sublabel' => l_('CF_2CO_CITY_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][state]', array('type' => 'text', 'label' => l_('CF_2CO_STATE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_STATE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][zip]', array('type' => 'text', 'label' => l_('CF_2CO_ZIP'), 'class' => 'M', 'sublabel' => l_('CF_2CO_ZIP_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][country]', array('type' => 'text', 'label' => l_('CF_2CO_COUNTRY'), 'class' => 'M', 'sublabel' => l_('CF_2CO_COUNTRY_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][phone]', array('type' => 'text', 'label' => l_('CF_2CO_PHONE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PHONE_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][email]', array('type' => 'text', 'label' => l_('CF_2CO_EMAIL'), 'class' => 'M', 'sublabel' => l_('CF_2CO_EMAIL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][card_holder_name]', array('type' => 'text', 'label' => l_('CF_2CO_CARD_HOLDER_NAME'), 'class' => 'M', 'sublabel' => l_('CF_2CO_CARD_HOLDER_NAME_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][street_address]', array('type' => 'text', 'label' => l_('CF_2CO_ADDRESS'), 'class' => 'M', 'sublabel' => l_('CF_2CO_ADDRESS_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][street_address2]', array('type' => 'text', 'label' => l_('CF_2CO_ADDRESS2'), 'class' => 'M', 'sublabel' => l_('CF_2CO_ADDRESS2_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][city]', array('type' => 'text', 'label' => l_('CF_2CO_CITY'), 'class' => 'M', 'sublabel' => l_('CF_2CO_CITY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][state]', array('type' => 'text', 'label' => l_('CF_2CO_STATE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_STATE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][zip]', array('type' => 'text', 'label' => l_('CF_2CO_ZIP'), 'class' => 'M', 'sublabel' => l_('CF_2CO_ZIP_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][country]', array('type' => 'text', 'label' => l_('CF_2CO_COUNTRY'), 'class' => 'M', 'sublabel' => l_('CF_2CO_COUNTRY_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][phone]', array('type' => 'text', 'label' => l_('CF_2CO_PHONE'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PHONE_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][email]', array('type' => 'text', 'label' => l_('CF_2CO_EMAIL'), 'class' => 'M', 'sublabel' => l_('CF_2CO_EMAIL_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>
-			<div id="advanced-{N}" class="tab-pane">
+			<div id="advanced-_XNX_" class="tab-pane">
 			<?php
 			echo \GCore\Helpers\Html::formSecStart();
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][demo]', array('type' => 'dropdown', 'label' => l_('CF_2CO_DEMO'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_2CO_DEMO_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][merchant_order_id]', array('type' => 'text', 'label' => l_('CF_2CO_MERCHANT_ORDER_ID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_MERCHANT_ORDER_ID_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][lang]', array('type' => 'text', 'label' => l_('CF_2CO_LANG'), 'class' => 'M', 'sublabel' => l_('CF_2CO_LANG_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][x_Receipt_Link_URL]', array('type' => 'text', 'label' => l_('CF_2CO_RECEIPT_URL'), 'class' => 'L', 'sublabel' => l_('CF_2CO_RECEIPT_URL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][fixed]', array('type' => 'text', 'label' => l_('CF_2CO_FIXED'), 'class' => 'L', 'sublabel' => l_('CF_2CO_FIXED_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][return_url]', array('type' => 'text', 'label' => l_('CF_2CO_RETURN_URL'), 'class' => 'L', 'sublabel' => l_('CF_2CO_RETURN_URL_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][pay_method]', array('type' => 'text', 'label' => l_('CF_2CO_PAY_METHOD'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PAY_METHOD_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][coupon]', array('type' => 'text', 'label' => l_('CF_2CO_COUPON'), 'class' => 'M', 'sublabel' => l_('CF_2CO_COUPON_DESC')));
-			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][{N}][purchase_step]', array('type' => 'text', 'label' => l_('CF_2CO_PURCHASE_STEP'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PURCHASE_STEP_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][demo]', array('type' => 'dropdown', 'label' => l_('CF_2CO_DEMO'), 'options' => array(0 => l_('NO'), 1 => l_('YES')), 'sublabel' => l_('CF_2CO_DEMO_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][merchant_order_id]', array('type' => 'text', 'label' => l_('CF_2CO_MERCHANT_ORDER_ID'), 'class' => 'M', 'sublabel' => l_('CF_2CO_MERCHANT_ORDER_ID_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][lang]', array('type' => 'text', 'label' => l_('CF_2CO_LANG'), 'class' => 'M', 'sublabel' => l_('CF_2CO_LANG_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][x_Receipt_Link_URL]', array('type' => 'text', 'label' => l_('CF_2CO_RECEIPT_URL'), 'class' => 'L', 'sublabel' => l_('CF_2CO_RECEIPT_URL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][fixed]', array('type' => 'text', 'label' => l_('CF_2CO_FIXED'), 'class' => 'L', 'sublabel' => l_('CF_2CO_FIXED_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][return_url]', array('type' => 'text', 'label' => l_('CF_2CO_RETURN_URL'), 'class' => 'L', 'sublabel' => l_('CF_2CO_RETURN_URL_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][pay_method]', array('type' => 'text', 'label' => l_('CF_2CO_PAY_METHOD'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PAY_METHOD_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][coupon]', array('type' => 'text', 'label' => l_('CF_2CO_COUPON'), 'class' => 'M', 'sublabel' => l_('CF_2CO_COUPON_DESC')));
+			echo \GCore\Helpers\Html::formLine('Form[extras][actions_config][_XNX_][purchase_step]', array('type' => 'text', 'label' => l_('CF_2CO_PURCHASE_STEP'), 'class' => 'M', 'sublabel' => l_('CF_2CO_PURCHASE_STEP_DESC')));
 			echo \GCore\Helpers\Html::formSecEnd();
 			?>
 			</div>

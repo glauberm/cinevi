@@ -58,7 +58,7 @@ class SignaturePad {
 		echo \GCore\Helpers\Html::formSecEnd();
 	}
 	
-	public static function config($data = array(), $k = '{N}'){
+	public static function config($data = array(), $k = '_XNX_'){
 		echo \GCore\Helpers\Html::formStart('original_element_config single_element_config', 'signature_pad_origin_config');
 		echo \GCore\Helpers\Html::formSecStart();
 		foreach(self::$configs as $name => $params){
