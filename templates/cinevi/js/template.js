@@ -10,10 +10,19 @@
 {
 	$(document).ready(function()
 	{
-		$('*[rel=tooltip]').tooltip();
+		$('*[rel=tooltip]').tooltip({placement: "bottom"});
 
 		// Turn radios into btn-group
 		$('.radio.btn-group label').addClass('btn');
+
+		$('fieldset.btn-group').each(function() {
+			// Handle disabled, prevent clicks on the container, and add disabled style to each button
+			if ($(this).prop('disabled')) {
+				$(this).css('pointer-events', 'none').off('click');
+				$(this).find('.btn').addClass('disabled');
+			}
+		});
+
 		$(".btn-group label:not(.active)").click(function()
 		{
 			var label = $(this);

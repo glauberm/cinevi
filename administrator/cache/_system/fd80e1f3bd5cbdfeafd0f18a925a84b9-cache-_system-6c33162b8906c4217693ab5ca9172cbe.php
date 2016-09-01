@@ -1,1 +1,1 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";O:8:"stdClass":4:{s:2:"id";s:3:"103";s:6:"option";s:6:"joomla";s:6:"params";s:51:"{"mediaversion":"0281e4ac065e613e906c0a3e3b3d0010"}";s:7:"enabled";s:1:"1";}}
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";O:8:"stdClass":4:{s:2:"id";s:3:"103";s:6:"option";s:6:"joomla";s:6:"params";s:51:"{"mediaversion":"85da6a5496c7447ad88b2cdf640ced8c"}";s:7:"enabled";s:1:"1";}}

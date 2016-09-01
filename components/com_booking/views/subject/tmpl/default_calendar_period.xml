@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<metadata>
-	<layout title="PERIOD_LAYOUT" description="PERIOD_CALENDAR_DESCRIPTION"></layout>
-	<files>
-		<filename>default_calendar_period.php</filename>
-	</files>
-</metadata>

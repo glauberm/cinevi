@@ -70,7 +70,7 @@ foreach ($this->emailData as $key => $val)
 	{
 		continue;
 	}
-	echo '<tr><td>' . $label . '</td><td>';
+	echo '<tr><td style="font-weight: bold;">' . $label . '</td><td>';
 	if (is_array($val)) :
 		foreach ($val as $v):
 			if (is_array($v)) :

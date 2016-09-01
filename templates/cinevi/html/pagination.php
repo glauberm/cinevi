@@ -70,10 +70,10 @@ defined('_JEXEC') or die;
  */
 function pagination_list_footer($list)
 {
-	$html = "<nav class=\"pagination\">\n";
+	$html = "<div class=\"pagination\">\n";
 	$html .= $list['pageslinks'];
 	$html .= "\n<input type=\"hidden\" name=\"" . $list['prefix'] . "limitstart\" value=\"" . $list['limitstart'] . "\" />";
-	$html .= "\n</nav>";
+	$html .= "\n</div>";
 
 	return $html;
 }
@@ -112,7 +112,7 @@ function pagination_list_render($list)
 		}
 	}
 
-	$html = '<ul class="pagination pagination-lg">';
+	$html = '<ul class="pagination-list">';
 	$html .= $list['start']['data'];
 	$html .= $list['previous']['data'];
 

@@ -2347,7 +2347,7 @@ class PlgFabrik_Element extends FabrikPlugin
 
 			// Placeholder to be updated by ajax code
 			$v = $this->getROElement($data, $repeatCounter);
-			$v = $v == '' ? '&nbsp;' : $v;
+			//$v = $v == '' ? '&nbsp;' : $v;
 
 			return '<div id="' . $htmlId . '">' . $v . '</div>';
 		}
@@ -2869,9 +2869,8 @@ class PlgFabrik_Element extends FabrikPlugin
 		 * element on the form.
 		 * $element = $this->getParent();
 		 */
-		$jsControllerKey = "\tFabrik.blocks['" . $jsControllerKey . "']";
-		$element         = $this->getElement();
-		$w               = new FabrikWorker;
+		$element = $this->getElement();
+		$w       = new FabrikWorker;
 
 		if (array_key_exists($element->id, $allJsActions))
 		{
@@ -2974,11 +2973,11 @@ class PlgFabrik_Element extends FabrikPlugin
 						// Need to use corrected triggerid here as well
 						if (preg_match('#^fabrik_trigger#', $triggerid))
 						{
-							$js .= $jsControllerKey . ".doElementFX('" . $triggerid . "', '$jsAct->js_e_event', this)";
+							$js .= "Fabrik.getBlock('" . $jsControllerKey . "').doElementFX('" . $triggerid . "', '$jsAct->js_e_event', this)";
 						}
 						else
 						{
-							$js .= $jsControllerKey . ".doElementFX('fabrik_trigger_" . $triggerid . "', '$jsAct->js_e_event', this)";
+							$js .= "Fabrik.getBlock('" . $jsControllerKey . "').doElementFX('fabrik_trigger_" . $triggerid . "', '$jsAct->js_e_event', this)";
 						}
 
 						$js .= "}";
@@ -3424,6 +3423,12 @@ class PlgFabrik_Element extends FabrikPlugin
 	 */
 	protected function singleFilter($default, $v, $type = 'text')
 	{
+		// $$$ hugh - for "reasons", sometimes it's an array with one value.  No clue why.  Sod it.
+		if (is_array($default))
+		{
+			$default = array_shift($default);
+		}
+		
 		// $$$ rob - if searching on "O'Fallon" from querystring filter the string has slashes added regardless
 		$default = (string) $default;
 		$default = stripslashes($default);
@@ -3480,7 +3485,7 @@ class PlgFabrik_Element extends FabrikPlugin
 		}
 		else
 		{
-			$selector          = '.advancedSeach_' . $listModel->getRenderContext() . ' .' . $id;
+			$selector          = '.advancedSearch_' . $listModel->getRenderContext() . ' .' . $id;
 			$opts['menuclass'] = 'auto-complete-container advanced';
 		}
 
@@ -3969,6 +3974,11 @@ class PlgFabrik_Element extends FabrikPlugin
 			// $elementWhere = JString::str_ireplace('WHERE ', 'AND ', $elementWhere);
 			$elementWhere = preg_replace("#^(\s*)(WHERE)(.*)#i", "$1AND$3", $elementWhere);
 		}
+		else if (JString::stristr($sql, 'WHERE ') && !empty($elementWhere) && !JString::stristr($elementWhere, 'WHERE '))
+		{
+			// if we have a WHERE in the main query, and the element clause isn't empty but doesn't start with WHERE ...
+			$elementWhere = 'AND ' . $elementWhere;
+		}
 
 		$sql .= ' ' . $elementWhere;
 		$sql .= "\n" . $groupBy;
@@ -4381,17 +4391,17 @@ class PlgFabrik_Element extends FabrikPlugin
 					$condition = 'IN';
 					if ($eval != FABRIKFILTER_QUERY)
 					{
-						$value     = FabrikString::safeQuote($value, true);
+						$value = FabrikString::safeQuote($value, true);
 					}
-					$value     = '(' . $value . ')';
+					$value = '(' . $value . ')';
 					break;
 				case 'not_in':
 					$condition = 'NOT IN';
 					if ($eval != FABRIKFILTER_QUERY)
 					{
-						$value     = FabrikString::safeQuote($value, true);
+						$value = FabrikString::safeQuote($value, true);
 					}
-					$value     = '(' . $value . ')';
+					$value = '(' . $value . ')';
 					break;
 			}
 
@@ -4440,11 +4450,11 @@ class PlgFabrik_Element extends FabrikPlugin
 	 * @param   string $condition     =/like etc.
 	 * @param   string $value         search string - already quoted if specified in filter array options
 	 * @param   string $originalValue original filter value without quotes or %'s applied
-	 * @param   string $type          filter type advanced/normal/prefilter/search/querystring/searchall
-	 *
+	 * @param   string $type          filter type advanced/normal/prefilter/search/querystring/sea* @
+	 * @param   string $filterEval    eval the filter value
 	 * @return  string    sql query part e,g, "key = value"
 	 */
-	public function getFilterQuery($key, $condition, $value, $originalValue, $type = 'normal')
+	public function getFilterQuery($key, $condition, $value, $originalValue, $type = 'normal', $filterEval = '0')
 	{
 		$this->encryptFieldName($key);
 
@@ -4613,7 +4623,7 @@ class PlgFabrik_Element extends FabrikPlugin
 	 */
 	public function recordInDatabase($data = null)
 	{
-		return $this->recordInDatabase;
+		return $this->getParams()->get('store_in_db', $this->recordInDatabase);
 	}
 
 	/**
@@ -5600,17 +5610,8 @@ class PlgFabrik_Element extends FabrikPlugin
 	 */
 	public function formJavascriptClass(&$srcs, $script = '', &$shim = array())
 	{
-		$name    = $this->getElement()->plugin;
-		$ext     = FabrikHelperHTML::isDebug() ? '.js' : '-min.js';
-		$shimKey = 'element/' . $name . '/' . $name;
-
-		if (!array_key_exists($shimKey, $shim))
-		{
-			$s                                      = new stdClass;
-			$s->deps                                = array('fab/element');
-			$shim['element/' . $name . '/' . $name] = $s;
-		}
-
+		$name   = $this->getElement()->plugin;
+		$ext    = FabrikHelperHTML::isDebug() ? '.js' : '-min.js';
 		$formId = $this->getFormModel()->getId();
 		static $elementClasses;
 
@@ -5631,7 +5632,7 @@ class PlgFabrik_Element extends FabrikPlugin
 
 		if (empty($elementClasses[$formId][$script]))
 		{
-			$srcs[]                           = $script;
+			$srcs['Element' . ucfirst($name)] = $script;
 			$elementClasses[$formId][$script] = 1;
 		}
 	}
@@ -5650,7 +5651,8 @@ class PlgFabrik_Element extends FabrikPlugin
 
 		if (JFile::exists(JPATH_SITE . '/' . $src))
 		{
-			$srcs[] = $src;
+			$className = 'Fb' . ucfirst($p) .'List';
+			$srcs[$className] = $src;
 		}
 	}
 
@@ -5991,29 +5993,36 @@ class PlgFabrik_Element extends FabrikPlugin
 	 */
 	protected function renderListDataFinal($data)
 	{
-		if (is_array($data) && count($data) > 1)
+		if (is_array($data))
 		{
-			if (!array_key_exists(0, $data))
+			if (count($data) > 1)
 			{
-				// Occurs if we have created a list from an existing table whose data contains json objects (e.g. #__users.params)
-				$obj     = ArrayHelper::toObject($data);
-				$data    = array();
-				$data[0] = $obj;
-			}
-			// If we are storing info as json the data will contain an array of objects
-			if (is_object($data[0]))
-			{
-				foreach ($data as &$o)
+				if (!array_key_exists(0, $data))
 				{
-					$this->convertDataToString($o);
+					// Occurs if we have created a list from an existing table whose data contains json objects (e.g. #__users.params)
+					$obj     = ArrayHelper::toObject($data);
+					$data    = array();
+					$data[0] = $obj;
 				}
-			}
+				// If we are storing info as json the data will contain an array of objects
+				if (is_object($data[0]))
+				{
+					foreach ($data as &$o)
+					{
+						$this->convertDataToString($o);
+					}
+				}
 
-			$r = '<ul class="fabrikRepeatData"><li>' . implode('</li><li>', $data) . '</li></ul>';
+				$r = '<ul class="fabrikRepeatData"><li>' . implode('</li><li>', $data) . '</li></ul>';
+			}
+			else
+			{
+				$r = empty($data) ? '' : array_shift($data);
+			}
 		}
 		else
 		{
-			$r = empty($data) ? '' : array_shift($data);
+			$r = $data;
 		}
 
 		$layout            = $this->getLayout('list');
@@ -6341,7 +6350,7 @@ class PlgFabrik_Element extends FabrikPlugin
 	public function onAjax_getFolders()
 	{
 		$input   = $this->app->input;
-		$rDir    = $input->get('dir');
+		$rDir    = $input->getString('dir');
 		$folders = JFolder::folders($rDir);
 
 		if ($folders === false)
@@ -6718,6 +6727,10 @@ class PlgFabrik_Element extends FabrikPlugin
 		{
 			$thousandSep = ' ';
 		}
+		else if ($thousandSep == '#00')
+		{
+			$thousandSep = '';
+		}
 
 		return number_format((float) $data, $decimalLength, $decimalSep, $thousandSep);
 	}
@@ -6749,7 +6762,11 @@ class PlgFabrik_Element extends FabrikPlugin
 		{
 			$thousandSep = ' ';
 		}
-
+		else if ($thousandSep == '#00')
+		{
+			$thousandSep = '';
+		}
+		
 		$val = str_replace($thousandSep, '', $val);
 		$val = str_replace($decimalSep, '.', $val);
 
@@ -7572,11 +7589,7 @@ class PlgFabrik_Element extends FabrikPlugin
 
 		if ($globalAdvanced !== 0)
 		{
-			// $$$ hugh - may have fixed the repeat group issues
-			//if (!$this->getGroup()->canRepeat())
-			//{
 			$advancedClass = $params->get('advanced_behavior', '0') == '1' || $globalAdvanced === 2 ? 'advancedSelect' : '';
-			//}
 		}
 
 		return $advancedClass;
@@ -7718,5 +7731,14 @@ class PlgFabrik_Element extends FabrikPlugin
 	public function isPublished()
 	{
 		return $this->getElement()->published === '1';
+	}
+
+	/**
+	 * Add any jsJLayout templates to Fabrik.jLayouts js object.
+	 *
+	 * @return void
+	 */
+	public function jsJLayouts()
+	{
 	}
 }

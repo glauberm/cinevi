@@ -644,6 +644,9 @@ class FabrikAdminModelList extends FabModelAdmin
 
 		$params = new Registry($row->get('params'));
 
+		$isView = $this->setIsView($params);
+		$data['params']['isView'] = (string) $isView;
+
 		$this->setState('list.id', $id);
 		$this->setState('list.form_id', $row->get('form_id'));
 		$feModel = $this->getFEModel();
@@ -790,6 +793,47 @@ class FabrikAdminModelList extends FabModelAdmin
 		}
 
 		return true;
+	}
+
+	/**
+	 * Tests if the table is in fact a view
+	 *
+	 * @return  bool	true if table is a view
+	 */
+	public function setIsView($params)
+	{
+		$isView = $params->get('isview', null);
+
+		if (!is_null($isView) && (int) $isView >= 0)
+		{
+			return $isView;
+		}
+
+		$feModel = $this->getFEModel();
+
+		$db = FabrikWorker::getDbo();
+		$table = $this->getTable();
+		$cn = $feModel->getConnection();
+		$c = $cn->getConnection();
+		$dbName = $c->database;
+
+		if ($table->db_table_name == '')
+		{
+			return;
+		}
+
+		// @todo JQueryBuilder this?
+		$sql = " SELECT table_name, table_type, engine FROM INFORMATION_SCHEMA.tables " . "WHERE table_name = " . $db->q($table->db_table_name)
+			. " AND table_type = 'view' AND table_schema = " . $db->q($dbName);
+		$db->setQuery($sql);
+		$row = $db->loadObjectList();
+		$isView = empty($row) ? "0" : "1";
+		$feModel->setIsView($isView);
+
+		// Store and save param for following tests
+		$params->set('isview', $isView);
+
+		return $isView;
 	}
 
 	/**
@@ -2341,7 +2385,7 @@ class FabrikAdminModelList extends FabModelAdmin
 		$o                      = (object) $a;
 		$o->admin_template      = 'admin';
 		$o->detaillink          = 0;
-		$o->empty_data_msg      = 'No data found';
+		$o->empty_data_msg      = FText::_('COM_FABRIK_LIST_NO_DATA_MSG');
 		$o->pdf                 = '';
 		$o->rss                 = 0;
 		$o->feed_title          = '';

@@ -1889,6 +1889,159 @@ class FabrikWorker
 	}
 
 	/**
+	 * Function to send an email
+	 *
+	 * @param   string   $from         From email address
+	 * @param   string   $fromName     From name
+	 * @param   mixed    $recipient    Recipient email address(es)
+	 * @param   string   $subject      email subject
+	 * @param   string   $body         Message body
+	 * @param   boolean  $mode         false = plain text, true = HTML
+	 * @param   mixed    $cc           CC email address(es)
+	 * @param   mixed    $bcc          BCC email address(es)
+	 * @param   mixed    $attachment   Attachment file name(s)
+	 * @param   mixed    $replyTo      Reply to email address(es)
+	 * @param   mixed    $replyToName  Reply to name(s)
+	 *
+	 * @return  boolean  True on success
+	 *
+	 * @since   11.1
+	 */
+	public static function sendMail($from, $fromName, $recipient, $subject, $body, $mode = false,
+		$cc = null, $bcc = null, $attachment = null, $replyTo = null, $replyToName = null)
+	{
+		// do a couple of tweaks to improve spam scores
+
+		// If html, make sure there's an <html> tag
+		if ($mode)
+		{
+			if (!stristr($body, '<html>'))
+			{
+				$body = '<html>' . $body . '</html>';
+			}
+		}
+
+		// if simple single email recipient with no name part, fake out name part to avoid TO_NO_BKRT hit in spam filters
+		$recipientName = '';
+		if (is_string($recipient) && !strstr($recipient, '<'))
+		{
+			$recipientName = $recipient;
+		}
+
+		// Get a JMail instance
+		$mailer = JFactory::getMailer();
+
+		$mailer->setSubject($subject);
+		$mailer->setBody($body);
+		$mailer->Encoding = 'base64';
+
+		// Are we sending the email as HTML?
+		$mailer->isHtml($mode);
+
+		try
+		{
+			$mailer->addRecipient($recipient, $recipientName);
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+
+		try
+		{
+			$mailer->addCc($cc);
+		}
+		catch (Exception $e)
+		{
+			// not sure if we should bail if Cc is bad, for now just soldier on
+		}
+
+		try
+		{
+			$mailer->addBcc($bcc);
+		}
+		catch (Exception $e)
+		{
+			// not sure if we should bail if Bcc is bad, for now just soldier on
+		}
+
+		try
+		{
+			$mailer->addAttachment($attachment);
+		}
+		catch (Exception $e)
+		{
+			// most likely file didn't exist, ignore
+		}
+
+		$autoReplyTo = false;
+
+		// Take care of reply email addresses
+		if (is_array($replyTo))
+		{
+			$numReplyTo = count($replyTo);
+
+			for ($i = 0; $i < $numReplyTo; $i++)
+			{
+				try
+				{
+					$mailer->addReplyTo($replyTo[$i], $replyToName[$i]);
+				}
+				catch (Exception $e)
+				{
+					// carry on
+				}
+			}
+		}
+		elseif (isset($replyTo))
+		{
+			try
+			{
+				$mailer->addReplyTo($replyTo, $replyToName);
+			}
+			catch (Exception $e)
+			{
+				// carry on
+			}
+		}
+		else
+		{
+			$autoReplyTo = true;
+		}
+
+		try
+		{
+			$mailer->setSender(array($from, $fromName, $autoReplyTo));
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+
+		/**
+		 * Set the plain text AltBody, which forces the PHP mailer class to make this
+		 * a multipart MIME type, with an alt body for plain text.  If we don't do this,
+		 * the default behavior is to send it as just text/html, which causes spam filters
+		 * to downgrade it.
+		 */
+		if ($mode)
+		{
+			$mailer->AltBody = JMailHelper::cleanText(strip_tags($body));
+		}
+
+		try
+		{
+			$ret = $mailer->Send();
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+
+		return $ret;
+	}
+
+	/**
 	 * Get a JS go back action e.g 'onclick="history.back()"
 	 *
 	 * @return string

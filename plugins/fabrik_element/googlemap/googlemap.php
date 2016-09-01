@@ -272,49 +272,6 @@ class PlgFabrik_ElementGooglemap extends PlgFabrik_Element
 	}
 
 	/**
-	 * Get the class to manage the form element
-	 * to ensure that the file is loaded only once
-	 *
-	 * @param   array   &$srcs   Scripts previously loaded
-	 * @param   string  $script  Script to load once class has loaded
-	 * @param   array   &$shim   Dependant class names to load before loading the class - put in requirejs.config shim
-	 *
-	 * @return void|boolean
-	 */
-	public function formJavascriptClass(&$srcs, $script = '', &$shim = array())
-	{
-		$params = $this->getParams();
-		$geocode = $params->get('fb_gm_geocode', '0');
-		$geocode_event = $params->get('fb_gm_geocode_event', 'button');
-
-		$s = new stdClass;
-		$s->deps = array('fab/element');
-
-		if ($geocode !== '0' && $geocode_event === 'change')
-		{
-			$folder = 'fab/lib/debounce/';
-			$s->deps[] = $folder . 'jquery.ba-throttle-debounce';
-		}
-
-		if (count($s->deps) > 1)
-		{
-			if (array_key_exists('element/googlemap/googlemap', $shim))
-			{
-				$shim['element/googlemap/googlemap']->deps = array_merge($shim['element/googlemap/googlemap']->deps, $s->deps);
-			}
-			else
-			{
-				$shim['element/googlemap/googlemap'] = $s;
-			}
-		}
-
-		parent::formJavascriptClass($srcs, $script, $shim);
-
-		return false;
-	}
-
-
-	/**
 	 * Returns javascript which creates an instance of the class defined in formJavascriptClass()
 	 *
 	 * @param   int  $repeatCounter  Repeat group counter
@@ -385,6 +342,9 @@ class PlgFabrik_ElementGooglemap extends PlgFabrik_Element
 					$opts->geocode_fields[] = $field_id;
 				}
 			}
+
+			// remove any duplicates in case they have misunderstood and selected the same element for all fields
+			$opts->geocode_fields = array_unique($opts->geocode_fields);
 		}
 
 		$opts->reverse_geocode = $params->get('fb_gm_reverse_geocode', '0') == '0' ? false : true;
@@ -443,6 +403,10 @@ class PlgFabrik_ElementGooglemap extends PlgFabrik_Element
 		{
 			$opts->directionsFrom = false;
 		}
+
+		$config = JComponentHelper::getParams('com_fabrik');
+		$apiKey = $config->get('google_api_key', '');
+		$opts->key = empty($apiKey) ? false : $apiKey;
 
 		return array('FbGoogleMap', $id, $opts);
 	}
@@ -955,5 +919,48 @@ class PlgFabrik_ElementGooglemap extends PlgFabrik_Element
 		}
 
 		return $this->default;
+	}
+
+
+	/**
+	 * Used to format the data when shown in the form's email
+	 *
+	 * @param   mixed $value         element's data
+	 * @param   array $data          form records data
+	 * @param   int   $repeatCounter repeat group counter
+	 *
+	 * @return  string    formatted value
+	 */
+	public function getEmailValue($value, $data = array(), $repeatCounter = 0)
+	{
+		if ($this->inRepeatGroup && is_array($value))
+		{
+			$val = array();
+
+			foreach ($value as $v2)
+			{
+				$val[] = $this->getIndEmailValue($v2, $data, $repeatCounter);
+			}
+		}
+		else
+		{
+			$val = $this->getIndEmailValue($value, $data, $repeatCounter);
+		}
+
+		return $val;
+	}
+
+	/**
+	 * Turn form value into email formatted value
+	 *
+	 * @param   mixed $value         Element value
+	 * @param   array $data          Form data
+	 * @param   int   $repeatCounter Group repeat counter
+	 *
+	 * @return  string  email formatted value
+	 */
+	protected function getIndEmailValue($value, $data = array(), $repeatCounter = 0)
+	{
+		return $this->_staticMap($value, null, null, null, $repeatCounter, false, $data);
 	}
 }

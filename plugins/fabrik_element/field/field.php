@@ -313,6 +313,10 @@ class PlgFabrik_ElementField extends PlgFabrik_Element
 
 		$opts->geocomplete = $params->get('autocomplete', '0') === '3';
 
+		$config = JComponentHelper::getParams('com_fabrik');
+		$apiKey = $config->get('google_api_key', '');
+		$opts->mapKey = empty($apiKey) ? false : $apiKey;
+
 		if ($this->getParams()->get('autocomplete', '0') == '2')
 		{
 			$autoOpts = array();
@@ -336,12 +340,18 @@ class PlgFabrik_ElementField extends PlgFabrik_Element
 	 */
 	public function formJavascriptClass(&$srcs, $script = '', &$shim = array())
 	{
+		$key = FabrikHelperHTML::isDebug() ? 'element/field/field' : 'element/field/field-min';
 		$params = $this->getParams();
 		$inputMask = trim($params->get('text_input_mask', ''));
-		$geocomplete = $params->get('autocomplete', '0') === '3';
+		$geoComplete = $params->get('autocomplete', '0') === '3';
 
 		$s = new stdClass;
-		$s->deps = array('fab/element');
+
+		// Even though fab/element is now an AMD defined module we should still keep it in here
+		// otherwise (not sure of the reason) jQuery.mask is not defined in field.js
+
+		// Seems OK now - reverting to empty array
+		$s->deps = array();
 
 		if (!empty($inputMask))
 		{
@@ -349,22 +359,19 @@ class PlgFabrik_ElementField extends PlgFabrik_Element
 			$s->deps[] = $folder . 'jquery.maskedinput';
 		}
 
-		if ($geocomplete)
+		if ($geoComplete)
 		{
 			$folder = 'components/com_fabrik/libs/googlemaps/geocomplete/';
 			$s->deps[] = $folder . 'jquery.geocomplete';
 		}
-
-		if (count($s->deps) > 1)
+		
+		if (array_key_exists($key, $shim))
 		{
-			if (array_key_exists('element/field/field', $shim))
-			{
-				$shim['element/field/field']->deps = array_merge($shim['element/field/field']->deps, $s->deps);
-			}
-			else
-			{
-				$shim['element/field/field'] = $s;
-			}
+			$shim[$key]->deps = array_merge($shim[$key]->deps, $s->deps);
+		}
+		else
+		{
+			$shim[$key] = $s;
 		}
 
 		parent::formJavascriptClass($srcs, $script, $shim);

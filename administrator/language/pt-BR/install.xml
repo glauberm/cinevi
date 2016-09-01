@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.5" client="administrator" type="language" method="upgrade">
+<extension version="3.6" client="administrator" type="language" method="upgrade">
 	<name>Português do Brasil (pt-BR)</name>
 	<tag>pt-BR</tag>
-	<version>3.5.1.1</version>
-	<creationDate>2016-04-07</creationDate>
+	<version>3.6.2.1</version>
+	<creationDate>Agosto de 2016</creationDate>
 	<author>Equipe de Tradução Português do Brasil</author>
 	<authorEmail>pt-br@joomlacarioca.com.br</authorEmail>
 	<authorUrl>http://brasil.joomla.com</authorUrl>
@@ -161,6 +161,12 @@
 		<filename>pt-BR.plg_finder_tags.sys.ini</filename>
 		<filename>pt-BR.plg_finder_weblinks.ini</filename>
 		<filename>pt-BR.plg_finder_weblinks.sys.ini</filename>
+		<filename>pt-BR.plg_installer_folderinstaller.ini</filename>
+		<filename>pt-BR.plg_installer_folderinstaller.sys.ini</filename>
+		<filename>pt-BR.plg_installer_packageinstaller.ini</filename>
+		<filename>pt-BR.plg_installer_packageinstaller.sys.ini</filename>
+		<filename>pt-BR.plg_installer_urlinstaller.ini</filename>
+		<filename>pt-BR.plg_installer_urlinstaller.sys.ini</filename>
 		<filename>pt-BR.plg_installer_webinstaller.ini</filename>
 		<filename>pt-BR.plg_installer_webinstaller.sys.ini</filename>
 		<filename>pt-BR.plg_quickicon_extensionupdate.ini</filename>

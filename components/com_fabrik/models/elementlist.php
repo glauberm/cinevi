@@ -193,10 +193,11 @@ class PlgFabrik_ElementList extends PlgFabrik_Element
 	 * @param   string  $value          Search string - already quoted if specified in filter array options
 	 * @param   string  $originalValue  Original filter value without quotes or %'s applied
 	 * @param   string  $type           Filter type advanced/normal/prefilter/search/querystring/searchall
-	 *
+	 * @param   string  $evalFilter     evaled (only used for multiselect types)
+	 *                                  
 	 * @return  string	sql query part e,g, "key = value"
 	 */
-	public function getFilterQuery($key, $condition, $value, $originalValue, $type = 'normal')
+	public function getFilterQuery($key, $condition, $value, $originalValue, $type = 'normal', $evalFilter = '0')
 	{
 		$element = $this->getElement();
 		$condition = JString::strtoupper($condition);
@@ -205,7 +206,7 @@ class PlgFabrik_ElementList extends PlgFabrik_Element
 
 		if ($element->filter_type == 'checkbox' || $element->filter_type == 'multiselect')
 		{
-			$str = $this->filterQueryMultiValues($key, $condition, $originalValue);
+			$str = $this->filterQueryMultiValues($key, $condition, $originalValue, $evalFilter);
 		}
 		else
 		{
@@ -246,12 +247,20 @@ class PlgFabrik_ElementList extends PlgFabrik_Element
 	 * @param $key
 	 * @param $condition
 	 * @param $originalValue
+	 * @param $evalFilter
 	 *
 	 * @return string
 	 */
-	protected function filterQueryMultiValues ($key, $condition, $originalValue)
+	protected function filterQueryMultiValues ($key, $condition, $originalValue, $evalFilter)
 	{
 		$str = array();
+
+		if ($evalFilter)
+		{
+			$originalValue = stripslashes(htmlspecialchars_decode($originalValue, ENT_QUOTES));
+			$originalValue = @eval($originalValue);
+			FabrikWorker::logEval($originalValue, 'Caught exception on eval of elementList::filterQueryMultiValues() ' . $key . ': %s');
+		}
 
 		if ($condition === 'NOT IN')
 		{
@@ -655,6 +664,12 @@ class PlgFabrik_ElementList extends PlgFabrik_Element
 				{
 					$lis[] = $l;
 				}
+				else
+				{
+					// was trying to fix issue with empty merged repeat rows not having height but messes CSV export
+					//$lis[] = '&nbsp;';
+					$lis[] = '';
+				}
 			}
 
 			if (!empty($lis))
@@ -674,33 +689,16 @@ class PlgFabrik_ElementList extends PlgFabrik_Element
 			}
 		}
 
-		$condensed = array();
+		$layout = FabrikHelperHTML::getLayout('fabrik-element-elementlist-details',
+			array(COM_FABRIK_FRONTEND . '/layouts/element'));
 
-		if ($condense)
-		{
-			foreach ($uls as $ul)
-			{
-				$condensed[] = $ul[0];
-			}
+		$displayData = array(
+			'uls' => $uls,
+			'condense' => $condense,
+			'addHtml' => $addHtml
+		);
 
-			return $addHtml ? '<ul class="fabrikRepeatData"><li>' . implode('</li><li>', $condensed) . '</li></ul>' : implode(' ', $condensed);
-		}
-		else
-		{
-			$html = array();
-			$html[] = $addHtml ? '<ul class="fabrikRepeatData"><li>' : '';
-
-			foreach ($uls as $ul)
-			{
-				$html[] = $addHtml ? '<ul class="fabrikRepeatData"><li>' : '';
-				$html[] = $addHtml ? implode('</li><li>', $ul) : implode(' ', $ul);
-				$html[] = $addHtml ? '</li></ul>' : '';
-			}
-
-			$html[] = $addHtml ? '</li></ul>' : '';
-
-			return $addHtml ? implode('', $html) : implode(' ', $html);
-		}
+		return $layout->render((object) $displayData);
 	}
 
 	/**
@@ -1011,16 +1009,13 @@ class PlgFabrik_ElementList extends PlgFabrik_Element
 	 */
 	public function formJavascriptClass(&$srcs, $script = '', &$shim = array())
 	{
-		$ext = FabrikHelperHTML::isDebug() ? '.js' : '-min.js';
-		$files = array('media/com_fabrik/js/element' . $ext, 'media/com_fabrik/js/elementlist' . $ext);
+		$mediaFolder = FabrikHelperHTML::getMediaFolder();
+		$files = array(
+			'Element' => $mediaFolder . '/element.js',
+			'ElementList' => $mediaFolder . '/elementlist.js'
+		);
 
-		foreach ($files as $file)
-		{
-			if (!in_array($file, $srcs))
-			{
-				$srcs[] = $file;
-			}
-		}
+		$srcs = array_merge($srcs, $files);
 
 		parent::formJavascriptClass($srcs, $script, $shim);
 	}

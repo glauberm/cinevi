@@ -1450,6 +1450,7 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 			$displayData                   = new stdClass;
 			$displayData->opts             = $options;
 			$displayData->default          = FArrayHelper::getValue($default, 0);
+			$displayData->editable         = $this->isEditable();
 			$displayData->showPleaseSelect = $this->showPleaseSelect();
 
 			return $layout->render($displayData);
@@ -2509,10 +2510,11 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 	 * @param   string $value         search string - already quoted if specified in filter array options
 	 * @param   string $originalValue original filter value without quotes or %'s applied
 	 * @param   string $type          filter type advanced/normal/prefilter/search/querystring/searchall
-	 *
+	 * @param   string  $evalFilter     evaled
+	 *                                  
 	 * @return  string    sql query part e,g, "key = value"
 	 */
-	public function getFilterQuery($key, $condition, $value, $originalValue, $type = 'normal')
+	public function getFilterQuery($key, $condition, $value, $originalValue, $type = 'normal', $evalFilter = '0')
 	{
 		/* $$$ rob $this->_rawFilter set in tableModel::getFilterArray()
 		 used in pre-filter drop-down in admin to allow users to pre-filter on raw db join value */
@@ -2547,9 +2549,9 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 
 		$this->encryptFieldName($key);
 
-		if (!$this->_rawFilter && ($type == 'searchall' || $type == 'prefilter'))
+		if (!$this->_rawFilter && ($type === 'searchall' || ($type === 'prefilter') || $type === 'menuPrefilter'))
 		{
-			if ($type !== 'prefilter')
+			if ($type !== 'prefilter' && $type !== 'menuPrefilter')
 			{
 				if (!$this->isJoin())
 				{
@@ -2560,6 +2562,13 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 					{
 						$key = FabrikString::safeColName($join->table_join_alias) . '.' . $this->_db->qn($key);
 					}
+				}
+			}
+			else
+			{
+				if (!$this->_rawFilter)
+				{
+					$key = $this->_db->qn($params->get('join_db_name')) . '.' . $this->_db->qn($this->getLabelParamVal());
 				}
 			}
 
@@ -2599,10 +2608,10 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 
 					if (!empty($rows))
 					{
-						// Either look for the parent_ids in the main fabrik list or the group's list.
+						// Either look for the ids in the main fabrik list or the group's list.
 						$groupJoinModel = $group->getJoinModel();
-						$groupFk        = $groupJoinModel->getForeignKey('.');
-						$lookupTable    = $group->isJoin() ? $groupFk : $this->getListModel()->getPrimaryKey();
+						$groupPk        = $groupJoinModel->getForeignID('.');
+						$lookupTable    = $group->isJoin() ? $groupPk : $this->getListModel()->getPrimaryKey();
 						$str            = $lookupTable . ' IN (' . implode(', ', $joinIds) . ')';
 					}
 					else
@@ -2860,16 +2869,51 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 	}
 
 	/**
+	 * Add any jsJLayout templates to Fabrik.jLayouts js object.
+	 *
+	 * @return void
+	 */
+	public function jsJLayouts()
+	{
+		$opts = $this->elementJavascriptOpts();
+		$params = $this->getParams();
+
+		if ($opts->allowadd)
+		{
+			$modalOpts = array(
+				'content' => '',
+				'id' => $opts->modalId,
+				'title' => '',
+				'modal' => false,
+				'expandable' => true
+			);
+			FabrikHelperHTML::jLayoutJs($opts->modalId, 'fabrik-modal', (object) $modalOpts);
+		}
+
+		if ($params->get('fabrikdatabasejoin_frontend_select'))
+		{
+			$modalOpts = array(
+				'content' => '',
+				'id' => 'db_join_select',
+				'title' => '',
+				'modal' => false,
+				'expandable' => true
+			);
+			FabrikHelperHTML::jLayoutJs('db_join_select', 'fabrik-modal', (object) $modalOpts);
+		}
+	}
+
+	/**
 	 * Get element JS options
 	 *
 	 * @param   int $repeatCounter Group repeat counter
 	 *
 	 * @return  array  Options
 	 */
-
-	protected function elementJavascriptOpts($repeatCounter)
+	protected function elementJavascriptOpts($repeatCounter = 0)
 	{
 		$params                   = $this->getParams();
+		$modalId                  = 'dbjoin_popupform';
 		$opts                     = $this->_getOptionVals();
 		$data                     = $this->getFormModel()->data;
 		$arSelected               = $this->getValue($data, $repeatCounter);
@@ -2879,6 +2923,7 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 		$popupForm                = (int) $params->get('databasejoin_popupform');
 		$popupListId              = (empty($popupForm) || !isset($forms[$popupForm])) ? '' : $forms[$popupForm]->listid;
 		$opts->id                 = $this->id;
+		$opts->modalId            = $modalId;
 		$opts->fullName           = $this->getFullName(true, false);
 		$opts->key                = $table . '___' . $params->get('join_key_column');
 		$opts->label              = $table . '___' . $this->getLabelParamVal();
@@ -2918,7 +2963,6 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 
 			foreach ($obs as $key => &$m)
 			{
-
 				if (empty($m))
 				{
 					unset($obs[$key]);
@@ -3173,7 +3217,7 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 				$trigger = 'change';
 				break;
 			case 'auto-complete':
-				$trigger = '';
+				$trigger = 'blur';
 				$id      = str_replace('[]', '', $id) . '-auto-complete';
 				break;
 			default:
@@ -3187,8 +3231,6 @@ class PlgFabrik_ElementDatabasejoin extends PlgFabrik_ElementList
 		{
 			$ar[] = array('id' => $id, 'triggerEvent' => $trigger);
 		}
-
-		$ar[] = array('id' => $id, 'triggerEvent' => 'blur');
 
 		return $ar;
 	}

@@ -19,7 +19,8 @@ jQuery.slimbox.scanPage = function() {
 
 window.addEvent("domready", jQuery.slimbox.scanPage);
 
-window.addEvent('fabrik.loaded', function() {
-	Fabrik.addEvent('fabrik.list.update', jQuery.slimbox.scanPage);
-	Fabrik.addEvent('fabrik.cdd.update', jQuery.slimbox.scanPage);
+
+require(['fab/fabrik'], function (Fabrik) {
+		Fabrik.addEvent('fabrik.list.update', jQuery.slimbox.scanPage);
+		Fabrik.addEvent('fabrik.cdd.update', jQuery.slimbox.scanPage);
 });

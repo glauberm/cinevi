@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<metadata>
-    <layout title="WEEK_MULTI_LAYOUT" description="WEEKLY_CALENDAR_DESCRIPTION"></layout>
-    <files>
-        <filename>default_calendar_weekly_multi.php</filename>
-    </files>
-</metadata>

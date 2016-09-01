@@ -269,9 +269,9 @@ class FabrikFEModelForm extends FabModelForm
 	 *
 	 * @since 3.1b
 	 *
-	 * @var string
+	 * @var array
 	 */
-	public $formPluginJS = '';
+	public $formPluginJS = array();
 
 	/**
 	 * Form plugin files to load
@@ -337,6 +337,13 @@ class FabrikFEModelForm extends FabModelForm
 	 * @var mixed
 	 */
 	public $formErrorMsg = null;
+
+	/**
+	 * Form sessionData
+	 *
+	 * @var array
+	 */
+	public $sessionData = null;
 
 	/**
 	 * Constructor
@@ -467,18 +474,20 @@ class FabrikFEModelForm extends FabModelForm
 			$ret = 1;
 		}
 
-		$isUserRowId = $this->isUserRowId();
+		//$isUserRowId = $this->isUserRowId();
 
-		// New form can we add?
-		if ($this->getRowId() === '' || $isUserRowId)
+		/* New form can we add?
+		 *
+		 * NOTE - testing to see if $data exists rather than looking at rowid to decide if editing, as when using
+		 * rowid=-1, things get funky, as rowid is never empty, even for new form, as it's set to user id
+		 */
+		if (empty($data) || !array_key_exists('__pk_val', $data) || empty($data['__pk_val']))
 		{
-			// If they can edit can they also add
 			if ($listModel->canAdd())
 			{
 				$ret = 3;
 			}
-			// $$$ hugh - corner case for rowid=-1, where they DON'T have add perms, but DO have edit perms
-			elseif ($isUserRowId && $listModel->canEdit($data))
+			else if ($listModel->canEdit($data))
 			{
 				$ret = 2;
 			}
@@ -651,13 +660,19 @@ class FabrikFEModelForm extends FabModelForm
 		// $$$ hugh - added ability to use form_XX, as am adding custom list_XX
 		$view = $this->isEditable() ? 'form' : 'details';
 
+		/**
+		 * $$$ hugh - need to use an assoc key name for the scripts array, as it gets used in the requirejs
+		 * to pass in as a function arg, which then blows up with "unexpected number" if we don't use a key name
+		 */
+		$scriptsKey = $view . '_' . $this->getId();
+
 		if (JFile::exists(COM_FABRIK_FRONTEND . '/js/' . $this->getId() . '.js'))
 		{
-			$scripts[] = 'components/com_fabrik/js/' . $this->getId() . '.js';
+			$scripts[$scriptsKey] = 'components/com_fabrik/js/' . $this->getId() . '.js';
 		}
 		elseif (JFile::exists(COM_FABRIK_FRONTEND . '/js/' . $view . '_' . $this->getId() . '.js'))
 		{
-			$scripts[] = 'components/com_fabrik/js/' . $view . '_' . $this->getId() . '.js';
+			$scripts[$scriptsKey] = 'components/com_fabrik/js/' . $view . '_' . $this->getId() . '.js';
 		}
 	}
 
@@ -1392,7 +1407,7 @@ class FabrikFEModelForm extends FabModelForm
 
 				$nsRaw = $val;
 
-				$nsRawFull = $this->_fullFormData;
+				$nsRawFull = $this->fullFormData;
 
 				for ($i = 0; $i <= $pathNodes; $i++)
 				{
@@ -1416,9 +1431,9 @@ class FabrikFEModelForm extends FabModelForm
 				$this->formDataWithTableName[$key] = $val;
 			}
 			// Check if set - for case where you have a fileupload element & confirmation plugin - when plugin is trying to update non-existent data
-			if (isset($this->_fullFormData))
+			if (isset($this->fullFormData))
 			{
-				$this->_fullFormData[$key] = $val;
+				$this->fullFormData[$key] = $val;
 			}
 			/*
 			 * Need to allow RO (encrypted) elements to be updated.  Consensus is that
@@ -1454,9 +1469,9 @@ class FabrikFEModelForm extends FabModelForm
 				$this->formData[$key] = $val;
 				$this->formDataWithTableName[$key] = $val;
 
-				if (isset($this->_fullFormData))
+				if (isset($this->fullFormData))
 				{
-					$this->_fullFormData[$key] = $val;
+					$this->fullFormData[$key] = $val;
 				}
 
 				if ($override_ro)
@@ -1496,7 +1511,7 @@ class FabrikFEModelForm extends FabModelForm
 		}
 		/* Maybe we are being called from onAfterProcess hook, or somewhere else
 		 * running after store, when non-joined data names have been reduced to short
-		 * names in formData, so peek in _fullFormData
+		 * names in formData, so peek in fullFormData
 		 */
 		elseif (isset($this->fullFormData) && array_key_exists($fullName, $this->fullFormData))
 		{
@@ -2537,9 +2552,9 @@ class FabrikFEModelForm extends FabModelForm
 		asort($aEls);
 
 		// Paul - Prepend rather than append "none" option.
-		array_unshift($aEls, JHTML::_('select.option', '', '-'));
+		array_unshift($aEls, JHtml::_('select.option', '', '-'));
 
-		return JHTML::_('select.genericlist', $aEls, $name, $attribs, 'value', 'text', $default);
+		return JHtml::_('select.genericlist', $aEls, $name, $attribs, 'value', 'text', $default);
 	}
 
 	/**
@@ -2619,11 +2634,12 @@ class FabrikFEModelForm extends FabModelForm
 	 * @param   string  $labelMethod           An element method that if set can alter the option's label
 	 *                                         Used to only show elements that can be selected for search all
 	 * @param   bool    $noJoins               do not include elements in joined tables (default false)
+	 * @param   bool    $translate             run label through translation (default true)
 	 *
 	 * @return	array	html options
 	 */
 	public function getElementOptions($useStep = false, $key = 'name', $show_in_list_summary = false, $incRaw = false,
-		$filter = array(), $labelMethod = '', $noJoins = false)
+		$filter = array(), $labelMethod = '', $noJoins = false, $translate = true)
 	{
 		$groups = $this->getGroupsHiarachy();
 		$aEls = array();
@@ -2655,6 +2671,11 @@ class FabrikFEModelForm extends FabModelForm
 				$val = $el->$key;
 				$label = strip_tags($prefix . $el->label);
 
+				if ($translate)
+				{
+					$label = FText::_($label);
+				}
+
 				if ($labelMethod !== '')
 				{
 					$elementModel->$labelMethod($label);
@@ -2684,12 +2705,12 @@ class FabrikFEModelForm extends FabModelForm
 								$rawVal = str_replace('`', '', $rawVal);
 							}
 
-							$aEls[$label . '(raw)'] = JHTML::_('select.option', $rawVal, $label . '(raw)');
+							$aEls[$label . '(raw)'] = JHtml::_('select.option', $rawVal, $label . '(raw)');
 						}
 					}
 				}
 
-				$aEls[] = JHTML::_('select.option', $val, $label);
+				$aEls[] = JHtml::_('select.option', $val, $label);
 			}
 		}
 		// Paul - Sort removed so that list is presented in group/id order regardless of whether $key is name or id
@@ -2953,11 +2974,11 @@ class FabrikFEModelForm extends FabModelForm
 			$errorsFound = true;
 		}
 
-		$errors = $this->isMambot ? $this->session->get($this->getSessionContext() . 'errors', array()) : $this->errors;
+		$allErrors = $this->isMambot ? $this->session->get($this->getSessionContext() . 'errors', array()) : $this->errors;
 
-		foreach ($errors as $field => $errors)
+		foreach ($allErrors as $field => $errors)
 		{
-			if (!empty($errors))
+			if (!empty($errors) & is_array($errors))
 			{
 				foreach ($errors as $error)
 				{
@@ -3130,7 +3151,8 @@ class FabrikFEModelForm extends FabModelForm
 
 						$bits = $data;
 						$bits = array_merge($tmp_data, $bits);
-						$data = array(FArrayHelper::toObject($bits));
+						//$data = array(FArrayHelper::toObject($bits));
+						$data = $bits;
 						FabrikHelperHTML::debug($data, 'form:getData from session (form not in Mambot and no errors');
 					}
 				}
@@ -3156,9 +3178,12 @@ class FabrikFEModelForm extends FabModelForm
 						 * rendering a form with a content plugin in a list intro.  And I don't think we ever need to
 						 * apply ordering to a form's select, by definition it's only one row.  Leaving this here for
 						 * now just as a reminder in case there's any unforeseen side effects.
+						 *
+						 * $$$ hugh - 4/25/2016 - yes, there is an issue, as (duh!) ordering is needed for repeat groups.
+						 * Changing this back to original for now, will need to work out how to handle that corner case
 						 */
-						// $opts = $input->get('task') == 'form.inlineedit' ? array('ignoreOrder' => true) : array();
-						$opts = array('ignoreOrder' => true);
+						$opts = $input->get('task') == 'form.inlineedit' ? array('ignoreOrder' => true) : array();
+						// $opts = array('ignoreOrder' => true);
 						$sql = $this->buildQuery($opts);
 						$fabrikDb->setQuery($sql);
 						FabrikHelperHTML::debug((string) $fabrikDb->getQuery(), 'form:render');
@@ -3444,6 +3469,11 @@ class FabrikFEModelForm extends FabModelForm
 	 */
 	protected function getSessionData()
 	{
+		if (isset($this->sessionData))
+		{
+			return $this->sessionData;
+		}
+
 		$params = $this->getParams();
 		$this->sessionModel = JModelLegacy::getInstance('Formsession', 'FabrikFEModel');
 		$this->sessionModel->setFormId($this->getId());
@@ -3458,7 +3488,9 @@ class FabrikFEModelForm extends FabModelForm
 
 		$this->sessionModel->useCookie($useCookie);
 
-		return $this->sessionModel->load();
+		$this->sessionData = $this->sessionModel->load();
+
+		return $this->sessionData;
 	}
 
 	/**
@@ -4021,12 +4053,7 @@ class FabrikFEModelForm extends FabModelForm
 			$remove = "/{edit:\s*.*?}/is";
 			$text = preg_replace($remove, '', $text);
 			$match = "/{details:\s*.*?}/is";
-
 			$text = preg_replace_callback($match, array($this, '_getIntroOutro'), $text);
-
-			// Was removing [rowid] from  {fabrik view=list id=2 countries___id=[rowid]} in details intro
-			//$text = str_replace('[', '{', $text);
-			//$text = str_replace(']', '}', $text);
 		}
 		else
 		{
@@ -4036,10 +4063,6 @@ class FabrikFEModelForm extends FabModelForm
 			$remove = "/{" . $remove . ":\s*.*?}/is";
 			$text = preg_replace_callback($match, array($this, '_getIntroOutro'), $text);
 			$text = preg_replace($remove, '', $text);
-
-			// Was removing [rowid] from  {fabrik view=list id=2 countries___id=[rowid]} in form intro
-			//$text = str_replace('[', '{', $text);
-			//$text = str_replace(']', '}', $text);
 			$text = preg_replace("/{details:\s*.*?}/is", '', $text);
 		}
 
@@ -4073,7 +4096,9 @@ class FabrikFEModelForm extends FabModelForm
 		$m = explode(":", $match[0]);
 		array_shift($m);
 		$m = implode(":", $m);
-		return FabrikString::rtrimword($m, "}");
+		$m = FabrikString::rtrimword($m, "}");
+		$m = preg_replace('/\[(\S+)\]/', '{${1}}', $m);
+		return $m;
 	}
 
 	/**
@@ -5247,6 +5272,27 @@ class FabrikFEModelForm extends FabModelForm
 		}
 
 		return $key;
+	}
+
+	/**
+	 * Ask all elements to add their js Fabrik.jLayouts to the framework
+	 * This has to be done before we call FabrikHelperHTML::framework();
+	 *
+	 * @return void;
+	 */
+	public function elementJsJLayouts()
+	{
+		$groups = $this->getGroupsHiarachy();
+
+		foreach ($groups as $groupModel)
+		{
+			$elementModels = $groupModel->getPublishedElements();
+
+			foreach ($elementModels as $elementModel)
+			{
+				$elementModel->jsJLayouts();
+			}
+		}
 	}
 
 	/**

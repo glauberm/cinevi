@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Buenard';
+    src: url('../fonts/buenard-bold-webfont.woff2') format('woff2'),
+         url('../fonts/buenard-bold-webfont.woff') format('woff'),
+         url('../fonts/buenard-bold-webfont.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
