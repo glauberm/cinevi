@@ -303,6 +303,11 @@ body.site .background-image:after {
 /* Banner */
 .body .container main .random-image {
     position: relative;
+    height: 150px;
+    overflow-y: hidden;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .body .container main .random-image img {
@@ -382,7 +387,14 @@ body.site .background-image:after {
     margin-bottom: 4px;
 }
 
-/* BANNERS */
+/* Form Fabrik */
+.still-dica {
+    padding: 4px 10px 12px 40px;
+    display: block;
+    color: #C22;
+}
+
+/* Banners */
 .body .container main .banneritem {
     display: inline-block;
 }

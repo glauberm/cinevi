@@ -59,7 +59,8 @@ function tryForLabel($formModel, $key, $raw, $info)
 	return array($label, $thisRaw, $show);
 }
 ?>
-<table>
+<h2>Departamento de Cinema e Vídeo</h2>
+<table border="1" style="border-collapse: collapse; width: 100%; border: 1px solid #045771; font-size: 14px;">
 <?php
 foreach ($this->emailData as $key => $val)
 {
@@ -70,7 +71,7 @@ foreach ($this->emailData as $key => $val)
 	{
 		continue;
 	}
-	echo '<tr><td style="font-weight: bold;">' . $label . '</td><td>';
+	echo '<tr><td style="padding: 6px; background-color: #045771; color: #FFF; font-weight: bold;">' . $label . '</td><td  style="padding: 6px 6px 10px;">';
 	if (is_array($val)) :
 		foreach ($val as $v):
 			if (is_array($v)) :
